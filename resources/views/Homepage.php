@@ -23,7 +23,7 @@
                 <a class="nav-link " href="about.php">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Products</a>
+                <a class="nav-link" href="products.php">Products</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="contact%20page.php">Contact</a>
@@ -32,7 +32,7 @@
                 <input class="search-form" type="text" placeholder="Search..">
             </li>
             <li class="nav-item img">
-                <a class="img" href="#">
+                <a class="img" href="basket.php">
                     <img id="accountImage" srC="Style/images/Basket.png" alt="Basket" width="40" height="40">
                 </a>
             </li>
@@ -118,7 +118,7 @@
         <h1 class="footer-info-title">Information</h1>
         <a class="footer-info-link" href="about.php">About</a>
         <a class="footer-info-link" href="useful%20links.php">Useful Links</a>
-        <p class="footer-info-link-final">Search Page</p>
+        <a class="footer-info-link" href="Search.php">Search Page</a>
     </div>
     <div class="footer-column">
         <h1 class="footer-pop-title">Popular Consoles</h1>

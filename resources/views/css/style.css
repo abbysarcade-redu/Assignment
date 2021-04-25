@@ -118,6 +118,30 @@ nav li a input[type=text] {
     align-content: center;
 }
 
+.col-md-6 {
+    width: 100%;
+}
+
+.checkout-container-left{
+    display: inline-block;
+    width: 40%;
+}
+
+.checkout-container-right{
+    display: inline-block;
+    width: 40%;
+    margin-left: 20px;
+}
+
+.left-white {
+    color: white;
+    margin-left: 20px;
+}
+
+checkout-row. {
+    display: inline-block;
+    width: 100%;
+}
 .button {
     background-color: #ff00e6;
     border-radius: 25px;
@@ -130,6 +154,20 @@ nav li a input[type=text] {
     horiz-align: center;
     color: white;
     text-decoration: none;
+}
+
+.button-pink {
+    background-color: #ff00e6;
+    border-radius: 25px;
+    font-size: 20px;
+    height: 30px;
+    border: none;
+    padding: 10px;
+    display: inline-block;
+    width: 170px;
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
 }
 
 button {
@@ -238,10 +276,10 @@ svg {
 .form-style {
     border-radius: 25px;
     height: 10px;
-    width: 50%;
+    width: 90%;
     padding: 5px;
     font-family: "Space Mono";
-    margin: 0 20px;
+    margin-left: 20px;
     margin-bottom: 10px;
     border: none;
 }
@@ -512,8 +550,101 @@ svg {
     border-radius: 25px;
 }
 
+.basket-page {
+    background-color: #222222;
+}
+
+.is-white {
+    color: white;
+    font-size: 20px;
+    margin-left: 30px;
+    position: center;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.is-white-left {
+    color: white;
+    font-size: 15px;
+    margin-left: 30px;
+    position: center;
+    display: block;
+    margin-top: 5px;
+}
+
 .table-wrapper .btn-group {
     float: right;
+}
+
+.input-trans {
+    width: 15px;
+    height: 15px;
+    text-align: center;
+}
+
+.basket-txt {
+    padding: 25px;
+    color: white;
+}
+
+.basket-total {
+    display: inline-block;
+}
+
+.basket-item {
+    display: inline-block;
+}
+
+.button-trans {
+    color: #222222;
+    background-color: #e9e9e9;
+    border-radius: 5px;
+    height: 25px;
+    width: 25px;
+}
+
+.content-column {
+    display: inline-block;
+}
+hr {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.right-align {
+    float: right;
+    background-color: #ffcc00;
+    border-radius: 25px;
+    font-size: 20px;
+    height: 30px;
+    border: none;
+    padding: 10px;
+    display: block;
+    width: 140px;
+    horiz-align: center;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: 250px;
+}
+
+.yellow-btn{
+    background-color: #ffcc00;
+    border-radius: 25px;
+    font-size: 20px;
+    height: 30px;
+    border: none;
+    padding: 10px;
+    width: 160px;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: 250px;
+    display: inline-block;
+    vertical-align: center;
 }
 
 .table-title .btn {
