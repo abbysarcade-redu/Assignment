@@ -19,8 +19,9 @@
     <p class="content">Student ID</p>
 
     <p class="content">This website has been created as part of a university assignment and is not a commercial site offering merchandise for sale.</p>
-    <div class="cent">
-        <a class="button" href="Homepage.php">Start Game<img class="icon" src="Style/images/Yellow%20Arrow.png"></a>
+    <div class="central">
+        <div class="cent">
+            <a class="button" href="Homepage.php">Start Game<img class="icon" src="Style/images/Yellow%20Arrow.png"></a>
+        </div>
     </div>
-
 </body>

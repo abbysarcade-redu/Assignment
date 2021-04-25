@@ -33,17 +33,29 @@
             </li>
             <li class="nav-item img">
                 <a class="img" href="#">
-                    <img id="accountImage" srC="Style/images/Basket.png" alt="Basket" width="40" height="40">
+                    <div class="dropdown">
+                        <img id="accountImage" srC="Style/images/Basket.png" alt="Basket" width="40" height="40">
+                    </div>
                 </a>
             </li>
-            <li class="nav-item img">
+            <li class="nav-item drop img">
                 <a class="img" href="#">
-                    <img id="accountImage" src="Style/images/Account.png" alt="Account" width="40" height="40">
+                    <img class="dropbtn" id="accountImage" src="Style/images/Account.png" alt="Account" width="40" height="40"><i class="fa fa-caret-down"></i>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li><a class="nav-link" href="#">Log In</a></li>
+                            <li><a class="nav-link" href="#">Sign Up</a></li>
+                        </ul>
+                    </div>
                 </a>
             </li>
         </ul>
     </div>
 </nav>
+<script>
+    document.querySelector(".drop a").addEventListener("click", function (){this.classList.toggle("active");
+    });
+</script>
 <div class="contact-page">
     <div class="hero-image">
         <img src="Style/images/Checkout-successful-banner.png" class="hero">

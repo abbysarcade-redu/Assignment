@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <title>Game On</title>
+    <title>Create an Account</title>
 </head>
 <body>
 <!---NAVBAR --->
@@ -44,3 +44,67 @@
         </ul>
     </div>
 </nav>
+
+<div class="contact-page">
+    <div class="hero-image">
+        <img src="Style/images/Create%20an%20account.png" class="hero">
+    </div>
+    <form>
+        <div class="central-buffer">
+            <div class="form-row central-form">
+                <div class="form-group">
+                    <input class="form-style" placeholder="Full Name*">
+                </div>
+                <div class="form-group col-md-6">
+                    <input class="form-style" placeholder="Email Address*">
+                </div>
+                <div class="form-group">
+                    <input class="form-style" placeholder="Contact Number">
+                </div>
+                <div class="form-group col-md-6">
+                    <input class="form-style" placeholder="Password*">
+                </div>
+                <div class="form-group col-md-6">
+                    <input class="form-style" placeholder="Confirm Password*">
+                </div>
+                <button class="yellow-btn">
+                    Create Account
+                </button>
+            </div>
+        </div>
+        <div class="central-buffer">
+            <div>
+                <img class="accountimg" src="Style/images/User.png">
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="footer">
+    <div class="footer-column">
+        <img src="Style/images/long-logo.png" class="footer-logo">
+        <p class="footer-content">Thank you for choosing game-on.co.uk, we pride ourselves on delivering a fantastic selection of games.</p>
+        <div>
+            <img class="footer-social" src="Style/images/Facebook-logo.png">
+            <img class="footer-social" src="Style/images/Twitter.png">
+            <img class="footer-social" src="Style/images/Twitch.png">
+        </div>
+        <p class="footer-content">Copyright 2021 game-on.co.uk</p>
+    </div>
+    <div class="footer-column">
+        <h1 class="footer-info-title">Information</h1>
+        <a class="footer-info-link" href="about.php">About</a>
+        <a class="footer-info-link" href="useful%20links.php">Useful Links</a>
+        <a class="footer-info-link" href="Search.php">Search Page</a>
+    </div>
+    <div class="footer-column">
+        <h1 class="footer-pop-title">Popular Consoles</h1>
+        <p class="footer-pop-link">Playstation</p>
+        <p class="footer-pop-link">Xbox</p>
+        <p class="footer-pop-link">Switch</p>
+        <p class="footer-pop-link-final">PC</p>
+    </div>
+</div>
+
+</body>
+</html>
