@@ -186,7 +186,12 @@ checkout-row. {
     text-align: center;
     width: 100%;
     position: center;
+}
 
+.central-login-form {
+    text-align: center;
+    width: 60%;
+    position: center;
 }
 
 .button-pink {
@@ -360,16 +365,20 @@ svg {
     position: relative;
 }
 
-.pop-console-img {
-    border-radius: 25px;
-    display: inline-block;
+.pop-console-cont{
+    display: inline;
     margin-left: 10px;
     margin-right: 10px;
-    height: 150px;
-    width: auto;
     margin-top: 30px;
     margin-bottom: 20px;
     position: relative;
+    width: 150px;
+}
+
+.pop-console-img {
+    border-radius: 25px;
+    height: 150px;
+
 }
 .pop-console-img img:hover {
     border: 2px #ffffff;
@@ -708,6 +717,23 @@ hr {
     text-decoration: none;
     margin-top: 10px;
     margin-left: 250px;
+}
+
+.white-btn {
+    background-color: #ffffff;
+    border-radius: 25px;
+    font-size: 20px;
+    height: 30px;
+    border: none;
+    padding: 10px;
+    padding-bottom: 20px;
+    width: 160px;
+    color: #ff00e6;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: 250px;
+    display: inline-block;
+    vertical-align: center;
 }
 
 .yellow-btn{

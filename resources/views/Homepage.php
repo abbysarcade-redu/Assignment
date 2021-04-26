@@ -46,15 +46,23 @@
 </nav>
 <div class="home-page">
     <div class="hero-image">
-        <img src="Style/images/New%20Games%20Now%20In(3).png" class="hero">
+        <img src="Style/images/Homepage-banner.png" class="hero">
     </div>
     <div class="pop-console">
         <h1>Popular Consoles</h1>
         <div>
-            <img src="Style/images/ps-logo.png" class="pop-console-img" href="#">
-            <img src="Style/images/Xbox-logo.png" class="pop-console-img">
-            <img src="Style/images/nintendo-logo.png" class="pop-console-img">
-            <img src="Style/images/computer.png" class="pop-console-img">
+            <div class="pop-console-cont">
+                <img src="Style/images/ps-logo.png" class="pop-console-img" href="#">
+            </div>
+            <div class="pop-console-cont">
+                <img src="Style/images/Xbox-logo.png" class="pop-console-img">
+            </div>
+            <div class="pop-console-cont">
+                <img src="Style/images/nintendo-logo.png" class="pop-console-img">
+            </div>
+            <div class="pop-console-cont">
+                <img src="Style/images/computer.png" class="pop-console-img">
+            </div>
         </div>
     </div>
     <div class="game-of-month">
