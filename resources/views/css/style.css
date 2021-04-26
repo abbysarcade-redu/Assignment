@@ -4,87 +4,183 @@
     font-family: 'VT323', sans-serif;
 }
 
- nav {
-    background-color: #222222;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    height: 100px;
-    font-size: 25px;
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    background-color: #f4f4f4;
 }
 
-nav ul li {
+a {
+    color: #000;
+}
+
+/* header */
+
+.header {
+    background-color: #222222;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+
+.header ul {
+    margin: 0;
+    padding: 0;
     list-style: none;
-    display: inline;
-    margin-left: 5px;
-    margin-right: 5px;
-    line-height: 80px;
-}
-
-nav li a {
-    padding: 0px 10px;
+    overflow: hidden;
     background-color: #222222;
-    text-decoration: none;
-    color: #ffffff;
+    font-family: VT323;
 }
 
-nav a:hover {
+.header li a {
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
     color: #ff00e6;
 }
 
-nav a:active {
+.header li a:active,
+.header .menu-btn:active {
     color: #00f7ff;
 }
 
-.product-search-container {
-    position: relative;
+.header .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
 }
 
-.control {
-    box-sizing: border-box;
+/* menu */
+
+.header .menu {
     clear: both;
-    font-size: 1rem;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
     position: relative;
-    text-align: inherit;
+    user-select: none;
 }
 
-nav li a.img {
-    padding: 0px 5px;
-
-
+.header .menu-icon .navicon {
+    background: #00f7ff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+    margin: 20px;
 }
-nav ul li.img {
-    list-style: none;
-    margin-top: 15px;
-
-}
-
-nav a.navbar-brand {
-    margin: 5px 10px;
+.nav-item {
+    padding: 5px 0;
 }
 
-input.search-form {
+.search-form {
+    margin: 25px;
     border-radius: 25px;
     border: none;
-    padding: 15px;
-    width: 100px;
-    height: 1px;
+    padding: 5px;
 }
 
-nav li a input[type=text] {
-    float: right;
-    padding: 6px;
-    border: none;
-    height: 80px;
-
-    font-size: 15px;
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+    background: #ff00e6;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
 }
+
+.header .menu-icon .navicon:before {
+    top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+    top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+    display: none;
+    margin: 20px;
+}
+
+.header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+    .header li {
+        float: left;
+    }
+    .header li a {
+        padding: 20px 20px;
+    }
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    .header .menu-icon {
+        display: none;
+    }
+    .home-page {
+        padding-top: 0px;
+    }
+}
+
+.nav-buffer {
+    height: auto;
+}
+
 .search {
     width: 100%;
     height: 100%;
     display: flex;
 }
 
+.home-page {
+    padding-top: 60px;
+}
 .container {
     width: 400px;
     height: 30px;
@@ -367,20 +463,37 @@ svg {
 
 .pop-console-img {
     border-radius: 25px;
-    display: inline-block;
-    height: 150px;
+    display: inline-flex;
+    max-height: 150px;
     width: auto;
     margin-top: 30px;
     margin-bottom: 20px;
     position: relative;
+    margin-inline: 1em 2em;
+    border: 4px solid transparent;
 }
-.pop-console-img img:hover {
-    border: 2px #ffffff;
+
+.pop-console-container {
+    width: auto;
+    padding: 5%;
+
+}
+
+.pop-console-img:hover {
+    border: 4px solid #ffffff;
+}
+
+.game-of-month-img:hover {
+    border: 4px solid #ffffff;
+}
+
+.top-games-img:hover {
+    border: 4px solid #ffffff;
 }
 
 .game-of-month {
     margin: 0;
-    min-height: 500px;
+    min-height: 100px;
     height: auto;
     background-color: #222222;
     color: #ff00e6;
@@ -389,16 +502,16 @@ svg {
     font-size: 20px;
 }
 
+
 .game-of-month-img {
     border-radius: 25px;
     display: inline-block;
-    margin-left: 10px;
-    margin-right: 10px;
-    height: 400px;
-    width: auto;
+    width: 90%;
     margin-top: 30px;
     margin-bottom: 20px;
-    position: relative;
+    position: center;
+    border: 4px solid transparent;
+    overflow: hidden;
 }
 
 .top-games {
@@ -422,6 +535,7 @@ svg {
     margin-top: 30px;
     margin-bottom: 5px;
     position: relative;
+    border: 4px solid transparent;
 }
 
 .team-img {
@@ -442,6 +556,10 @@ svg {
     font-size: 10px;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.top-games-txt:hover {
+    color: black;
 }
 
 .team-name {
@@ -559,6 +677,22 @@ svg {
     color: #00f7ff;
     font-size: 20px;
     margin-bottom: 10px;
+}
+
+.footer-info-link:hover {
+    color: white;
+}
+
+.footer-info-link:active {
+    color: #00f7ff;
+}
+
+.footer-pop-link:hover {
+    color: white;
+}
+
+.footer-pop-link:active {
+    color: #ff00e6;
 }
 
 .def-back {
