@@ -51,18 +51,10 @@
     <div class="pop-console">
         <h1>Popular Consoles</h1>
         <div>
-            <div class="pop-console-cont">
-                <img src="Style/images/ps-logo.png" class="pop-console-img" href="#">
-            </div>
-            <div class="pop-console-cont">
-                <img src="Style/images/Xbox-logo.png" class="pop-console-img">
-            </div>
-            <div class="pop-console-cont">
-                <img src="Style/images/nintendo-logo.png" class="pop-console-img">
-            </div>
-            <div class="pop-console-cont">
-                <img src="Style/images/computer.png" class="pop-console-img">
-            </div>
+            <img src="Style/images/ps-logo.png" class="pop-console-img" href="#">
+            <img src="Style/images/Xbox-logo.png" class="pop-console-img">
+            <img src="Style/images/nintendo-logo.png" class="pop-console-img">
+            <img src="Style/images/computer.png" class="pop-console-img">
         </div>
     </div>
     <div class="game-of-month">
