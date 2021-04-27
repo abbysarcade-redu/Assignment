@@ -17,18 +17,20 @@ a {
 /* header */
 
 .header {
-    background-color: #222222;
+    background-color: transparent;
     box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
     position: fixed;
     width: 100%;
     z-index: 3;
+    overflow: visible;
+    max-height: 10px;
 }
 
 .header ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    overflow: hidden;
+    overflow: auto;
     background-color: #222222;
     font-family: VT323;
 }
@@ -66,6 +68,8 @@ a {
     clear: both;
     max-height: 0;
     transition: max-height .2s ease-out;
+    float: right;
+    width: 200px;
 }
 
 /* menu icon */
@@ -90,6 +94,7 @@ a {
 }
 .nav-item {
     padding: 5px 0;
+    width: 200px;
 }
 
 .search-form {
@@ -107,7 +112,6 @@ a {
     height: 100%;
     position: absolute;
     transition: all .2s ease-out;
-    width: 100%;
 }
 
 .header .menu-icon .navicon:before {
@@ -116,6 +120,7 @@ a {
 
 .header .menu-icon .navicon:after {
     top: -5px;
+    width: 200px;
 }
 
 /* menu btn */
@@ -126,7 +131,10 @@ a {
 }
 
 .header .menu-btn:checked ~ .menu {
-    max-height: 240px;
+    max-height: 450px;
+    max-width: 200px;
+    border: 1px solid red;
+    float: right;
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon {
