@@ -17,22 +17,23 @@ a {
 /* header */
 
 .header {
-    background-color: transparent;
+    background-color: #222222;
     box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
     position: fixed;
     width: 100%;
     z-index: 3;
-    overflow: visible;
-    max-height: 10px;
+    height: 100px;
+    overflow: no-content;
 }
 
 .header ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    overflow: auto;
+    overflow: hidden;
     background-color: #222222;
     font-family: VT323;
+
 }
 
 .header li a {
@@ -69,7 +70,7 @@ a {
     max-height: 0;
     transition: max-height .2s ease-out;
     float: right;
-    width: 200px;
+    margin: 0;
 }
 
 /* menu icon */
@@ -78,9 +79,11 @@ a {
     cursor: pointer;
     display: inline-block;
     float: right;
-    padding: 28px 20px;
+    padding: 0 20px;
+    padding-top: 28px;
     position: relative;
     user-select: none;
+
 }
 
 .header .menu-icon .navicon {
@@ -90,19 +93,127 @@ a {
     position: relative;
     transition: background .2s ease-out;
     width: 18px;
-    margin: 20px;
+    margin: 0 20px;
+    margin-top: 20px;
 }
 .nav-item {
     padding: 5px 0;
-    width: 200px;
+
 }
 
-.search-form {
-    margin: 25px;
-    border-radius: 25px;
-    border: none;
+.search-bar {
+    display: flex;
+    border-radius: 100px;
+    overflow: hidden;
+    font-size: 1.25em;
+    padding: 3px;
+    position: relative;
+    size: 40px;
+    background: white;
+    margin-top: 15px;
+    font-family: "Space Mono";
+    height: 25px;
+    width: 25px;
+    transition: width 300ms ease-in-out;
+    margin-left: 5px;
+}
+
+
+
+.search_input {
+    border: transparent;
+    padding: 1px;
+    flex-grow: 1;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 10%;
+    outline: transparent;
+    cursor: pointer !important;
+    font-size: 1.5rem;
+    line-height: 25px;
+    opacity: 0 !important;
+
+}
+
+input {
+    border: transparent;
+    font-family: "Space Mono";
+    outline: transparent;
     padding: 5px;
 }
+
+
+.search_button {
+    font-size: 1rem;
+    margin-left: auto;
+    background: #ff00e6;
+    border: 0;
+    cursor: pointer;
+    border-radius: 120px;
+    transition: background 200ms ease-out;
+    width: 25px;
+    height: 25px;
+}
+
+.search-bar:focus-within {
+    box-shadow: 0 0 5px;
+    width: 90% !important;
+    margin-bottom: 15px;
+}
+.search-bar:focus-within > .search_button {
+    background: #00f7ff;
+    color: #ff00e6;
+    margin-left: calc(100% - 25px) !important;
+
+}
+
+.search-bar:focus-within > .search_input {
+    opacity: 1 !important;
+    font-size: 1rem;
+    padding-left: 5px;
+    width: calc(100% - 35px) !important;
+    cursor: initial !important;
+    background: transparent;
+
+}
+
+.menu-icon.search-bar:focus-within > nav-item {
+    display: none;
+}
+
+.search-bar > .search_button:hover, .search-bar > .search_button:hover {
+    outline: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+
+}
+
+.search-bar > .search_input:focus-within {
+    opacity: 1;
+    z-index: initial;
+    cursor: initial;
+}
+
+
+
+
+
+
+.search__submit {
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+    transition: background-color 500ms ease-out;
+}
+
+.search__submit:hover,
+.search__submit:focus {
+    outline: 0;
+    transform: rotate(1turn);
+    box-shadow: 0 0 10px rgba(0,0,0,.65);
+}
+
 
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
@@ -112,6 +223,7 @@ a {
     height: 100%;
     position: absolute;
     transition: all .2s ease-out;
+    width: 100%;
 }
 
 .header .menu-icon .navicon:before {
@@ -120,7 +232,6 @@ a {
 
 .header .menu-icon .navicon:after {
     top: -5px;
-    width: 200px;
 }
 
 /* menu btn */
@@ -132,8 +243,6 @@ a {
 
 .header .menu-btn:checked ~ .menu {
     max-height: 450px;
-    max-width: 200px;
-    border: 1px solid red;
     float: right;
 }
 
@@ -154,6 +263,14 @@ a {
     top: 0;
 }
 
+.buffer {
+    width: 5px;
+}
+
+.right {
+    float: right !important;
+}
+
 /* 48em = 768px */
 
 @media (min-width: 48em) {
@@ -166,15 +283,22 @@ a {
     .header .menu {
         clear: none;
         float: right;
-        max-height: none;
+        max-height: 100px;
+        width: 75%;
     }
     .header .menu-icon {
         display: none;
     }
+
     .home-page {
         padding-top: 0px;
     }
+    .header .menu .search-bar:focus-within {
+        width: 20% !important;
+        margin-bottom: 10px !important;
+    }
 }
+
 
 .nav-buffer {
     height: auto;

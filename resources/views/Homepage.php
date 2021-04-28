@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <title>Game On</title>
 </head>
@@ -28,19 +29,21 @@
         <li class="nav-item">
             <a class="nav-link" href="contact%20page.php">Contact</a>
         </li>
-        <li>
-            <input class="search-form" type="text" placeholder="Search..">
-        </li>
-        <li class="img">
+        <li class="img right">
             <a class="img" href="basket.php">
                 <img id="accountImage" srC="Style/images/Basket.png" alt="Basket" width="40" height="40">
             </a>
         </li>
-        <li class="img">
+        <li class="img right">
             <a class="img" href="#">
                 <img id="accountImage" src="Style/images/Account.png" alt="Account" width="40" height="40">
             </a>
         </li>
+        <li class="search-bar right">
+            <input type="text" class="search_input" aria-label="search" placeholder="Search..">
+            <button class="search_button" aria-label="submit search"><i class="fas fa-search"></i></button>
+        </li>
+        <li class="buffer"></li>
     </ul>
 </nav>
 <div class="nav-buffer">
