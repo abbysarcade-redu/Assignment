@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+
 <html lang="en">
 <head>
     <meta charset="UFT-8">
@@ -46,10 +47,11 @@
         <li class="buffer"></li>
     </ul>
 </nav>
-<div class="nav-buffer">
 
-</div>
+
+
 <div class="home-page">
+
     <div class="hero-image">
         <img src="Style/images/Homepage-banner.png" class="hero">
     </div>
@@ -62,12 +64,16 @@
             <img src="Style/images/computer.png" class="pop-console-img">
         </div>
     </div>
+<?php
+if ($product->game_of_month == 1): ?>
     <div class="game-of-month">
         <h1> Game of the month</h1>
         <div>
-            <img src="Style/images/game-of-month.jpg" class="game-of-month-img">
+
+            <img src="<?php echo e($product->product_image); ?>" class="game-of-month-img">
         </div>
     </div>
+    <?php endif; ?>
     <div class="top-games">
         <h1>Top Games</h1>
         <div>

@@ -301,7 +301,7 @@ input {
 
 
 .nav-buffer {
-    height: auto;
+    height: 100px;
 }
 
 .search {
