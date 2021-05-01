@@ -1,4 +1,9 @@
-
+<?php include ("../db.php"); ?>
+<?php $g_o_m = ($G_O_M_preparedStatement->fetchColumn()); ?>
+<?php class game_of_month {
+    public $product_name;
+    public $product_image;
+} ?>
 
 <html lang="en">
 <head>
@@ -47,11 +52,7 @@
         <li class="buffer"></li>
     </ul>
 </nav>
-
-
-
 <div class="home-page">
-
     <div class="hero-image">
         <img src="Style/images/Homepage-banner.png" class="hero">
     </div>
@@ -64,53 +65,22 @@
             <img src="Style/images/computer.png" class="pop-console-img">
         </div>
     </div>
-<?php
-if ($product->game_of_month == 1): ?>
     <div class="game-of-month">
         <h1> Game of the month</h1>
         <div>
-
-            <img src="<?php echo e($product->product_image); ?>" class="game-of-month-img">
+            <img src="<?php echo ($g_o_m); ?>" class="game-of-month-img">
         </div>
     </div>
-    <?php endif; ?>
     <div class="top-games">
         <h1>Top Games</h1>
         <div>
+        <?php $row = $featured_games_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "game_of_month");
+        foreach($row as $game_of_month): ?>
             <div class="top-games-entry">
-                <img src="Style/images/miles-morales.png" class="top-games-img">
-                <p class="top-games-txt">Miles Morales</p>
+                <img src="<?php echo($game_of_month->product_image) ?>" class="top-games-img">
+                <p class="top-games-txt"><?php echo($game_of_month->product_name) ?></p>
             </div>
-            <div class="top-games-entry">
-                <img src="Style/images/fifa.png" class="top-games-img">
-                <p class="top-games-txt">Fifa</p>
-            </div>
-            <div class="top-games-entry">
-                <img src="Style/images/Cyberpunk.png" class="top-games-img">
-                <p class="top-games-txt">Cyberpunk</p>
-            </div>
-            <div class="top-games-entry">
-                <img src="Style/images/hitman.png" class="top-games-img">
-                <p class="top-games-txt">Hitman 3</p>
-            </div>
-        </div>
-        <div>
-            <div class="top-games-entry">
-                <img src="Style/images/boarderlands.png" class="top-games-img">
-                <p class="top-games-txt">Boarderlands 3</p>
-            </div>
-            <div class="top-games-entry">
-                <img src="Style/images/Reddead.png" class="top-games-img">
-                <p class="top-games-txt">Red Dead Redemption</p>
-            </div>
-            <div class="top-games-entry">
-                <img src="Style/images/god-of-war.png" class="top-games-img">
-                <p class="top-games-txt">God Of War</p>
-            </div>
-            <div class="top-games-entry">
-                <img src="Style/images/valhalla.png" class="top-games-img">
-                <p class="top-games-txt">Valhalla</p>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>

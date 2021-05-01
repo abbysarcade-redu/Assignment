@@ -1,3 +1,8 @@
+<?php include ("../db.php"); ?>
+<?php class games {
+    public $product_name;
+    public $product_image;
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <title>About Us</title>
+    <title>Games</title>
 </head>
 <body>
 <!---NAVBAR --->
@@ -21,7 +26,7 @@
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">
         <li class="nav-item active">
-            <a class="nav-link-active " href="about.php">About</a>
+            <a class="nav-link " href="about.php">About</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="products.php">Products</a>
@@ -46,12 +51,31 @@
         <li class="buffer"></li>
     </ul>
 </nav>
-<div class="nav-buffer">
-<div class="contact-page">
+<div class="content-page">
     <div class="hero-image">
         <img src="Style/images/products-banner.png" class="hero">
     </div>
-</div>
+    <div class="products">
+        <div class="product-container">
+            <div class="filter">
+                <input type="text" id="search_input" onkeyup="search_function()" placeholder="Search games..">
+            </div>
+        </div>
+        <div class="product-container">
+            <ul class="prods" id="productUL">
+                <?php $row = $games_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "games");
+                foreach($row as $games): ?>
+                <li>
+                    <div class="top-games-entry">
+                        <img src="<?php echo($games->product_image) ?>" class="top-games-img">
+                        <p class="top-games-txt"><?php echo($games->product_name) ?></p>
+                    </div>
+                </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <script src="../js/SearchFunction.js"></script>
+    </div>
 </div>
 <div class="footer">
     <div class="footer-column">

@@ -145,6 +145,10 @@ input {
     padding: 5px;
 }
 
+li {
+    display: inline-block;
+    text-decoration: none;
+}
 
 .search_button {
     font-size: 1rem;
@@ -156,6 +160,17 @@ input {
     transition: background 200ms ease-out;
     width: 25px;
     height: 25px;
+}
+#search_input {
+    width: 90%;
+    font-family: "Space Mono";
+    border-radius: 50px;
+}
+
+#productUL {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 .search-bar:focus-within {
@@ -293,6 +308,10 @@ input {
     .home-page {
         padding-top: 0px;
     }
+
+    .contact-page {
+        padding-top: 0px;
+    }
     .header .menu .search-bar:focus-within {
         width: 20% !important;
         margin-bottom: 10px !important;
@@ -313,6 +332,7 @@ input {
 .home-page {
     padding-top: 60px;
 }
+
 .container {
     width: 400px;
     height: 30px;
@@ -484,10 +504,11 @@ svg {
     background-color: #00f7ff;
 }
 
-.contact-page{
+.content-page {
     background-color: #222222;
-    height: auto;
+    padding-top: 60px;
 }
+
 
 .hero-image {
    max-width: 100%;
@@ -508,6 +529,18 @@ svg {
     min-height: 250px;
     height: auto;
     background-color: #00f7ff;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    border: 100px #222222;
+    font-size: 20px;
+}
+
+.products {
+    margin: 0;
+    min-height: 250px;
+    height: auto;
+    background-color: #222222;
     color: #ffffff;
     text-align: center;
     padding: 20px;
@@ -607,7 +640,35 @@ svg {
 
 .pop-console-container {
     width: auto;
-    padding: 5%;
+    padding: calc((width / 5px) - 150px);
+
+}
+
+.prods {
+    width: calc(100% - 220px);
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.filter {
+    width: 150px;
+    height: auto;
+    color: #222222;
+    background-color: #00f7ff;
+    border-radius: 15px;
+    padding: 10px;
+    position: sticky;
+}
+
+.product-container {
+    display: inline;
+    overflow: auto;
 
 }
 
@@ -663,7 +724,7 @@ svg {
     margin-left: 20px;
     margin-right: 20px;
     height: 100px;
-    width: auto;
+    width: 100px;
     margin-top: 30px;
     margin-bottom: 5px;
     position: relative;
@@ -1086,6 +1147,6 @@ td {
 
 .buffer-space {
     background-color: #222222;
-    height: 30px;
+    height: 400px;
     width: auto;
 }
