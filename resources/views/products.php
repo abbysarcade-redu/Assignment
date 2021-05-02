@@ -2,6 +2,7 @@
 <?php class games {
     public $product_name;
     public $product_image;
+    public $product_sku;
 } ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +22,7 @@
 <body>
 <!---NAVBAR --->
 <nav class="header">
-    <a href="" class="logo"><img src="Style/images/Untitled design.png" alt="Game On" width="80"></a>
+    <a href="Homepage.php" class="logo"><img src="Style/images/Untitled design.png" alt="Game On" width="80"></a>
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">
@@ -67,8 +68,10 @@
                 foreach($row as $games): ?>
                 <li>
                     <div class="top-games-entry">
-                        <img src="<?php echo($games->product_image) ?>" class="top-games-img">
-                        <p class="top-games-txt"><?php echo($games->product_name) ?></p>
+                        <a href="product_page.php?sku=<?=$games->product_sku;?>">
+                            <img src="<?php echo($games->product_image) ?>" class="top-games-img">
+                            <p class="top-games-txt"><?php echo($games->product_name) ?></p>
+                        </a>
                     </div>
                 </li>
                 <?php endforeach; ?>

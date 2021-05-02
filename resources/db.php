@@ -18,7 +18,7 @@ $G_O_M_preparedStatement = $pdo->prepare($game_of_month);
 $G_O_M_preparedStatement->execute([1]);
 
 // Get featured games
-$featured_games = "SELECT product_name, product_image FROM assignment.product WHERE featured = ?";
+$featured_games = "SELECT product_name, product_image, product_sku FROM assignment.product WHERE featured = ?";
 
 //pass query
 $featured_games_preparedStatement = $pdo->prepare($featured_games);
@@ -28,7 +28,7 @@ $featured_games_preparedStatement->execute([1]);
 
 
 // Get games
-$games = "SELECT product_name, product_image FROM assignment.product";
+$games = "SELECT product_name, product_image, product_sku FROM assignment.product";
 
 //pass query
 $games_preparedStatement = $pdo->prepare($games);
@@ -48,7 +48,7 @@ $playstation_preparedStatement = $pdo->prepare($playstation);
 $playstation_preparedStatement->execute([1]);
 
 // Xbox image
-$xbox = "SELECT product_name, product_image FROM ASSIGNMENT.product WHERE xbox = ?";
+$xbox = "SELECT product_name, product_image, product_sku FROM ASSIGNMENT.product WHERE xbox = ?";
 
 // pass query
 
@@ -79,3 +79,12 @@ $pc_preparedStatement = $pdo->prepare($pc);
 //execute
 
 $pc_preparedStatement->execute([1]);
+
+// Get game details
+$game = "SELECT product_name, product_image, product_description, slug, product_cost, playstation, xbox, nintendo, pc FROM assignment.product WHERE product_sku = ?";
+
+//pass query
+$game_preparedStatement = $pdo->prepare($game);
+
+//execute
+//$game_preparedStatement->execute();

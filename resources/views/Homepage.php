@@ -3,6 +3,7 @@
 <?php class game_of_month {
     public $product_name;
     public $product_image;
+    public $product_sku;
 } ?>
 
 <html lang="en">
@@ -18,11 +19,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <title>Game On</title>
+    <base href="www.game-on.co.uk" />
 </head>
 <body>
 <!---NAVBAR --->
 <nav class="header">
-    <a href="" class="logo"><img src="Style/images/Untitled design.png" alt="Game On" width="80"></a>
+    <a href="Homepage.php" class="logo"><img src="Style/images/Untitled design.png" alt="Game On" width="80"></a>
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">
@@ -61,8 +63,8 @@
         <div class="pop-console-container">
             <a href="playstation.php"><img src="Style/images/ps-logo.png" class="pop-console-img" ></a>
             <a href="xbox.php"><img src="Style/images/Xbox-logo.png" class="pop-console-img"></a>
-            <img src="Style/images/nintendo-logo.png" class="pop-console-img">
-            <img src="Style/images/computer.png" class="pop-console-img">
+            <a href="nintendo.php"><img src="Style/images/nintendo-logo.png" class="pop-console-img"></a>
+            <a href="PC.php"><img src="Style/images/computer.png" class="pop-console-img"></a>
         </div>
     </div>
     <div class="game-of-month">
@@ -77,8 +79,9 @@
         <?php $row = $featured_games_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "game_of_month");
         foreach($row as $game_of_month): ?>
             <div class="top-games-entry">
-                <img src="<?php echo($game_of_month->product_image) ?>" class="top-games-img">
-                <p class="top-games-txt"><?php echo($game_of_month->product_name) ?></p>
+                <a href="product_page.php?sku=<?=$game_of_month->product_sku;?>">
+                    <img src="<?php echo($game_of_month->product_image) ?>" class="top-games-img">
+                    <p class="top-games-txt"><?php echo($game_of_month->product_name) ?></p></a>
             </div>
             <?php endforeach; ?>
         </div>

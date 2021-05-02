@@ -205,6 +205,21 @@ li {
 
 }
 
+.console-button:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+
+.console-control input[type="radio"]:checked + label {
+    background-color: white;
+    color: #ff00e6;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+}
+
+
+.submit_button:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+
 .search-bar > .search_input:focus-within {
     opacity: 1;
     z-index: initial;
@@ -310,6 +325,10 @@ li {
     }
 
     .content-page {
+        padding-top: 0px;
+    }
+
+    .prod-container {
         padding-top: 0px;
     }
     .header .menu .search-bar:focus-within {
@@ -524,6 +543,206 @@ svg {
     width: 100%;
 }
 
+.prod-container {
+    background: #ededed;
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 100px;
+}
+
+.prod-box {
+    padding: 3rem 1.5rem;
+}
+
+.prod-columns {
+    margin: -.75rem;
+    display: inline-block;
+    width: 100%;
+}
+
+.prod-column {
+    flex: none;
+    width: 30%;
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+}
+
+.purchase-column {
+    width: 66.666666666%;
+    display: inline-flex;
+}
+
+.prod-label {
+    margin-bottom: .5em;
+    font-weight: 500;
+    color: #ff00e6;
+    display: block;
+    font-size: 1rem;
+    font-family: "Space Mono";
+    margin-left: 5px;
+}
+
+.console-control {
+    display: flex;
+    flex-flow: row wrap;
+    box-sizing: border-box;
+    clear: both;
+    font-size: 1rem;
+    position: relative;
+    text-align: inherit;
+}
+
+.con-rad-cont {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.submit_button_control {
+    padding: 10px 0 0;
+    box-sizing: border-box;
+    clear: both;
+    font-size: 1rem;
+    position: relative;
+    text-align: inherit;
+}
+
+.submit_button {
+    background: #00f7ff;
+    border-color: transparent;
+    margin-right: 5px;
+    font-weight: 500 !important;
+    border-width: 1px;
+    cursor: pointer;
+    justify-content: center;
+    padding: calc(.5rem - 1px) 1em;
+    text-align: center;
+    white-space: nowrap;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: none;
+    display: inline-flex;
+    font-size: 1rem;
+    height: 2.5rem;
+    line-height: 1.5;
+    position: relative;
+    vertical-align: top;
+    margin-left: 5px;
+}
+
+.prod-info-container {
+    padding: 3rem 1.5rem;
+    display: block;
+    box-sizing: inherit;
+    overflow: hidden;
+}
+
+.prod-info-columns {
+    display: flex;
+    margin: -.75rem;
+    box-sizing: inherit;
+}
+
+.panel {
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 .5em 1em -.125em rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.02);
+    font-size: 1rem;
+    box-sizing: inherit;
+}
+
+.panel-heading {
+    font-weight: 500;
+    background-color: #00f7ff;
+    border-radius: 6px 6px 0 0;
+    color: black;
+    font-size: 1.25em;
+    line-height: 1.25;
+    padding: .75em 1em;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+.panel-block {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    align-items: center;
+    color: black;
+    justify-content: flex-start;
+    padding: .5em .75em;
+    box-sizing: inherit;
+}
+
+.prod-info-column {
+    flex: none;
+    width: 66.6666667%;
+    display: block;
+    padding: .75rem;
+    box-sizing: inherit;
+}
+
+.prod-side-container {
+    display: block;
+    box-sizing: inherit;
+    flex: none;
+    width: 30%;
+    align-items: center;
+}
+
+.product-content {
+    margin-bottom: 1.5rem;
+    box-sizing: inherit;
+    font-family: "Space Mono";
+    font-size: smaller;
+}
+
+.prod-in-container {
+    margin: 0 auto;
+    position: relative;
+    width: auto;
+}
+
+.console-button {
+    font-weight: 700;
+    padding: 6px 6px;
+    border-radius: 7px;
+    width: 75px;
+    text-align: center;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    background-color: #ff00e6;
+}
+
+.prod-title {
+    margin-bottom: 0 !important;
+    font-weight: 500 !important;
+    font-size: 1.5rem !important;
+    margin-left: 5px;
+}
+
+.price {
+    font-family: "Space Mono";
+    margin-left: 5px;
+}
+
+.prod-img {
+    border-radius: 13px;
+    max-width: 200px;
+    width: auto;
+    border: 4px solid white;
+}
+
+.container-prod {
+    flex-grow: 1;
+    margin: 0 auto;
+    position: relative;
+    width: auto;
+}
 
 .hero-image {
    max-width: 100%;

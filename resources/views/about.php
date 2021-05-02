@@ -16,7 +16,7 @@
 <body>
 <!---NAVBAR --->
 <nav class="header">
-    <a href="" class="logo"><img src="Style/images/Untitled design.png" alt="Game On" width="80"></a>
+    <a href="Homepage.php" class="logo"><img src="Style/images/Untitled design.png" alt="Game On" width="80"></a>
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">
