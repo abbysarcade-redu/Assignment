@@ -91,15 +91,15 @@
     <div class="footer-column">
         <h1 class="footer-info-title">Information</h1>
         <a class="footer-info-link" href="about.php">About</a>
-        <a class="footer-info-link" href="useful%20links.php">Useful Links</a>
+        <a class="footer-info-link" href="useful_links.php">Useful Links</a>
         <a class="footer-info-link" href="Search.php">Search Page</a>
     </div>
     <div class="footer-column">
         <h1 class="footer-pop-title">Popular Consoles</h1>
-        <p class="footer-pop-link">Playstation</p>
-        <p class="footer-pop-link">Xbox</p>
-        <p class="footer-pop-link">Switch</p>
-        <p class="footer-pop-link-final">PC</p>
+        <a class="footer-pop-link" href="playstation.php">Playstation</a>
+        <a class="footer-pop-link" href="xbox.php">Xbox</a>
+        <a class="footer-pop-link" href="nintendo.php">Nintendo</a>
+        <a class="footer-pop-link-final" href="PC.php">PC</a>
     </div>
 </div>
 

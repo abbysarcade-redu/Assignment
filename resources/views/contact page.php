@@ -16,7 +16,7 @@
 <body>
 <!---NAVBAR --->
 <nav class="header">
-    <a href="" class="logo"><img src="Style/images/Untitled design.png" alt="Game On" width="80"></a>
+    <a href="Homepage.php" class="logo"><img src="Style/images/Untitled design.png" alt="Game On" width="80"></a>
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">
@@ -48,7 +48,7 @@
 </nav>
 <div class="nav-buffer">
 
-<div class="contact-page">
+<div class="content-page">
     <div class="hero-image">
         <img src="Style/images/contact-us-banner.png" class="hero">
     </div>
@@ -57,22 +57,22 @@
         <p class="message-content">If you have any queries or question, please do not hesitate to send us a message using the form below and a member of our customer service team will get back in touch as soon as possible. We look forward to speaking to you. </p>
     </div>
     <div class="contact-page-layout">
-        <form>
+        <form action="contact_send.php" method="post">
             <div class="form-row">
                 <div class="form-group">
-                    <input class="form-style" placeholder="Full Name*">
+                    <input class="form-style" placeholder="Full Name*" name="customer_name" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="Email Address*">
+                    <input class="form-style" placeholder="Email Address*" name="customer_email" required>
                 </div>
             </div>
             <div class="form-group">
-                <input class="form-style" placeholder="Contact Number">
+                <input class="form-style" placeholder="Contact Number" name="customer_phone_number">
             </div>
             <div class="form-group">
-                <input class="form-style" placeholder="Message*" rows="3">
+                <textarea class="form-style-txt" rows="4" placeholder="Message*" name="customer_message" required></textarea>
             </div>
-            <button>Send Message</button>
+            <button type="submit">Send Message</button>
         </form>
     </div>
     <div class="contact-page-layout">
@@ -83,9 +83,9 @@
             <p class="is-blue">Sunderland,</p>
             <p class="is-blue">SR6 0DD</p>
 
-            <p class="is-blue">Located in <a>The University of Sunderland.</a></p>
+            <p class="is-blue">Located in <a class="is-pink">The University of Sunderland.</a></p>
         </div>
-        <div class="mapouter"><div class="gmap_canvas"><iframe width="400" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=SR6%200DD&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{position:relative;text-align:right;height:400px;width:400px;}</style><a href="https://www.embedgooglemap.net">how to add google map in wordpress</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:400px;width:400px;}</style></div></div>    </div>
+        <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=SR6%200DD&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{position:relative;text-align:right;height:auto;width:auto;}</style><style>.gmap_canvas {overflow:hidden;background:none!important;height:100%;width:100%;border-radius: 20px;}</style></div></div>    </div>
 </div>
 
 
@@ -103,15 +103,15 @@
     <div class="footer-column">
         <h1 class="footer-info-title">Information</h1>
         <a class="footer-info-link" href="about.php">About</a>
-        <a class="footer-info-link" href="useful%20links.php">Useful Links</a>
+        <a class="footer-info-link" href="useful_links.php">Useful Links</a>
         <a class="footer-info-link" href="Search.php">Search Page</a>
     </div>
     <div class="footer-column">
         <h1 class="footer-pop-title">Popular Consoles</h1>
-        <p class="footer-pop-link">Playstation</p>
-        <p class="footer-pop-link">Xbox</p>
-        <p class="footer-pop-link">Switch</p>
-        <p class="footer-pop-link-final">PC</p>
+        <a class="footer-pop-link" href="playstation.php">Playstation</a>
+        <a class="footer-pop-link" href="xbox.php">Xbox</a>
+        <a class="footer-pop-link" href="nintendo.php">Nintendo</a>
+        <a class="footer-pop-link-final" href="PC.php">PC</a>
     </div>
 </div>
 

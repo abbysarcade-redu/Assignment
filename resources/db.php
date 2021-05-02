@@ -35,3 +35,47 @@ $games_preparedStatement = $pdo->prepare($games);
 
 //execute
 $games_preparedStatement->execute();
+
+// playstation image
+$playstation = "SELECT product_name, product_image FROM ASSIGNMENT.product WHERE playstation = ?";
+
+// pass query
+
+$playstation_preparedStatement = $pdo->prepare($playstation);
+
+//execute
+
+$playstation_preparedStatement->execute([1]);
+
+// Xbox image
+$xbox = "SELECT product_name, product_image FROM ASSIGNMENT.product WHERE xbox = ?";
+
+// pass query
+
+$xbox_preparedStatement = $pdo->prepare($xbox);
+
+//execute
+
+$xbox_preparedStatement->execute([1]);
+
+// nintendo image
+$nintendo = "SELECT product_name, product_image FROM ASSIGNMENT.product WHERE nintendo = ?";
+
+// pass query
+
+$nintendo_preparedStatement = $pdo->prepare($nintendo);
+
+//execute
+
+$nintendo_preparedStatement->execute([1]);
+
+// PC image
+$pc = "SELECT product_name, product_image FROM ASSIGNMENT.product WHERE pc = ?";
+
+// pass query
+
+$pc_preparedStatement = $pdo->prepare($pc);
+
+//execute
+
+$pc_preparedStatement->execute([1]);

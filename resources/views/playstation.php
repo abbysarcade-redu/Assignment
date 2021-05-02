@@ -1,3 +1,9 @@
+<?php include ("../db.php"); ?>
+<?php class p_s {
+    public $product_name;
+    public $product_image;
+} ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,5 +53,57 @@
         <li class="buffer"></li>
     </ul>
 </nav>
-<div class="nav-buffer">
-<div><h1>hello</h1></div>
+<div class="content-page">
+    <div class="hero-image">
+        <img src="Style/images/playstation-banner.png" class="hero">
+    </div>
+    <div class="products">
+        <div class="product-container">
+            <div class="filter">
+                <input type="text" id="search_input" onkeyup="search_function()" placeholder="Search games..">
+            </div>
+        </div>
+        <div class="product-container">
+            <ul class="prods" id="productUL">
+                <?php $row = $playstation_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "p_s");
+                foreach($row as $p_s): ?>
+                    <li>
+                        <div class="top-games-entry">
+                            <img src="<?php echo($p_s->product_image) ?>" class="top-games-img">
+                            <p class="top-games-txt"><?php echo($p_s->product_name) ?></p>
+                        </div>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <script src="../js/SearchFunction.js"></script>
+    </div>
+</div>
+<div class="footer">
+    <div class="footer-column">
+        <img src="Style/images/long-logo.png" class="footer-logo">
+        <p class="footer-content">Thank you for choosing game-on.co.uk, we pride ourselves on delivering a fantastic selection of games.</p>
+        <div>
+            <img class="footer-social" src="Style/images/Facebook-logo.png">
+            <img class="footer-social" src="Style/images/Twitter.png">
+            <img class="footer-social" src="Style/images/Twitch.png">
+        </div>
+        <p class="footer-content">Copyright 2021 game-on.co.uk</p>
+    </div>
+    <div class="footer-column">
+        <h1 class="footer-info-title">Information</h1>
+        <a class="footer-info-link" href="about.php">About</a>
+        <a class="footer-info-link" href="useful_links.php">Useful Links</a>
+        <a class="footer-info-link" href="Search.php">Search Page</a>
+    </div>
+    <div class="footer-column">
+        <h1 class="footer-pop-title">Popular Consoles</h1>
+        <a class="footer-pop-link" href="playstation.php">Playstation</a>
+        <a class="footer-pop-link" href="xbox.php">Xbox</a>
+        <a class="footer-pop-link" href="nintendo.php">Nintendo</a>
+        <a class="footer-pop-link-final" href="PC.php">PC</p>
+    </div>
+</div>
+
+</body>
+</html>
