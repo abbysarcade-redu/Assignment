@@ -58,7 +58,7 @@
         <img src="Style/images/pc-banner.png" class="hero">
     </div>
     <div class="products">
-        <div class="product-container">
+        <div class="fit-container">
             <div class="filter">
                 <input type="text" id="search_input" onkeyup="search_function()" placeholder="Search games..">
             </div>

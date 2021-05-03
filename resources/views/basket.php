@@ -58,6 +58,13 @@
         <a class="right-align yellow-btn" href="checkout.php">Checkout Securely</a>
     </div>
     <hr>
+    <a id="bsk-empty">Empty Cart</a>
+    <?php
+    if(isset($_SESSION["basket_item"])) {
+        $total_quantity = 0;
+        $total_price = 0;
+    }
+    ?>
     <div class="basket-storage">
         <div class="basket-item">
             <img src="Style/images/miles-morales.png" class="top-games-img">

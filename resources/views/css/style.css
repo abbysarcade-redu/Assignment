@@ -167,11 +167,6 @@ li {
     border-radius: 50px;
 }
 
-#productUL {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
 
 .search-bar:focus-within {
     box-shadow: 0 0 5px;
@@ -674,6 +669,8 @@ svg {
     justify-content: flex-start;
     padding: .5em .75em;
     box-sizing: inherit;
+    font-family: "Space Mono";
+    font-size: smaller;
 }
 
 .prod-info-column {
@@ -771,7 +768,7 @@ svg {
 }
 
 .products {
-    display: inline-block;
+    display: inline-flex;
 }
 
 .us-block {
@@ -886,7 +883,8 @@ svg {
 }
 
 .prods {
-    width: calc(100% - 220px);
+    display: block;
+    width: 100%;
 }
 
 .right {
@@ -899,18 +897,29 @@ svg {
 }
 
 .filter {
-    width: 150px;
+    width: 85%;
     height: auto;
     color: #222222;
     background-color: #00f7ff;
     border-radius: 15px;
     padding: 10px;
     position: sticky;
+    display: block;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.fit-container {
+    display: block;
+    overflow: auto;
+    width: 30%;
+
 }
 
 .product-container {
-    display: inline;
+    display: block;
     overflow: auto;
+    width: 69%;
 
 }
 
@@ -971,6 +980,7 @@ svg {
     margin-bottom: 5px;
     position: relative;
     border: 4px solid transparent;
+    vertical-align: middle !important;
 }
 
 .team-img {
@@ -991,6 +1001,11 @@ svg {
     font-size: 10px;
     margin-left: 10px;
     margin-right: 10px;
+    text-align: center;
+    align-content: center !important;
+    word-wrap: normal;
+    max-width: 120px;
+    height: 40px;
 }
 
 .top-games-txt:hover {

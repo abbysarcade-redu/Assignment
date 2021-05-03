@@ -103,9 +103,10 @@
                             </div>
                         </div>
                         <div class="submit_button_control">
-                            <button class="submit_button">
+                            <button class="submit_button" type="submit" name="add_to_cart">
                                 Add to basket
                             </button>
+                            <input type="hidden" name="product_id" value="<?php echo($product_ret->product_sku) ?>">
                             <button class="submit_button">
                                 Buy Now
                             </button>
