@@ -552,7 +552,6 @@ svg {
 }
 
 .prod-columns {
-    margin: -.75rem;
     display: inline-block;
     width: 100%;
 }
@@ -566,7 +565,7 @@ svg {
 }
 
 .purchase-column {
-    width: 66.666666666%;
+    width: 50%;
     display: inline-flex;
 }
 
@@ -729,9 +728,9 @@ svg {
 
 .prod-img {
     border-radius: 13px;
-    max-width: 200px;
-    width: auto;
     border: 4px solid white;
+    max-width: 100%;
+    max-height: 180px;
 }
 
 .container-prod {
@@ -983,6 +982,22 @@ svg {
     vertical-align: middle !important;
 }
 
+.img:before {
+    content: attr(data-count);
+    position: absolute;
+    color: white;
+    right: 16px;
+    font-size: 15px;
+    text-align: center;
+    top: -12px;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+    opacity: 0;
+
+}
+
 .team-img {
     border-radius: 60px;
     display: inline-block;
@@ -1005,7 +1020,6 @@ svg {
     align-content: center !important;
     word-wrap: normal;
     max-width: 120px;
-    height: 40px;
 }
 
 .top-games-txt:hover {
@@ -1042,16 +1056,31 @@ svg {
     background-color: black;
     text-align: center;
     font-size: 20px;
+    width: 100%;
+    align-content: center !important;
+    display: inline-flex;
+}
+
+.social {
+    text-align: left;
+    align-content: flex-start;
 }
 
 .footer-column {
     max-width: 1170px;
-    max-height: 150px;
+    height: 150px;
     margin:auto;
     color: white;
-    display: inline-grid;
+    display: inline;
     width: 25%;
+    min-width: 100px;
     padding: 0 15px;
+    overflow: no-display;
+
+}
+
+.link-controler {
+    width: 100px;
 }
 
 .footer-logo {
@@ -1072,6 +1101,7 @@ svg {
 
 .footer-social {
     height: 20px;
+    float: left;
 }
 
 .footer-info-link {
@@ -1084,6 +1114,7 @@ svg {
     list-style-type: none;
     text-decoration: none;
     max-height: 20px;
+    display: block;
 }
 
 .footer-info-link-final {
@@ -1100,6 +1131,9 @@ svg {
     color: #ff00e6;
     font-size: 20px;
     margin-bottom: 10px;
+    display: block;
+    align-content: center;
+    width: 200px;
 }
 
 .footer-pop-link {
@@ -1111,6 +1145,7 @@ svg {
     padding-bottom: 10px;
     list-style-type: none;
     text-decoration: none;
+    display: block;
 }
 
 .footer-pop-link-final {
@@ -1121,12 +1156,15 @@ svg {
     width: 200px;
     list-style-type: none;
     text-decoration: none;
+    display: block;
 }
 
 .footer-pop-title {
     color: #00f7ff;
     font-size: 20px;
     margin-bottom: 10px;
+    display: block;
+    width: 200px;
 }
 
 .footer-info-link:hover {
@@ -1138,6 +1176,10 @@ svg {
 }
 
 .footer-pop-link:hover {
+    color: white;
+}
+
+.footer-pop-link-final:hover {
     color: white;
 }
 
@@ -1278,6 +1320,17 @@ hr {
     margin-right: 20px;
     margin-top: 20px;
     margin-bottom: 10px;
+}
+
+.basket-number {
+    background-color: red;
+    font-family: "Space Mono";
+    font-size: 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: center;
 }
 
 .right-align {

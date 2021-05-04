@@ -37,7 +37,7 @@ $games_preparedStatement = $pdo->prepare($games);
 $games_preparedStatement->execute();
 
 // playstation image
-$playstation = "SELECT product_name, product_image FROM ASSIGNMENT.product WHERE playstation = ?";
+$playstation = "SELECT product_name, product_image, product_sku FROM ASSIGNMENT.product WHERE playstation = ?";
 
 // pass query
 
@@ -59,7 +59,7 @@ $xbox_preparedStatement = $pdo->prepare($xbox);
 $xbox_preparedStatement->execute([1]);
 
 // nintendo image
-$nintendo = "SELECT product_name, product_image FROM ASSIGNMENT.product WHERE nintendo = ?";
+$nintendo = "SELECT product_name, product_image, product_sku FROM ASSIGNMENT.product WHERE nintendo = ?";
 
 // pass query
 
@@ -70,7 +70,7 @@ $nintendo_preparedStatement = $pdo->prepare($nintendo);
 $nintendo_preparedStatement->execute([1]);
 
 // PC image
-$pc = "SELECT product_name, product_image FROM ASSIGNMENT.product WHERE pc = ?";
+$pc = "SELECT product_name, product_image, product_sku FROM ASSIGNMENT.product WHERE pc = ?";
 
 // pass query
 
