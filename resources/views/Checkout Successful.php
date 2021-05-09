@@ -1,7 +1,63 @@
+<?php include ("../db.php"); ?>
+<?php if(!isset($_SESSION)) {
+    session_start();
+} ?>
 <!DOCTYPE html>
 <?php include ("layout/header.php"); ?>
 <body>
 <?php include ("layout/nav.php"); ?>
+<?php
+$address_preparedStatement->execute(array(
+    $_POST['d-house-number'],
+    $_POST['d-street'],
+    $_POST['d-town'],
+    $_POST['d-county'],
+    $_POST['d-country'],
+    $_POST['d-post-code'],
+    1
+));
+$delivery_address = $pdo->lastInsertId();
+
+print_r($delivery_address);
+$address_preparedStatement->execute(array(
+    $_POST['b-house-number'],
+    $_POST['b-street'],
+    $_POST['b-town'],
+    $_POST['b-county'],
+    $_POST['b-country'],
+    $_POST['b-post-code'],
+    2
+));
+
+$billing_address = $pdo->lastInsertId();
+print_r($billing_address);
+
+$address_ids = ([$delivery_address],[$billing_address]);
+
+$user_address_preparedStatement->execute($_SESSION['user_id'], $address_ids);
+
+$payment_preparedStatement->execute(array(
+    base64_encode($_POST['card_number']),
+    base64_encode($_POST['name_on_code']),
+    base64_encode($_POST['csv']),
+    $billing_address
+));
+
+$payment_ref = $pdo->lastInsertId();
+print_r($payment_ref);
+
+$delivery_preparedStatement->execute(array(
+    $delivery_address,
+    'waiting for dispatch'
+));
+
+$delivery_ref = $pdo->lastInsertId();
+print_r($delivery_ref);
+
+$sale_detail_update_preparedStatement->execute(array($payment_ref, $delivery_ref, $_SESSION['sale']));
+
+
+?>
 <div class="nav-buffer">
 <script>
     document.querySelector(".drop a").addEventListener("click", function (){this.classList.toggle("active");

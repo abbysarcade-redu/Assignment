@@ -12,6 +12,14 @@
 <body>
 <?php include ("layout/nav.php"); ?>
 <?php $total = array(); ?>
+
+<?php if(!isset($_SESSION['order_number'])) {
+    $date = strtotime("now");
+    $id = rand(00000000, 99999999);
+    $order_number = ($date . $id);
+} else {
+    $order_number = $_SESSION['order_number'];
+}?>
 <div class="nav-buffer"></div>
 <div class="basket-page">
     <div class="hero-image">
@@ -34,7 +42,12 @@
             $basket_product_preparedStatement->execute([$sku]);
             $basket_games = $basket_product_preparedStatement->fetchObject( 'basket_games');
             $subtotal = ($basket_games->product_cost)*$amount;
-            array_push($total, $subtotal);?>
+            $line_items_preparedStatement->execute(array(
+                $order_number,
+                $sku,
+                $amount
+            ));
+            array_push($total, $subtotal); ?>
                 <div class="basket-storage">
                     <div class="basket-item-i">
                         <img src="<?php echo($basket_games->product_image) ?>" class="games-img">
@@ -72,11 +85,32 @@
             <a class="button-pink-b" href="products.php">Continue Shopping</a>
         </div>
         <div>
-            <a class="yellow-btn-b" href="checkout.php?total=<?php echo (array_sum($total)); ?>">Checkout Securely</a>
+            <a class="yellow-btn-b" href="checkout.php">Checkout Securely</a>
         </div>
     </div>
 </div>
     <?php include ("layout/footer.php"); ?>
 </body>
 </html>
+<?php
+if (!isset($_SESSION['order_number'])) {
+    $_SESSION['order_number'] = $order_number;
 
+    $user_id = rand(000000000, 9999999999);
+    $order_status = 'basket';
+
+    $transaction_preparedStatement->execute(array(
+        $date,
+        $order_number,
+        $_SESSION['user_id'],
+        gmdate("Y-m-d H:i:s", $date),
+        $_SESSION['total'],
+        $order_status,
+    ));
+
+}
+
+
+
+
+?>

@@ -1,10 +1,18 @@
+<?php include ("../db.php"); ?>
+<?php if(!isset($_SESSION)) {
+    session_start();
+} ?>
 <!DOCTYPE html>
 <?php include ("layout/header.php"); ?>
 <body>
 <?php include ("layout/nav.php"); ?>
-<?php $total = $_GET['total'] ?>
+<?php $order_number = $_GET['order_number'] ?>
+<?php class user {
+    public $name;
+    public $email;
+} ?>
+<div class="nav-buffer"></div>
 
-<div class="nav-buffer">
 <div class="content-page">
     <div class="hero-image">
         <img src="Style/images/checkout-banner.png" class="hero">
@@ -15,23 +23,35 @@
             <p class="basket-txt">Basket Subtotal:</p>
         </div>
         <div class="basket-sub-item-r">
-            <p class="basket-txt-r"><?php echo ($total); ?></p>
+            <p class="basket-txt-r"><?php echo ($_SESSION['total']); ?></p>
         </div>
     </div>
     <hr>
-    <form>
+    <form name="checkout" action="Checkout%20Successful.php" method="post">
         <div class="checkout-row">
             <div class="checkout-container-left">
                 <label class="left-white">Your Details</label>
                 <div class="form-row">
                     <div class="form-group">
-                        <input class="form-style" placeholder="Full Name*" required>
+                        <?php if(isset($_SESSION['user_id'])):
+                        $user_details_preparedStatement->execute([$_SESSION['user_id']]);
+                        $user = $user_details_preparedStatement->fetchObject('user'); ?>
+                        <input class="form-style" placeholder="Full Name*" name="name" value="<?php echo $user->user_name ?>" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <input class="form-style" placeholder="Email Address*" required>
+                        <input class="form-style" placeholder="Email Address*" value="<?php echo $user->user_email ?>" required>
                     </div>
                 </div>
                 <div class="form-group">
+                    <?php else: ?>
+                    <input class="form-style" placeholder="Full Name*" value="<?php echo $user->user_name ?>" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <input class="form-style" placeholder="Email Address*" value="<?php echo $user->user_email ?>" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <?php endif; ?>
                     <input class="form-style" placeholder="Contact Number">
                 </div>
             </div>
@@ -55,19 +75,22 @@
             <label class="left-white">Delivery Address</label>
             <div class="form-row">
                 <div class="form-group">
-                    <input class="form-style" placeholder="House Number*" required>
+                    <input class="form-style" placeholder="House Number*" name="d-house-number" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="Street*" required>
+                    <input class="form-style" placeholder="Street*" name="d-street" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="Town*" required>
+                    <input class="form-style" placeholder="Town*" name="d-town" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="County*" required>
+                    <input class="form-style" placeholder="County*" name="d-county" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="Post Code*" required>
+                    <input class="form-style" placeholder="Country*" name="d-country" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <input class="form-style" placeholder="Post Code*" name="d-post-code" required>
                 </div>
             </div>
         </div>
@@ -75,23 +98,26 @@
             <label class="left-white">Billing Address</label>
             <div class="form-row">
                 <div class="form-group">
-                    <input class="form-style" placeholder="House Number*" required>
+                    <input class="form-style" placeholder="House Number*" name="b-house-number" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="Street*" required>
+                    <input class="form-style" placeholder="Street*" name="b-street" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="Town*" required>
+                    <input class="form-style" placeholder="Town*" name="b-town" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="County*" required>
+                    <input class="form-style" placeholder="County*" name="b-county" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="Post Code*" required>
+                    <input class="form-style" placeholder="Country*" name="b-country" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <input class="form-style" placeholder="Post Code*" name="b-post-code" required>
                 </div>
             </div>
         </div>
-        <button class="yellow-btn" onclick="href='Checkout%Successful.php'">Checkout Securely</button>
+        <button class="yellow-btn" >Checkout Securely</button>
     </form>
 
 </div>

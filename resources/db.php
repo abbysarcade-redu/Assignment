@@ -99,8 +99,8 @@ $basket_product_preparedStatement = $pdo->prepare($basket_product);
 //execute
 
 //transaction
-$transaction = "INSERT INTO ASSIGNMENT.sale (sale_id, sale_number, user_number, order_date, payment_ref, order_value, order_status, delivery_ref)
-VALUES(?,?,?,?,?,?,?,?)";
+$transaction = "INSERT INTO ASSIGNMENT.sale (sale_id, sale_number, user_id, order_date, order_value, order_status)
+VALUES(?,?,?,?,?,?)";
 
 //pass query
 $transaction_preparedStatement = $pdo->prepare($transaction);
@@ -113,9 +113,47 @@ VALUES(?,?,?,?)";
 $user_preparedStatement = $pdo->prepare($user);
 
 //address
-$address = "INSERT INTO ASSIGNMENT.address (address_id, house_number, street_name, town, county, country, post_code)
+$address = "INSERT INTO ASSIGNMENT.address (house_number, street_name, town, county, country, post_code, a_type)
 VALUES(?,?,?,?,?,?,?)";
 
 //pass query
 $address_preparedStatement = $pdo->prepare($address);
 
+$user_details = "SELECT user_name, user_email FROM ASSIGNMENT.users WHERE user_id = ?";
+
+// pass query
+
+$user_details_preparedStatement = $pdo->prepare($user_details);
+
+//line_item
+$line_items = "INSERT INTO ASSIGNMENT.line_item (sale_id, product_sku, quantity)
+VALUES(?,?,?)";
+
+//pass query
+$line_items_preparedStatement = $pdo->prepare($line_items);
+
+//payment
+$payment = "INSERT INTO ASSIGNMENT.payment (card_number, name_on_card, csv, address_id)
+VALUES(?,?,?,?)";
+
+//pass query
+$payment_preparedStatement = $pdo->prepare($payment);
+
+//transaction
+$user_address = "UPDATE ASSIGNMENT.users SET address_id = ? WHERE user_id = ?";
+
+//pass query
+$user_address_preparedStatement = $pdo->prepare($user_address);
+
+//Delivery
+$delivery = "INSERT INTO ASSIGNMENT.delivery (address_id, delivery_status)
+VALUES(?,?)";
+
+//pass query
+$delivery_preparedStatement = $pdo->prepare($delivery);
+
+//transaction
+$sale_detail_update = "UPDATE ASSIGNMENT.sale SET payment_ref = ?, delivery_ref = ? WHERE sale_id = ?";
+
+//pass query
+$sale_detail_update_preparedStatement = $pdo->prepare($sale_detail_update);
