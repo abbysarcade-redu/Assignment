@@ -106,8 +106,8 @@ VALUES(?,?,?,?,?,?,?,?)";
 $transaction_preparedStatement = $pdo->prepare($transaction);
 
 //user
-$user = "INSERT INTO ASSIGNMENT.users (user_id, user_name, user_email, user_password, address_id, access_type)
-VALUES(?,?,?,?,?,?)";
+$user = "INSERT INTO ASSIGNMENT.users (user_name, user_email, user_password, access_type)
+VALUES(?,?,?,?)";
 
 //pass query
 $user_preparedStatement = $pdo->prepare($user);

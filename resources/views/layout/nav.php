@@ -27,13 +27,13 @@ if(!isset($_SESSION)) {
             </a>
         </li>
         <li class="img right">
-            <a class="img dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <?php if(!isset($_SESSION['user_id'])): ?>
+            <a class="img dropdown-toggle" href="login.php">
+            <?php else: ?>
+            <a class="img dropdown-toggle" href="#">
+            <?php endif; ?>
                 <img id="accountImage" src="Style/images/Account.png" alt="Account" width="40" height="40">
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="login.php">Login</a>
-                <a class="dropdown-item" href="create%20account.php">Create an account</a>
-            </ul>
         </li>
         <script src="../js/nav_dropdown.js"></script>
         <li class="search-bar right">

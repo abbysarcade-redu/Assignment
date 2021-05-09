@@ -444,13 +444,22 @@ checkout-row. {
     position: center;
     padding-bottom: 10px;
     display: inline-block;
-    width: 100%;
+    width: 45%;
 }
 
 .accountimg {
     height: 190px;
     width: auto;
     margin-left: 40px;
+    float: right;
+}
+
+
+.accountcimg {
+    height: 250px;
+    width: auto;
+    margin-left: 40px;
+    float: right;
 }
 
 .central {
@@ -560,6 +569,7 @@ svg {
     background-color: #222222;
     padding-top: 60px;
     width: 100%;
+    height: 80%;
 }
 
 .prod-container {
@@ -809,6 +819,57 @@ svg {
     font-size: 20px;
 }
 
+input:invalid {
+    border-radius: 2px solid red;
+}
+
+#message {
+    display: none;
+    font-size: 15px;
+    margin-left: 20px;
+    background-color: white;
+    width: 40%;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#message p {
+    font-family: "Space Mono";
+}
+
+#message b {
+    font-family: "Space Mono";
+}
+
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+    content: "✔";
+}
+
+.invalid {
+    color: red !important;
+}
+
+.account_created_page {
+    display: inline-flex;
+    width: 100%;
+}
+
+.account_created_container {
+    width: 40%;
+    margin: 4%;
+    display: block;
+}
+
+.invalid:before {
+    position: relative;
+    content: "✖";
+}
+
 .message-content-block {
     margin: 15px;
     min-height: 50px;
@@ -824,7 +885,7 @@ svg {
 .form-style {
     border-radius: 25px;
     height: 10px;
-    width: 80%;
+    width: 90%;
     padding: 5px;
     font-family: "Space Mono";
     margin-left: 20px;
@@ -1068,6 +1129,19 @@ svg {
     width: 100%;
 }
 
+.a-content {
+    font-family: 'Space Mono';
+    color: white;
+    font-size: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    align-content: center !important;
+    word-wrap: normal;
+    height: 40px;
+    width: 80%;
+}
+
 .top-games-txt {
     font-family: 'Space Mono';
     color: white;
@@ -1300,6 +1374,17 @@ text-align: center;
     margin-top: 20px;
 }
 
+.a-title {
+    color: white;
+    font-size: 20px;
+    position: center;
+    display: block;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 80%;
+}
+
 .dropdown {
     float: left;
     overflow: hidden;
@@ -1492,18 +1577,13 @@ hr {
     background-color: #ffcc00;
     border-radius: 25px;
     font-size: 20px;
-    height: 20px;
     border: none;
-    padding: 10px;
-    padding-bottom: 20px;
     width: 160px;
     color: white;
     text-decoration: none;
-    margin-top: 10px;
-    margin-left: 250px;
     display: inline-block;
-    vertical-align: center;
     text-align: center;
+    padding: 5px;
 }
 
 .b-but {
