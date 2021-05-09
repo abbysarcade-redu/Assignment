@@ -215,6 +215,10 @@ li {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
 }
 
+.submit_button:disabled {
+    cursor: default;
+}
+
 .search-bar > .search_input:focus-within {
     opacity: 1;
     z-index: initial;
@@ -384,15 +388,22 @@ li {
     width: 100%;
 }
 
+.dropdown-toggle::after {
+    transition: transform 0.15s linear;
+}
+
+
+
 .checkout-container-left{
     display: inline-block;
-    width: 40%;
+    width: 45%;
 }
 
 .checkout-container-right{
     display: inline-block;
-    width: 40%;
+    width: 45%;
     margin-left: 20px;
+    text-align: right;
 }
 
 .left-white {
@@ -433,6 +444,7 @@ checkout-row. {
     position: center;
     padding-bottom: 10px;
     display: inline-block;
+    width: 100%;
 }
 
 .accountimg {
@@ -452,10 +464,23 @@ checkout-row. {
 
 .central-login-form {
     text-align: center;
-    width: 60%;
+    width: 100%;
     position: center;
 }
 
+.button-pink-b {
+    background-color: #ff00e6;
+    border-radius: 25px;
+    font-size: 20px;
+    height: 30px;
+    border: none;
+    padding: 10px;
+    display: inline-flex;
+    width: 170px;
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
 
 .button-pink {
     background-color: #ff00e6;
@@ -463,7 +488,6 @@ checkout-row. {
     font-size: 20px;
     height: 30px;
     border: none;
-    padding: 10px;
     display: inline-block;
     width: 170px;
     color: white;
@@ -638,6 +662,7 @@ svg {
     display: flex;
     margin: -.75rem;
     box-sizing: inherit;
+    width: 60%;
 }
 
 .panel {
@@ -674,31 +699,33 @@ svg {
 
 .prod-info-column {
     flex: none;
-    width: 66.6666667%;
+    width: 60%;
     display: block;
     padding: .75rem;
     box-sizing: inherit;
+    width: 100%;
 }
 
 .prod-side-container {
     display: block;
     box-sizing: inherit;
     flex: none;
-    width: 30%;
+    width: 60%;
     align-items: center;
 }
 
 .product-content {
     margin-bottom: 1.5rem;
-    box-sizing: inherit;
     font-family: "Space Mono";
     font-size: smaller;
+    width: 100%
 }
 
 .prod-in-container {
     margin: 0 auto;
     position: relative;
-    width: auto;
+    width: 100%;
+    display: inline-block;
 }
 
 .console-button {
@@ -934,6 +961,10 @@ svg {
     border: 4px solid #ffffff;
 }
 
+.games-img:hover {
+    border: 4px solid #ffffff;
+}
+
 .game-of-month {
     margin: 0;
     min-height: 100px;
@@ -982,6 +1013,19 @@ svg {
     vertical-align: middle !important;
 }
 
+.games-img {
+    border-radius: 25px;
+    display: inline-block;
+    margin-right: 20px;
+    height: 100px;
+    width: 100px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    position: relative;
+    border: 4px solid transparent;
+    vertical-align: middle !important;
+}
+
 .img:before {
     content: attr(data-count);
     position: absolute;
@@ -1010,6 +1054,20 @@ svg {
     position: relative;
 }
 
+.games-txt {
+    font-family: 'Space Mono';
+    color: white;
+    font-size: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    align-content: center !important;
+    word-wrap: normal;
+    max-width: 120px;
+    height: 40px;
+    width: 100%;
+}
+
 .top-games-txt {
     font-family: 'Space Mono';
     color: white;
@@ -1020,6 +1078,7 @@ svg {
     align-content: center !important;
     word-wrap: normal;
     max-width: 120px;
+    height: 40px;
 }
 
 .top-games-txt:hover {
@@ -1042,7 +1101,8 @@ svg {
 }
 
 .top-games-entry {
-    display: inline-block;
+    display: inline-flex;
+    height: 180px;
 }
 
 .team-entry {
@@ -1054,33 +1114,41 @@ svg {
     min-height: 200px;
     height: auto;
     background-color: black;
-    text-align: center;
+    text-align: center !important;
     font-size: 20px;
     width: 100%;
-    align-content: center !important;
-    display: inline-flex;
 }
 
 .social {
     text-align: left;
-    align-content: flex-start;
 }
 
 .footer-column {
-    max-width: 1170px;
-    height: 150px;
-    margin:auto;
+    margin: auto;
     color: white;
-    display: inline;
-    width: 25%;
+    width: 80%;
     min-width: 100px;
     padding: 0 15px;
-    overflow: no-display;
+    text-align: center;
+    align-content: center;
+    display: grid;
+    justify-items: center;
 
 }
 
+@media (min-width: 40em) {
+    .footer-column {
+        display: block;
+        width: 25%;
+    }
+
+    .footer {
+        display: inline-flex;
+    }
+}
+
 .link-controler {
-    width: 100px;
+text-align: center;
 }
 
 .footer-logo {
@@ -1097,6 +1165,7 @@ svg {
     width: 200px;
     padding-bottom: 10px;
     left: 0;
+    text-align: center;
 }
 
 .footer-social {
@@ -1109,12 +1178,13 @@ svg {
     color: #ff00e6;
     font-size: 10px;
     margin-right: 10px;
-    width: 200px;
+    width: 100%;
     padding-bottom: 10px;
     list-style-type: none;
     text-decoration: none;
     max-height: 20px;
     display: block;
+    max-width: 200px;
 }
 
 .footer-info-link-final {
@@ -1133,19 +1203,21 @@ svg {
     margin-bottom: 10px;
     display: block;
     align-content: center;
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
 }
 
 .footer-pop-link {
     font-family: 'Space Mono';
     color: #00f7ff;
+    width: 100%;
     font-size: 10px;
     margin-right: 10px;
-    width: 200px;
     padding-bottom: 10px;
     list-style-type: none;
     text-decoration: none;
     display: block;
+    max-width: 200px;
 }
 
 .footer-pop-link-final {
@@ -1153,18 +1225,20 @@ svg {
     color: #00f7ff;
     font-size: 10px;
     margin-right: 10px;
-    width: 200px;
+    width: 100%;
     list-style-type: none;
     text-decoration: none;
     display: block;
+    max-width: 200px;
 }
 
 .footer-pop-title {
     color: #00f7ff;
     font-size: 20px;
     margin-bottom: 10px;
+    width: 100%;
     display: block;
-    width: 200px;
+    max-width: 200px;
 }
 
 .footer-info-link:hover {
@@ -1291,17 +1365,49 @@ svg {
     text-align: center;
 }
 
-.basket-txt {
-    padding: 25px;
+.basket-txt-r {
     color: white;
+    padding: 25px 0;
+    width: 90%;
+    text-align: right;
+}
+
+.basket-txt {
+    color: white;
+    padding: 25px 0;
+    width: 90%;
 }
 
 .basket-total {
-    display: inline-block;
+    display: inline-flex;
+    width: 100%;
 }
 
 .basket-item {
     display: inline-block;
+}
+
+.basket-sub-item {
+    width: 40%;
+    display: flex;
+    margin-left: 5%;
+}
+.basket-sub-item-r {
+    width: 40%;
+    display: flex;
+    margin-left: 5%;
+    float: right;
+}
+
+.basket-item-i {
+    display: inline-block;
+    margin-left: 3%;
+}
+
+.basket-item-l {
+    display: inline-block;
+    width: 10%;
+    margin: 0 5%;
 }
 
 .button-trans {
@@ -1309,11 +1415,29 @@ svg {
     background-color: #e9e9e9;
     border-radius: 5px;
     height: 25px;
-    width: 25px;
+    padding: 0 5px;
+    margin: 0 3%;
+    text-decoration: none;
+}
+
+.bas-cont {
+    display: inline-flex;
+    width: 100%;
 }
 
 .content-column {
     display: inline-block;
+}
+
+.content-column-left {
+    display: flex;
+    width: 40%;
+
+}
+
+.content-column-right {
+    display: block;
+    width: 60%;
 }
 hr {
     margin-left: 20px;
@@ -1331,6 +1455,7 @@ hr {
     border-radius: 50%;
     text-align: center;
     vertical-align: center;
+    color: black;
 }
 
 .right-align {
@@ -1354,24 +1479,20 @@ hr {
     background-color: #ffffff;
     border-radius: 25px;
     font-size: 20px;
-    height: 30px;
     border: none;
-    padding: 10px;
-    padding-bottom: 20px;
     width: 160px;
     color: #ff00e6;
     text-decoration: none;
     margin-top: 10px;
-    margin-left: 250px;
     display: inline-block;
-    vertical-align: center;
+    padding: 5px;
 }
 
 .yellow-btn{
     background-color: #ffcc00;
     border-radius: 25px;
     font-size: 20px;
-    height: 30px;
+    height: 20px;
     border: none;
     padding: 10px;
     padding-bottom: 20px;
@@ -1382,6 +1503,27 @@ hr {
     margin-left: 250px;
     display: inline-block;
     vertical-align: center;
+    text-align: center;
+}
+
+.b-but {
+    display: flex;
+}
+
+.yellow-btn-b {
+    background-color: #ffcc00;
+    border-radius: 25px;
+    font-size: 20px;
+    height: 30px;
+    border: none;
+    padding: 10px;
+    display: inline-flex;
+    width: 170px;
+    color: white;
+    text-decoration: none;
+    margin-left: 250px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .table-title .btn {

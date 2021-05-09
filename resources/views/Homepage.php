@@ -33,7 +33,7 @@
         <h1>Top Games</h1>
         <div>
         <?php $row = $featured_games_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "game_of_month");
-        foreach($row as $game_of_month): ?>
+        foreach ($row as $game_of_month): ?>
             <div class="top-games-entry">
                 <a href="product_page.php?sku=<?=$game_of_month->product_sku;?>">
                     <img src="<?php echo($game_of_month->product_image) ?>" class="top-games-img">

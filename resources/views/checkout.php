@@ -2,17 +2,21 @@
 <?php include ("layout/header.php"); ?>
 <body>
 <?php include ("layout/nav.php"); ?>
+<?php $total = $_GET['total'] ?>
+
 <div class="nav-buffer">
-<div class="contact-page">
+<div class="content-page">
     <div class="hero-image">
         <img src="Style/images/checkout-banner.png" class="hero">
     </div>
     <hr>
-    <div class="basket-item">
-        <p class="basket-txt">Basket Subtotal:</p>
-    </div>
-    <div class="basket-item">
-        <p class="basket-txt">£80.00</p>
+    <div class="basket-total">
+        <div class="basket-sub-item">
+            <p class="basket-txt">Basket Subtotal:</p>
+        </div>
+        <div class="basket-sub-item-r">
+            <p class="basket-txt-r"><?php echo ($total); ?></p>
+        </div>
     </div>
     <hr>
     <form>
@@ -21,10 +25,10 @@
                 <label class="left-white">Your Details</label>
                 <div class="form-row">
                     <div class="form-group">
-                        <input class="form-style" placeholder="Full Name*">
+                        <input class="form-style" placeholder="Full Name*" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <input class="form-style" placeholder="Email Address*">
+                        <input class="form-style" placeholder="Email Address*" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -35,14 +39,14 @@
                 <label class="left-white">Card Details</label>
                 <div class="form-row">
                     <div class="form-group">
-                        <input class="form-style" placeholder="Card Number*">
+                        <input class="form-style" placeholder="Card Number*" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <input class="form-style" placeholder="Name on Card*">
+                        <input class="form-style" placeholder="Name on Card*" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <input class="form-style" placeholder="CSV*">
+                    <input class="form-style" placeholder="CSV*" required>
                 </div>
             </div>
         </div>
@@ -51,19 +55,19 @@
             <label class="left-white">Delivery Address</label>
             <div class="form-row">
                 <div class="form-group">
-                    <input class="form-style" placeholder="House Number*">
+                    <input class="form-style" placeholder="House Number*" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="Street*">
+                    <input class="form-style" placeholder="Street*" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="Town*">
+                    <input class="form-style" placeholder="Town*" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="County*">
+                    <input class="form-style" placeholder="County*" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="Post Code*">
+                    <input class="form-style" placeholder="Post Code*" required>
                 </div>
             </div>
         </div>
@@ -71,19 +75,19 @@
             <label class="left-white">Billing Address</label>
             <div class="form-row">
                 <div class="form-group">
-                    <input class="form-style" placeholder="House Number*">
+                    <input class="form-style" placeholder="House Number*" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="Street*">
+                    <input class="form-style" placeholder="Street*" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="Town*">
+                    <input class="form-style" placeholder="Town*" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="County*">
+                    <input class="form-style" placeholder="County*" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="Post Code*">
+                    <input class="form-style" placeholder="Post Code*" required>
                 </div>
             </div>
         </div>

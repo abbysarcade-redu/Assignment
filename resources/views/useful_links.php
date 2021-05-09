@@ -3,7 +3,7 @@
 <body>
 <?php include ("layout/nav.php"); ?>
 <div class="nav-buffer">
-<div class="contact-page">
+<div class="content-page">
     <div class="hero-image">
         <img src="Style/images/useful-links-banner.png" class="hero">
     </div>

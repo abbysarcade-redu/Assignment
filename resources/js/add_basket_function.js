@@ -15,3 +15,9 @@ function basket_fuction($sku) {
 var basket_length = basket_products.length;
 console.log(basket_length);
 document.getElementById('basket').innerText = basket_length;
+
+
+function basket_click() {
+    if basket_products >= 1;
+    var controller = '?php ech'
+}

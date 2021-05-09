@@ -2,7 +2,9 @@
 <?php $SKU = $_GET['sku'] ?>
 <?php $passing_sku = str_split($SKU, 12) ?>
 <?php $game_preparedStatement->execute($passing_sku); ?>
-<?php session_start(); ?>
+<?php if(!isset($_SESSION)) {
+    session_start();
+} ?>
 <?php class prod_ret {
     public $product_name;
     public $product_image;
@@ -33,25 +35,25 @@
                             <label class="prod-label">Choose your console</label>
                             <div class="console-control">
                                 <?php if($product_ret->playstation == 1): ?>
-                                <input class="con-rad-cont" id="console[playstation]" type="radio" name="console">
+                                <input class="con-rad-cont" id="console[playstation]" type="radio" name="console" onclick="document.getElementById('purchase_button').disabled=false;document.getElementById('bask_button').disabled=false">
                                 <label class="console-button" for="console[playstation]">
                                     Playstation
                                 </label>
                                 <?php endif; ?>
                                 <?php if($product_ret->xbox == 1): ?>
-                                    <input class="con-rad-cont" id="console[xbox]" type="radio" name="console">
+                                    <input class="con-rad-cont" id="console[xbox]" type="radio" name="console" onclick="document.getElementById('purchase_button').disabled=false;document.getElementById('bask_button').disabled=false">
                                     <label class="console-button" for="console[xbox]">
                                         Xbox
                                     </label>
                                 <?php endif; ?>
                                 <?php if($product_ret->nintendo == 1): ?>
-                                    <input class="con-rad-cont" id="console[nintendo]" type="radio" name="console">
+                                    <input class="con-rad-cont" id="console[nintendo]" type="radio" name="console" onclick="document.getElementById('purchase_button').disabled=false;document.getElementById('bask_button').disabled=false">
                                     <label class="console-button" for="console[nintendo]">
                                         Nintendo
                                     </label>
                                 <?php endif; ?>
                                 <?php if($product_ret->pc == 1): ?>
-                                    <input class="con-rad-cont" id="console[pc]" type="radio" name="console">
+                                    <input class="con-rad-cont" id="console[pc]" type="radio" name="console" onclick="document.getElementById('purchase_button').disabled=false;document.getElementById('bask_button').disabled=false">
                                     <label class="console-button" for="console[pc]">
                                         PC
                                     </label>
@@ -62,15 +64,18 @@
                             </div>
                         </div>
                         <div class="submit_button_control">
-                            <button class="submit_button" type="submit" name="add_to_cart" onclick="basket_fuction(<?= $SKU?>)">
-                                Add to basket
-                            </button>
-                            <input type="hidden" name="product_id" value="<?php echo($product_ret->product_sku) ?>">
-                            <button class="submit_button">
+                            <form method="post" action="update_session">
+                                <a href="create_basket.php?sku=<?php echo ($SKU) ?>">
+                                    <input type="submit" id="bask_button" class="submit_button" type="submit" name="add_to_cart" value="Add to basket" disabled/>
+                                </a>
+                            </form>
+
+
+                            <button onclick="local.href='basket.php?sku=<?php echo($SKU) ?>'" id="purchase_button" class="submit_button"  disabled>
                                 Buy Now
                             </button>
                         </div>
-                        <script src="../js/add_basket_function.js">windown.onload = basket_fuction()
+                        <script src="../js/add_basket_function.js">window.onload = basket_fuction()
                         </script>
 
                         </script>

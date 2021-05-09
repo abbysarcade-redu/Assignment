@@ -88,3 +88,34 @@ $game_preparedStatement = $pdo->prepare($game);
 
 //execute
 //$game_preparedStatement->execute();
+
+// basket game image
+$basket_product = "SELECT product_name, product_image, product_cost FROM ASSIGNMENT.product WHERE product_sku = ?";
+
+// pass query
+
+$basket_product_preparedStatement = $pdo->prepare($basket_product);
+
+//execute
+
+//transaction
+$transaction = "INSERT INTO ASSIGNMENT.sale (sale_id, sale_number, user_number, order_date, payment_ref, order_value, order_status, delivery_ref)
+VALUES(?,?,?,?,?,?,?,?)";
+
+//pass query
+$transaction_preparedStatement = $pdo->prepare($transaction);
+
+//user
+$user = "INSERT INTO ASSIGNMENT.users (user_id, user_name, user_email, user_password, address_id, access_type)
+VALUES(?,?,?,?,?,?)";
+
+//pass query
+$user_preparedStatement = $pdo->prepare($user);
+
+//address
+$address = "INSERT INTO ASSIGNMENT.address (address_id, house_number, street_name, town, county, country, post_code)
+VALUES(?,?,?,?,?,?,?)";
+
+//pass query
+$address_preparedStatement = $pdo->prepare($address);
+
