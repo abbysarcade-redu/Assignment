@@ -24,12 +24,12 @@
                 <?php $row = $playstation_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "p_s");
                 foreach($row as $p_s): ?>
                     <li>
-                        <a href="product_page.php?sku=<?=$p_s->product_sku;?>">
-                            <div class="top-games-entry">
+                        <div class="top-games-entry">
+                            <a href="product_page.php?sku=<?=$p_s->product_sku;?>">
                                 <img href="product_page.php?sku=<?=$p_s->product_sku;?>" src="<?php echo($p_s->product_image) ?>" class="top-games-img">
                                 <p class="top-games-txt"><?php echo($p_s->product_name) ?></p>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </li>
                 <?php endforeach; ?>
             </ul>

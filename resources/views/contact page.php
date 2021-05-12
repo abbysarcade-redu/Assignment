@@ -2,7 +2,7 @@
 <?php include ("layout/header.php"); ?>
 <body>
 <?php include ("layout/nav.php"); ?>
-<div class="nav-buffer">
+<div class="nav-buffer"></div>
 
 <div class="content-page">
     <div class="hero-image">
@@ -43,9 +43,7 @@
         </div>
         <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=SR6%200DD&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{position:relative;text-align:right;height:auto;width:auto;}</style><style>.gmap_canvas {overflow:hidden;background:none!important;height:100%;width:100%;border-radius: 20px;}</style></div></div>    </div>
 </div>
-
-
-    <?php include ("layout/footer.php"); ?>
+<?php include ("layout/footer.php"); ?>
 
 </body>
 </html>
