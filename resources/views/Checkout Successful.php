@@ -3,9 +3,7 @@
     session_start();
 } ?>
 <!DOCTYPE html>
-<?php include ("layout/header.php"); ?>
-<body>
-<?php include ("layout/nav.php"); ?>
+
 <?php
 $address_preparedStatement->execute(array(
     $_POST['d-house-number'],
@@ -32,13 +30,17 @@ $address_preparedStatement->execute(array(
 $billing_address = $pdo->lastInsertId();
 print_r($billing_address);
 
-$address_ids = ([$delivery_address],[$billing_address]);
+$address_ids = ([$delivery_address, $billing_address]);
+print_r($address_ids);
+$user = $_SESSION['user_id'];
+print_r(",");
+print_r($user);
 
-$user_address_preparedStatement->execute($_SESSION['user_id'], $address_ids);
+$user_address_preparedStatement->execute(array(json_encode($address_ids), $user));
 
 $payment_preparedStatement->execute(array(
     base64_encode($_POST['card_number']),
-    base64_encode($_POST['name_on_code']),
+    base64_encode($_POST['name_on_card']),
     base64_encode($_POST['csv']),
     $billing_address
 ));
@@ -54,11 +56,11 @@ $delivery_preparedStatement->execute(array(
 $delivery_ref = $pdo->lastInsertId();
 print_r($delivery_ref);
 
-$sale_detail_update_preparedStatement->execute(array($payment_ref, $delivery_ref, $_SESSION['sale']));
+$sale_detail_update_preparedStatement->execute([$payment_ref, $delivery_ref, $_SESSION['order_number']]);
 
 
 ?>
-<div class="nav-buffer">
+/<div class="nav-buffer">
 <script>
     document.querySelector(".drop a").addEventListener("click", function (){this.classList.toggle("active");
     });
@@ -111,3 +113,6 @@ $sale_detail_update_preparedStatement->execute(array($payment_ref, $delivery_ref
 </html>
 
 
+<?php include ("layout/header.php"); ?>
+    <body>
+<?php include ("layout/nav.php"); ?>

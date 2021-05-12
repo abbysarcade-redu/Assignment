@@ -39,12 +39,12 @@
                         <input class="form-style" placeholder="Full Name*" name="name" value="<?php echo $user->user_name ?>" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <input class="form-style" placeholder="Email Address*" value="<?php echo $user->user_email ?>" required>
+                        <input class="form-style" placeholder="Email Address*" name="email" value="<?php echo $user->user_email ?>" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <?php else: ?>
-                    <input class="form-style" placeholder="Full Name*" value="<?php echo $user->user_name ?>" required>
+                    <input class="form-style" placeholder="Full Name*" name="name" value="<?php echo $user->user_name ?>" required>
                 </div>
                 <div class="form-group col-md-6">
                     <input class="form-style" placeholder="Email Address*" value="<?php echo $user->user_email ?>" required>
@@ -52,21 +52,21 @@
             </div>
             <div class="form-group">
                 <?php endif; ?>
-                    <input class="form-style" placeholder="Contact Number">
+                    <input class="form-style" placeholder="Contact Number" name="number">
                 </div>
             </div>
             <div class="checkout-container-right">
                 <label class="left-white">Card Details</label>
                 <div class="form-row">
                     <div class="form-group">
-                        <input class="form-style" placeholder="Card Number*" required>
+                        <input class="form-style" placeholder="Card Number*" name="card_number" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <input class="form-style" placeholder="Name on Card*" required>
+                        <input class="form-style" placeholder="Name on Card*" name="name_on_card" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <input class="form-style" placeholder="CSV*" required>
+                    <input class="form-style" placeholder="CSV*" name="csv" required>
                 </div>
             </div>
         </div>

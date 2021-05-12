@@ -146,7 +146,7 @@ $user_address = "UPDATE ASSIGNMENT.users SET address_id = ? WHERE user_id = ?";
 $user_address_preparedStatement = $pdo->prepare($user_address);
 
 //Delivery
-$delivery = "INSERT INTO ASSIGNMENT.delivery (address_id, delivery_status)
+$delivery = "INSERT INTO ASSIGNMENT.delivery (addess_id, delivery_staus)
 VALUES(?,?)";
 
 //pass query
