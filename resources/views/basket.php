@@ -43,11 +43,7 @@ print_r($order_number);?>
             $basket_product_preparedStatement->execute([$sku]);
             $basket_games = $basket_product_preparedStatement->fetchObject( 'basket_games');
             $subtotal = ($basket_games->product_cost)*$amount;
-            //$line_items_preparedStatement->execute(array(
-            //    $order_number,
-            //    $sku,
-            //    $amount
-            //));
+
             array_push($total, $subtotal); ?>
                 <div class="basket-storage">
                     <div class="basket-item-i">
