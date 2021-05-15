@@ -1,12 +1,8 @@
 <?php if(!isset($_SESSION)) {
     session_start();
 } ?>
-<?php class basket_games {
-    public $product_name;
-    public $product_image;
-    public $product_cost;
-} ?>
-<?php include ("../db.php"); ?>
+<?php include ("../tools/class_controller.php"); ?>
+<?php include ("../tools/db.php"); ?>
 <!DOCTYPE html>
 <?php include ("layout/header.php"); ?>
 <body>

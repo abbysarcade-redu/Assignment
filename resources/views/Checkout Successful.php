@@ -1,4 +1,5 @@
-<?php include ("../db.php"); ?>
+<?php include ("../tools/class_controller.php"); ?>
+<?php include ("../tools/db.php"); ?>
 <?php if(!isset($_SESSION)) {
     session_start();
 } ?>
@@ -9,14 +10,6 @@
 else: ?>
 
     <?php
-
-    class checkout_games
-    {
-        public $product_name;
-        public $product_image;
-        public $product_cost;
-        public $available_stock;
-    }
 
     $vals = array_count_values($_SESSION['basket']);
     $max = count($vals);

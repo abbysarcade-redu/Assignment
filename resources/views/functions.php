@@ -1,4 +1,4 @@
-<?php include ("../db.php"); ?>
+<?php include ("../tools/db.php"); ?>
 <?php
 
 if(null !== $_POST["import"]) {

@@ -1,16 +1,10 @@
-<?php include ("../db.php"); ?>
+<?php include ("../tools/class_controller.php"); ?>
+<?php include ("../tools/db.php"); ?>
 <?php $SKU = $_GET['sku'] ?>
 <?php $passing_sku = str_split($SKU, 12) ?>
 <?php $game_preparedStatement->execute($passing_sku); ?>
 <?php if(!isset($_SESSION)) {
     session_start();
-} ?>
-<?php class prod_ret {
-    public $product_name;
-    public $product_image;
-    public $product_description;
-    public $slug;
-    public $available_stock;
 } ?>
 <?php $game_preparedStatement->setFetchMode(PDO::FETCH_CLASS, 'prod_ret'); ?>
 <?php $product_ret= ($game_preparedStatement->fetch()); ?>

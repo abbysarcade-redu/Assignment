@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include ("../db.php"); ?>
+<?php include ("../tools/db.php"); ?>
 <?php include ("layout/header.php"); ?>
 <body>
 <?php include ("layout/nav.php"); ?>

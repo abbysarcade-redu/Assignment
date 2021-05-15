@@ -1,17 +1,8 @@
-<?php include ("../db.php"); ?>
-<?php class game_of_month {
-    public $product_image;
-    public $available_stock;
-} ?>
+<?php include ("../tools/class_controller.php"); ?>
+<?php include ("../tools/db.php"); ?>
 
 <?php $g_o_m = ($G_O_M_preparedStatement->fetchObject('game_of_month')); ?>
 
-<?php class featured_game {
-    public $product_name;
-    public $product_image;
-    public $product_sku;
-    public $available_stock;
-} ?>
 
 <!DOCTYPE html>
 <?php include ("layout/header.php"); ?>

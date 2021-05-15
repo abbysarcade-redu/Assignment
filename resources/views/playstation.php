@@ -1,10 +1,5 @@
-<?php include ("../db.php"); ?>
-<?php class p_s {
-    public $product_name;
-    public $product_image;
-    public $product_sku;
-    public $available_stock;
-} ?>
+<?php include ("../tools/class_controller.php"); ?>
+<?php include ("../tools/db.php"); ?>
 
 <!DOCTYPE html>
 <?php include ("layout/header.php"); ?>

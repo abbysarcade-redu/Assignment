@@ -1,4 +1,5 @@
-<?php include ("../db.php"); ?>
+<?php include ("../tools/class_controller.php"); ?>
+<?php include ("../tools/db.php"); ?>
 <?php if(!isset($_SESSION)) {
     session_start();
 } ?>
@@ -7,10 +8,7 @@
 <body>
 <?php include ("layout/nav.php"); ?>
 <?php $order_number = $_GET['order_number'] ?>
-<?php class user {
-    public $name;
-    public $email;
-} ?>
+
 <div class="nav-buffer"></div>
 
 <div class="content-page">
