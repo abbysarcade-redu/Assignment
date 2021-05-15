@@ -16,7 +16,6 @@ $address_preparedStatement->execute(array(
 ));
 $delivery_address = $pdo->lastInsertId();
 
-print_r($delivery_address);
 $address_preparedStatement->execute(array(
     $_POST['b-house-number'],
     $_POST['b-street'],
@@ -28,13 +27,9 @@ $address_preparedStatement->execute(array(
 ));
 
 $billing_address = $pdo->lastInsertId();
-print_r($billing_address);
 
 $address_ids = ([$delivery_address, $billing_address]);
-print_r($address_ids);
 $user = $_SESSION['user_id'];
-print_r(",");
-print_r($user);
 
 $user_address_preparedStatement->execute(array(json_encode($address_ids), $user));
 
@@ -46,7 +41,6 @@ $payment_preparedStatement->execute(array(
 ));
 
 $payment_ref = $pdo->lastInsertId();
-print_r($payment_ref);
 
 $delivery_preparedStatement->execute(array(
     $delivery_address,
@@ -54,60 +48,82 @@ $delivery_preparedStatement->execute(array(
 ));
 
 $delivery_ref = $pdo->lastInsertId();
-print_r($delivery_ref);
 
 $sale_detail_update_preparedStatement->execute([$payment_ref, $delivery_ref, $_SESSION['order_number']]);
 
-
+class checkout_games
+{
+    public $product_name;
+    public $product_image;
+    public $product_cost;
+}
 ?>
-/<div class="nav-buffer">
+<?php include ("layout/header.php"); ?>
+<body>
+<?php include ("layout/nav.php"); ?>
+
+
+<div class="nav-buffer"></div>
 <script>
     document.querySelector(".drop a").addEventListener("click", function (){this.classList.toggle("active");
     });
 </script>
-<div class="contact-page">
+<div class="content-page">
     <div class="hero-image">
         <img src="Style/images/Checkout-successful-banner.png" class="hero">
     </div>
     <h1 class="is-white">Congratulations on your Checkout!</h1>
     <div class="checkout-container-left">
-        <p class="is-white-left">Order Number: *******</p>
-        <p class="is-white-left">Name: *******</p>
-        <p class="is-white-left">Email Address: *******</p>
-        <p class="is-white-left">Phone Number: *******</p>
-        <p class="is-white-left">Card Number: *******</p>
+        <p class="is-white-left">Order Number: <?php echo($_SESSION['order_number'])?></p>
+        <p class="is-white-left">Name: <?php echo($_POST['name'])?></p>
+        <p class="is-white-left">Email Address: <?php echo($_POST['email'])?></p>
+        <?php if(isset($_POST['number'])): ?>
+            <p class="is-white-left">Phone Number: <?php echo($_POST['number'])?></p>
+        <?php endif; ?>
+        <p class="is-white-left">Card Number: **** **** **** <?php echo(substr($_POST['card_number'], -4)) ?></p>
     </div>
     <div class="checkout-container-right">
-        <img src="Style/images/celebrate.png" class="hero">
+        <img src="Style/images/celebrate.png" class="accountimg">
     </div>
     <hr>
-    <div class="basket-storage">
-        <div class="basket-item">
-            <img src="Style/images/miles-morales.png" class="top-games-img">
-        </div>
-        <div class="basket-item">
-            <p class="top-games-txt">Miles Morales</p>
-        </div>
-        <div class="basket-item">
-            <p class="top-games-txt">x1</p>
-        </div>
-        <div class="basket-item">
-            <p class="top-games-txt">£80.00</p>
-        </div>
-    </div>
+    <?php
+    $vals = array_count_values($_SESSION['basket']);
+    $max=count($vals);
+    if ($max != 0):
+        foreach ($vals as $sku => $amount):
+            $basket_product_preparedStatement->execute([$sku]);
+            $checkout_games = $basket_product_preparedStatement->fetchObject( 'checkout_games');
+            $subtotal = ($checkout_games->product_cost)*$amount; ?>
+                <div class="basket-storage">
+                    <div class="basket-item-i">
+                        <img src="<?php echo($checkout_games->product_image) ?>" class="games-img">
+                    </div>
+                    <div class="basket-item-l">
+                        <p class="games-txt"><?php echo($checkout_games->product_name) ?></p>
+                    </div>
+                    <div class="basket-item-l">
+                        <p class="games-txt">x<?php print_r($amount); ?></p>
+                    </div>
+                    <div class="basket-item-l">
+                        <p class="games-txt">£<?php echo($subtotal); ?></p>
+                    </div>
+                </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
     <hr>
+
     <div class="basket-total">
-        <div class="basket-item">
-            <p class="basket-txt">Basket Subtotal:</p>
+        <div class="basket-sub-item">
+            <p class="basket-txt">Basket Total:</p>
         </div>
-        <div class="basket-item">
-            <p class="basket-txt">£80.00</p>
+        <div class="basket-sub-item-r">
+            <p class="basket-txt-r">£<?php echo ($_SESSION['total']); ?></p>
         </div>
     </div>
     <hr>
     <div class="buffer-space"></div>
 </div>
-    <?php include ("layout/footer.php"); ?>
+<?php include ("layout/footer.php"); ?>
 
 </body>
 </html>

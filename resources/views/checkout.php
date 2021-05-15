@@ -44,10 +44,10 @@
                 </div>
                 <div class="form-group">
                     <?php else: ?>
-                    <input class="form-style" placeholder="Full Name*" name="name" value="<?php echo $user->user_name ?>" required>
+                    <input class="form-style" placeholder="Full Name*" name="name" value="John Doe" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="Email Address*" value="<?php echo $user->user_email ?>" required>
+                    <input class="form-style" placeholder="Email Address*" value="order@game-on.co.uk" required>
                 </div>
             </div>
             <div class="form-group">

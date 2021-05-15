@@ -19,7 +19,8 @@
     $order_number = ($date . $id);
 } else {
     $order_number = $_SESSION['order_number'];
-}?>
+}
+print_r($order_number);?>
 <div class="nav-buffer"></div>
 <div class="basket-page">
     <div class="hero-image">
@@ -42,11 +43,11 @@
             $basket_product_preparedStatement->execute([$sku]);
             $basket_games = $basket_product_preparedStatement->fetchObject( 'basket_games');
             $subtotal = ($basket_games->product_cost)*$amount;
-            $line_items_preparedStatement->execute(array(
-                $order_number,
-                $sku,
-                $amount
-            ));
+            //$line_items_preparedStatement->execute(array(
+            //    $order_number,
+            //    $sku,
+            //    $amount
+            //));
             array_push($total, $subtotal); ?>
                 <div class="basket-storage">
                     <div class="basket-item-i">
@@ -72,7 +73,7 @@
     <hr>
     <div class="basket-total">
         <div class="basket-sub-item">
-            <p class="basket-txt">Basket Subtotal:</p>
+            <p class="basket-txt">Basket Total:</p>
         </div>
         <div class="basket-sub-item-r">
             <?php $_SESSION['total'] = array_sum($total); ?>
@@ -109,8 +110,5 @@ if (!isset($_SESSION['order_number'])) {
     ));
 
 }
-
-
-
 
 ?>
