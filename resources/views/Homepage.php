@@ -1,9 +1,16 @@
 <?php include ("../db.php"); ?>
-<?php $g_o_m = ($G_O_M_preparedStatement->fetchColumn()); ?>
 <?php class game_of_month {
+    public $product_image;
+    public $available_stock;
+} ?>
+
+<?php $g_o_m = ($G_O_M_preparedStatement->fetchObject('game_of_month')); ?>
+
+<?php class featured_game {
     public $product_name;
     public $product_image;
     public $product_sku;
+    public $available_stock;
 } ?>
 
 <!DOCTYPE html>
@@ -23,23 +30,27 @@
             <a href="PC.php"><img src="Style/images/computer.png" class="pop-console-img"></a>
         </div>
     </div>
-    <div class="game-of-month">
-        <h1> Game of the month</h1>
-        <div>
-            <img src="<?php echo ($g_o_m); ?>" class="game-of-month-img">
+    <?php if($g_o_m->available_stock != 0): ?>
+        <div class="game-of-month">
+            <h1> Game of the month</h1>
+            <div>
+                <img src="<?php echo ($g_o_m->product_image); ?>" class="game-of-month-img">
+            </div>
         </div>
-    </div>
+    <?php endif; ?>
     <div class="top-games">
         <h1>Top Games</h1>
         <div>
-        <?php $row = $featured_games_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "game_of_month");
-        foreach ($row as $game_of_month): ?>
-            <div class="top-games-entry">
-                <a href="product_page.php?sku=<?=$game_of_month->product_sku;?>">
-                    <img src="<?php echo($game_of_month->product_image) ?>" class="top-games-img">
-                    <p class="top-games-txt"><?php echo($game_of_month->product_name) ?></p></a>
-            </div>
-            <?php endforeach; ?>
+        <?php $row = $featured_games_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "featured_game");
+        foreach ($row as $featured_game):
+            if($featured_game->available_stock != 0):?>
+                <div class="top-games-entry">
+                    <a href="product_page.php?sku=<?=$featured_game->product_sku;?>">
+                        <img src="<?php echo($featured_game->product_image) ?>" class="top-games-img">
+                        <p class="top-games-txt"><?php echo($featured_game->product_name) ?></p></a>
+                </div>
+            <?php endif; ?>
+        <?php endforeach; ?>
         </div>
     </div>
 </div>

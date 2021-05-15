@@ -3,6 +3,7 @@
     public $product_name;
     public $product_image;
     public $product_sku;
+    public $available_stock;
 } ?>
 <!DOCTYPE html>
 <?php include ("layout/header.php"); ?>
@@ -21,15 +22,17 @@
         <div class="product-container">
             <ul class="prods" id="productUL">
                 <?php $row = $pc_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "p_c");
-                foreach($row as $p_c): ?>
-                    <li>
-                        <div class="top-games-entry">
-                            <a href="product_page.php?sku=<?=$p_c->product_sku;?>">
-                                <img src="<?php echo($p_c->product_image) ?>" class="top-games-img">
-                                <p class="top-games-txt"><?php echo($p_c->product_name) ?></p>
-                            </a>
-                        </div>
-                    </li>
+                foreach($row as $p_c):
+                    if($p_c->available_stock != 0):?>
+                        <li>
+                            <div class="top-games-entry">
+                                <a href="product_page.php?sku=<?=$p_c->product_sku;?>">
+                                    <img src="<?php echo($p_c->product_image) ?>" class="top-games-img">
+                                    <p class="top-games-txt"><?php echo($p_c->product_name) ?></p>
+                                </a>
+                            </div>
+                        </li>
+                    <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
         </div>

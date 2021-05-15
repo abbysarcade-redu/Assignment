@@ -1160,6 +1160,11 @@ input:invalid {
     color: black;
 }
 
+.out-of-stock {
+    color: #FF2856;
+    margin-left: 5px;
+}
+
 .team-name {
     color: black;
     font-size: 20px;

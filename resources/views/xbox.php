@@ -3,6 +3,7 @@
     public $product_name;
     public $product_image;
     public $product_sku;
+    public $available_stock;
 } ?>
 
 <!DOCTYPE html>
@@ -22,15 +23,17 @@
         <div class="product-container">
             <ul class="prods" id="productUL">
                 <?php $row = $xbox_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "x_b");
-                foreach($row as $x_b): ?>
-                    <li>
-                        <div class="top-games-entry">
-                            <a href="product_page.php?sku=<?=$x_b->product_sku;?>">
-                                <img src="<?php echo($x_b->product_image) ?>" class="top-games-img">
-                                <p class="top-games-txt"><?php echo($x_b->product_name) ?></p>
-                            </a>
-                        </div>
-                    </li>
+                foreach($row as $x_b):
+                    if($x_b->available_stock != 0):?>
+                        <li>
+                            <div class="top-games-entry">
+                                <a href="product_page.php?sku=<?=$x_b->product_sku;?>">
+                                    <img src="<?php echo($x_b->product_image) ?>" class="top-games-img">
+                                    <p class="top-games-txt"><?php echo($x_b->product_name) ?></p>
+                                </a>
+                            </div>
+                        </li>
+                    <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
         </div>

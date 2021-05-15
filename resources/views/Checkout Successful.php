@@ -15,6 +15,7 @@ else: ?>
         public $product_name;
         public $product_image;
         public $product_cost;
+        public $available_stock;
     }
 
     $vals = array_count_values($_SESSION['basket']);
@@ -28,6 +29,11 @@ else: ?>
                 $_SESSION['order_number'],
                 $sku,
                 $amount
+            ));
+            $remaining_stock = ($checkout_games->available_stock - $amount);
+            $stock_update_update_preparedStatement->execute(array(
+                $remaining_stock,
+                $sku
             ));
         }
     }

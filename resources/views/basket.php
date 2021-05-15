@@ -43,7 +43,8 @@ print_r($order_number);?>
             $basket_product_preparedStatement->execute([$sku]);
             $basket_games = $basket_product_preparedStatement->fetchObject( 'basket_games');
             $subtotal = ($basket_games->product_cost)*$amount;
-
+            $stock_check_preparedStatement->execute([$sku]);
+            $stock = $stock_check_preparedStatement->fetch();
             array_push($total, $subtotal); ?>
                 <div class="basket-storage">
                     <div class="basket-item-i">
@@ -53,7 +54,13 @@ print_r($order_number);?>
                         <p class="games-txt"><?php echo($basket_games->product_name) ?></p>
                     </div>
                     <a class="button-trans" href="basket%20reduce.php?sku=<?php echo($sku); ?>">-</a>
+                    <?php if($stock['available_stock'] < $amount):
+                        echo '<script>alert("There is insufficient stock for this order. We have updated the order to reflect this.")</script>';
+                        $amount = $stock['available_stock']?>
                     <input class="input-trans" type="text" value="<?php print_r($amount); ?>">
+                    <?php else: ?>
+                    <input class="input-trans" type="text" value="<?php print_r($amount); ?>">
+                    <?php endif; ?>
                     <a class="button-trans" href="basket_increase.php?sku=<?php echo($sku); ?>">+</a>
                     <div class="basket-item-l">
                         <p class="games-txt"><?php echo($subtotal); ?></p>

@@ -10,6 +10,7 @@
     public $product_image;
     public $product_description;
     public $slug;
+    public $available_stock;
 } ?>
 <?php $game_preparedStatement->setFetchMode(PDO::FETCH_CLASS, 'prod_ret'); ?>
 <?php $product_ret= ($game_preparedStatement->fetch()); ?>
@@ -63,6 +64,9 @@
                                 <p class="price">£<?php echo($product_ret->product_cost) ?></p>
                             </div>
                         </div>
+                        <?php if(($product_ret->available_stock) == 0): ?>
+                        <p class="out-of-stock">Product Out of Stock</p>
+                        <?php endif; ?>
                         <div class="submit_button_control">
                             <form method="post" action="update_session">
                                 <a href="create_basket.php?sku=<?php echo ($SKU) ?>">
@@ -75,10 +79,7 @@
                                 Buy Now
                             </button>
                         </div>
-                        <script src="../js/add_basket_function.js">window.onload = basket_fuction()
-                        </script>
 
-                        </script>
                     </form>
                 </div>
             </div>

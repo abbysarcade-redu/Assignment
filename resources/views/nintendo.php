@@ -3,6 +3,7 @@
     public $product_name;
     public $product_image;
     public $product_sku;
+    public $available_stock;
 } ?>
 
 <!DOCTYPE html>
@@ -22,15 +23,17 @@
         <div class="product-container">
             <ul class="prods" id="productUL">
                 <?php $row = $nintendo_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "n_t_d");
-                foreach($row as $n_t_d): ?>
-                    <li>
-                        <div class="top-games-entry">
-                            <a href="product_page.php?sku=<?=$n_t_d->product_sku;?>">
-                                <img src="<?php echo($n_t_d->product_image) ?>" class="top-games-img">
-                                <p class="top-games-txt"><?php echo($n_t_d->product_name) ?></p>
-                            </a>
-                        </div>
-                    </li>
+                foreach($row as $n_t_d):
+                    if($n_t_d->available_stock != 0):?>
+                        <li>
+                            <div class="top-games-entry">
+                                <a href="product_page.php?sku=<?=$n_t_d->product_sku;?>">
+                                    <img src="<?php echo($n_t_d->product_image) ?>" class="top-games-img">
+                                    <p class="top-games-txt"><?php echo($n_t_d->product_name) ?></p>
+                                </a>
+                            </div>
+                        </li>
+                    <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
         </div>
