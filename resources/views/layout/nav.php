@@ -3,9 +3,6 @@ if(!isset($_SESSION)) {
     session_start();
 } ?>
 
-<script src="../js/add_basket_function.js">
-    document.getElementById('basket').innerText = basket_length;
-</script>
 <nav class="header">
     <a href="Homepage.php" class="logo"><img src="Style/images/Untitled design.png" alt="Game On" width="80"></a>
     <input class="menu-btn" type="checkbox" id="menu-btn" />

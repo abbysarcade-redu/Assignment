@@ -4,6 +4,10 @@
 } ?>
 <!DOCTYPE html>
 
+<?php if((count($_SESSION['basket'])) == 0):
+    header('location: products.php');
+else: ?>
+
 <?php
 $address_preparedStatement->execute(array(
     $_POST['d-house-number'],
@@ -131,4 +135,9 @@ class checkout_games
 
 <?php include ("layout/header.php"); ?>
     <body>
-<?php include ("layout/nav.php"); ?>
+<?php
+    $_SESSION['basket'] = array();
+    unset($_SESSION['total']);
+    unset($_SESSION['order_number']);
+?>
+<?php endif; ?>
