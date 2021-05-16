@@ -5,6 +5,7 @@
 <?php include ("layout/header.php"); ?>
 <header>
     <title>Playstation</title>
+    <script src="../js/SearchFunction.js"></script>
 </header>
 <body>
 <?php include ("layout/nav.php"); ?>
