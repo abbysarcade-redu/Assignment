@@ -1238,6 +1238,10 @@ h1 {
     width: 80%;
 }
 
+.game-containter {
+    text-decoration: none;
+}
+
 .top-games-txt {
     font-family: 'Space Mono';
     color: white;

@@ -38,7 +38,7 @@
         foreach ($row as $featured_game):
             if($featured_game->available_stock != 0):?>
                 <div class="top-games-entry">
-                    <a href="product_page.php?sku=<?=$featured_game->product_sku;?>">
+                    <a class="game-containter" href="product_page.php?sku=<?=$featured_game->product_sku;?>">
                         <img src="<?php echo($featured_game->product_image) ?>" class="top-games-img">
                         <p class="top-games-txt"><?php echo($featured_game->product_name) ?></p></a>
                 </div>
