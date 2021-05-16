@@ -150,3 +150,4 @@ $account_update = "UPDATE ASSIGNMENT.users SET user_name = ?, user_email = ? WHE
 
 //pass query
 $account_update_preparedStatement = $pdo->prepare($account_update);
+

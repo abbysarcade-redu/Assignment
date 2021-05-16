@@ -210,6 +210,14 @@ li {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
 }
 
+.search-input {
+    background: #fff;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
+
+}
 
 .submit_button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
@@ -809,6 +817,7 @@ svg {
 
 .products {
     display: inline-flex;
+    width: 100%;
 }
 
 .us-block {

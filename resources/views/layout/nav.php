@@ -33,10 +33,16 @@ if(!isset($_SESSION)) {
             </a>
         </li>
         <script src="../js/nav_dropdown.js"></script>
-        <li class="search-bar right">
-            <input type="text" class="search_input" aria-label="search" placeholder="Search..">
-            <button class="search_button" aria-label="submit search"><i class="fas fa-search"></i></button>
-        </li>
+        <div class="search-input">
+            <li class="search-bar right">
+                <a target="_blank" href="" hidden></a>
+                <input type="text" class="search_input" aria-label="search" placeholder="Search..">
+                <div class="autocomplete-box">
+                <li>Hello</li>
+                </div>
+                <button class="search_button" aria-label="submit search"><i class="fas fa-search"></i></button>
+            </li>
+        </div>
         <li class="buffer"></li>
     </ul>
 </nav>
