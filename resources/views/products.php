@@ -1,11 +1,13 @@
 
 
+
 <!DOCTYPE html>
 <?php include ("layout/header.php"); ?>
 <header>
     <title>Games</title>
     <script src="../js/SearchFunction.js"></script>
 </header>
+
 <body>
 <?php include ("layout/nav.php"); ?>
 <div class="content-page">
@@ -20,18 +22,16 @@
         </div>
         <div class="product-container">
             <ul class="prods" id="productUL">
-                <?php $row = $games_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "games");
-                foreach($row as $games):
-                    if($games->available_stock != 0):?>
+                <?php $row = $products_preparedStatement-> fetchAll(PDO::FETCH_CLASS, 'game');
+                foreach($row as $game): ?>
                         <li>
                             <div class="top-games-entry">
-                                <a href="product_page.php?sku=<?=$games->product_sku;?>">
-                                    <img src="<?php echo($games->product_image) ?>" class="top-games-img">
-                                    <p class="products-games-txt"><?php echo($games->product_name) ?></p>
+                                <a href="product_page.php?sku=<?=$game->product_sku;?>">
+                                    <img src="<?php echo($game->product_image) ?>" class="top-games-img">
+                                    <p class="products-games-txt"><?php echo($game->product_name) ?></p>
                                 </a>
                             </div>
                         </li>
-                    <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
         </div>

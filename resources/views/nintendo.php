@@ -20,9 +20,8 @@
         </div>
         <div class="product-container">
             <ul class="prods" id="productUL">
-                <?php $row = $games_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "game");
-                foreach($row as $game):
-                    if($game->available_stock != 0):?>
+                <?php $row = $products_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "game");
+                foreach($row as $game):?>
                         <li>
                             <div class="top-games-entry">
                                 <a href="product_page.php?sku=<?=$game->product_sku;?>">
@@ -31,7 +30,6 @@
                                 </a>
                             </div>
                         </li>
-                    <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
         </div>

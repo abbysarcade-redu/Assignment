@@ -41,7 +41,6 @@ if(!isset($_SESSION['basket'])) {
                 <img id="accountImage" src="Style/images/Account.png" alt="Account" width="40" height="40">
             </a>
         </li>
-        <script src="../js/nav_dropdown.js"></script>
             <div class="search-input">
                 <div class="search-bar right">
                     <input type="text" class="search_input" aria-label="search" placeholder="Search.." required>
