@@ -1,8 +1,3 @@
-<?php include ("../tools/class_controller.php"); ?>
-<?php include ("../tools/db.php"); ?>
-
-<?php $g_o_m = ($G_O_M_preparedStatement->fetchObject('game_of_month')); ?>
-
 
 <!DOCTYPE html>
 <?php include ("layout/header.php"); ?>
@@ -11,6 +6,8 @@
 </header>
 <body>
 <?php include ("layout/nav.php"); ?>
+<?php $g_o_m = ($G_O_M_preparedStatement->fetchObject('game_of_month')); ?>
+
 <div class="home-page">
     <div class="hero-image">
         <img src="Style/images/Homepage-banner.png" class="hero">

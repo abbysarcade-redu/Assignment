@@ -1,7 +1,14 @@
 <?php
 if(!isset($_SESSION)) {
     session_start();
-} ?>
+}
+
+if(!isset($_SESSION['basket'])) {
+    $_SESSION['basket'] = array();
+}
+    ?>
+<?php include ("../tools/class_controller.php"); ?>
+<?php include ("../tools/db.php"); ?>
 
 <nav class="header">
     <a href="Homepage.php" class="logo"><img src="Style/images/Untitled design.png" alt="Game On" width="80"></a>
@@ -33,16 +40,27 @@ if(!isset($_SESSION)) {
             </a>
         </li>
         <script src="../js/nav_dropdown.js"></script>
-        <div class="search-input">
-            <li class="search-bar right">
-                <a target="_blank" href="" hidden></a>
-                <input type="text" class="search_input" aria-label="search" placeholder="Search..">
-                <div class="autocomplete-box">
-                <li>Hello</li>
+            <div class="search-input">
+                <div class="search-bar right">
+                    <input type="text" class="search_input" aria-label="search" placeholder="Search.." required>
+                    <button class="search_button" aria-label="submit search"><i class="fas fa-search"></i></button>
                 </div>
-                <button class="search_button" aria-label="submit search"><i class="fas fa-search"></i></button>
-            </li>
-        </div>
+                    <ul class="gift-card-search-results" id="search_container">
+                        <?php $row = $games_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "game");
+                        foreach($row as $game): ?>
+                            <li>
+                                <div class="search-item">
+                                    <a class="search-display" href="product_page.php?sku=<?=$game->product_sku;?>">
+                                        <img class="search-img" src="<?php echo($game->product_image) ?>">
+                                        <p class="search-txt"><?php echo($game->product_name) ?></p>
+                                    </a>
+                                </div>
+                            </li>
+                        <hr>
+                         <?php endforeach; ?>
+                    </ul>
+                </li>
+            </div>
         <li class="buffer"></li>
     </ul>
 </nav>
