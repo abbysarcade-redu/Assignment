@@ -40,34 +40,34 @@
                         <input class="form-style" placeholder="Full Name*" name="name" value="<?php echo $user->user_name ?>" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <input class="form-style" placeholder="Email Address*" name="email" value="<?php echo $user->user_email ?>" required>
+                        <input class="form-style" placeholder="Email Address*" type="email" name="email" value="<?php echo $user->user_email ?>" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <?php else: ?>
-                    <input class="form-style" placeholder="Full Name*" name="name" value="John Doe" required>
+                    <input class="form-style" placeholder="Full Name*" name="name" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="Email Address*" value="order@game-on.co.uk" required>
+                    <input class="form-style" placeholder="Email Address*" type="email" required>
                 </div>
             </div>
             <div class="form-group">
                 <?php endif; ?>
-                    <input class="form-style" placeholder="Contact Number" name="number">
+                    <input class="form-style" placeholder="Contact Number" type="tel" name="number">
                 </div>
             </div>
             <div class="checkout-container-right">
                 <label class="left-white">Card Details</label>
                 <div class="form-row">
                     <div class="form-group">
-                        <input class="form-style" placeholder="Card Number*" name="card_number" required>
+                        <input class="form-style" placeholder="Card Number*" name="card_number" minlength="16" maxlength="16" required>
                     </div>
                     <div class="form-group col-md-6">
                         <input class="form-style" placeholder="Name on Card*" name="name_on_card" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <input class="form-style" placeholder="CSV*" name="csv" required>
+                    <input class="form-style" placeholder="CSV*" name="csv" maxlength="3" minlength="3" required>
                 </div>
             </div>
         </div>
@@ -91,7 +91,7 @@
                     <input class="form-style" placeholder="Country*" name="d-country" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="Post Code*" name="d-post-code" required>
+                    <input class="form-style" placeholder="Post Code*" name="d-post-code" minlength="6" maxlength="8" required>
                 </div>
             </div>
         </div>
@@ -114,7 +114,7 @@
                     <input class="form-style" placeholder="Country*" name="b-country" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="Post Code*" name="b-post-code" required>
+                    <input class="form-style" placeholder="Post Code*" name="b-post-code" minlength="6" maxlength="8" required>
                 </div>
             </div>
         </div>
