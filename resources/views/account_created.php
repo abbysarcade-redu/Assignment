@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <?php include ("../tools/db.php"); ?>
 <?php include ("layout/header.php"); ?>
+<header>
+    <title>Account Created</title>
+</header>
 <body>
 <?php include ("layout/nav.php"); ?>
 <?php

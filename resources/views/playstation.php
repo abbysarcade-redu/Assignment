@@ -3,6 +3,9 @@
 
 <!DOCTYPE html>
 <?php include ("layout/header.php"); ?>
+<header>
+    <title>Playstation</title>
+</header>
 <body>
 <?php include ("layout/nav.php"); ?>
 <div class="content-page">

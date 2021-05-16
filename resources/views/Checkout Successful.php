@@ -79,6 +79,9 @@ else: ?>
 
     ?>
     <?php include ("layout/header.php"); ?>
+    <header>
+        <title>Checkout Successful</title>
+    </header>
     <body>
     <?php include ("layout/nav.php"); ?>
 

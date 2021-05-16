@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <?php include ("layout/header.php"); ?>
+<header>
+    <title>Login</title>
+</header>
 <body>
 <?php include ("layout/nav.php"); ?>
 

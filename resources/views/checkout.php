@@ -5,6 +5,9 @@
 } ?>
 <!DOCTYPE html>
 <?php include ("layout/header.php"); ?>
+<header>
+    <title>Checkout</title>
+</header>
 <body>
 <?php include ("layout/nav.php"); ?>
 <?php $order_number = $_GET['order_number'] ?>

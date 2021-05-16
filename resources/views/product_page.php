@@ -13,6 +13,9 @@
     $_SESSION['basket'] = array(); ?>
 <!DOCTYPE html>
 <?php include ("layout/header.php"); ?>
+<header>
+    <title><?php echo($product_ret->product_name) ?></title>
+</header>
 <body>
 <?php include ("layout/nav.php"); ?>
 <section class="prod-container">

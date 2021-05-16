@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <?php include ("layout/header.php"); ?>
+<header>
+    <title>Welcome</title>
+</header>
 <body class="def-back">
 <div>
     <img class="full-logo" src="Style/images/Untitled%20design.png">

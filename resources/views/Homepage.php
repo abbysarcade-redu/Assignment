@@ -6,6 +6,9 @@
 
 <!DOCTYPE html>
 <?php include ("layout/header.php"); ?>
+<header>
+    <title>Game On</title>
+</header>
 <body>
 <?php include ("layout/nav.php"); ?>
 <div class="home-page">

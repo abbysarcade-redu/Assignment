@@ -40,6 +40,9 @@ if($_POST) {
 ?>
 <!DOCTYPE html>
 <?php include ("layout/header.php"); ?>
+<header>
+    <title>Contact Page</title>
+</header>
 <body>
 <?php include ("layout/nav.php"); ?>
 <div class="nav-buffer">

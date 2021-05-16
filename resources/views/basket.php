@@ -5,6 +5,9 @@
 <?php include ("../tools/db.php"); ?>
 <!DOCTYPE html>
 <?php include ("layout/header.php"); ?>
+<header>
+    <title>Basket</title>
+</header>
 <body>
 <?php include ("layout/nav.php"); ?>
 <?php $total = array(); ?>

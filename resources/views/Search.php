@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <?php include ("layout/header.php"); ?>
+<header>
+    <title>Search</title>
+</header>
 <body>
 <?php include ("layout/nav.php"); ?>
 <div class="nav-buffer">

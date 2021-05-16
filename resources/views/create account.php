@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <?php include ("layout/header.php"); ?>
+<header>
+    <title>Create Account</title>
+</header>
 <body>
 <?php include ("layout/nav.php"); ?>
 <div class="nav-buffer"></div>
