@@ -27,7 +27,9 @@ if(!isset($_SESSION['basket'])) {
         <li class="img right">
             <a class="img" href="basket.php">
                 <img id="accountImage" srC="Style/images/Basket.png" alt="Basket" width="40" height="40">
+                <?php if((count($_SESSION['basket'])) != 0): ?>
                 <p class="basket-number" id="basket"><?php echo (count($_SESSION['basket'])) ?></p>
+                <?php endif; ?>
             </a>
         </li>
         <li class="img right">
@@ -64,5 +66,6 @@ if(!isset($_SESSION['basket'])) {
         <li class="buffer"></li>
     </ul>
 </nav>
+
 
 
