@@ -27,7 +27,7 @@ if(!isset($_SESSION)) {
             <?php if(!isset($_SESSION['user_id'])): ?>
             <a class="img dropdown-toggle" href="login.php">
             <?php else: ?>
-            <a class="img dropdown-toggle" href="#">
+            <a class="img dropdown-toggle" href="account.php">
             <?php endif; ?>
                 <img id="accountImage" src="Style/images/Account.png" alt="Account" width="40" height="40">
             </a>

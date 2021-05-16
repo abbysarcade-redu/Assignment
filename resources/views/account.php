@@ -34,6 +34,8 @@
         <a class="yellow-btn">Reset Password</a>
         <a class="yellow-btn">Manage Addresses</a>
         <a class="yellow-btn">Orders</a>
+        <a href="logout.php" class="button-pink">Logout</a>
+        <?php print_r($_SESSION); ?>
     </div>
 </div>
 <?php include ("layout/footer.php"); ?>
