@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-        <table class="table table-striped table-hover">
+        <table class="table table-hover">
             <thead>
             <tr>
                 <th>Website</th>
@@ -46,7 +46,7 @@
             </tr>
             </thead>
             <tbody>
-                <tr lan="Javascript">
+                <tr lang="Javascript">
                     <td>Soeng Souy</td>
                     <td>Bootstrap Data Table with Filter Row Feature | CSS JAVASCRIPT </td>
                     <td>Soeng Souy</td>
