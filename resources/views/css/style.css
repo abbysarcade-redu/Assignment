@@ -215,8 +215,9 @@ li {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
 }
 
-.submit_button:disabled {
-    cursor: default;
+.isdisabled {
+    cursor: not-allowed !important;
+    color: #00bac0;
 }
 
 .search-bar > .search_input:focus-within {
@@ -648,7 +649,7 @@ svg {
     border-width: 1px;
     cursor: pointer;
     justify-content: center;
-    padding: calc(.5rem - 1px) 1em;
+    padding: 0 1em;
     text-align: center;
     white-space: nowrap;
     align-items: center;
@@ -661,6 +662,7 @@ svg {
     position: relative;
     vertical-align: top;
     margin-left: 5px;
+    text-decoration: none;
 }
 
 .prod-info-container {

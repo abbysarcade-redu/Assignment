@@ -1,3 +1,10 @@
+<head>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+    <script language="JavaScript" type="text/javascript" src="../js/console_select.js"></script>
+</head>
 <?php include ("../tools/class_controller.php"); ?>
 <?php include ("../tools/db.php"); ?>
 <?php $SKU = $_GET['sku'] ?>
@@ -66,11 +73,12 @@
                         <p class="out-of-stock">Product Out of Stock</p>
                         <?php endif; ?>
                         <div class="submit_button_control">
-                            <form method="post" action="update_session">
-                                <a href="create_basket.php?sku=<?php echo ($SKU) ?>">
-                                    <input type="submit" id="bask_button" class="submit_button" type="submit" name="add_to_cart" value="Add to basket" disabled/>
-                                </a>
-                            </form>
+                            <a id="add_to_basket" class="submit_button isdisabled" href="create_basket.php?sku=<?php echo ($SKU) ?>">
+                                Add to basket
+                            </a>
+
+
+
 
 
                             <button onclick="local.href='basket.php?sku=<?php echo($SKU) ?>'" id="purchase_button" class="submit_button"  disabled>
