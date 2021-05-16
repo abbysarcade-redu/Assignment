@@ -579,6 +579,8 @@ button {
     display: inline-block;
     width: 40%;
     overflow: no-display;
+    height: 100%;
+    margin-left: 15px;
 }
 
 .mapouter {
@@ -968,6 +970,11 @@ input:invalid {
     border: none;
     overflow: no-content;
     padding-left: 7px;
+    font-size: 10px;
+}
+
+h1 {
+    padding-bottom: 5px;
 }
 
 .form-style-txt {
@@ -980,7 +987,7 @@ input:invalid {
     margin-bottom: 10px;
     border: none;
     overflow: no-content;
-    font-size: 14px;
+    font-size: 10px;
     padding-left: 7px;
 }
 
@@ -1195,6 +1202,20 @@ input:invalid {
     color: white;
     font-size: 10px;
     margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    align-content: center !important;
+    word-wrap: normal;
+    max-width: 120px;
+    height: 40px;
+    width: 100%;
+}
+
+.form-txt {
+    font-family: 'Space Mono';
+    color: white;
+    font-size: 10px;
+    margin-left: 25px;
     margin-right: 10px;
     text-align: center;
     align-content: center !important;

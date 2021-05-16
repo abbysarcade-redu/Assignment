@@ -19,17 +19,21 @@
         <form action="contact_send.php" method="post">
             <div class="form-row">
                 <div class="form-group">
-                    <input class="form-style" placeholder="Full Name*" name="customer_name" required>
+                    <label class="form-txt">Full Name *</label>
+                    <input class="form-style" placeholder="John Doe" name="customer_name" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="Email Address*" name="customer_email" required>
+                    <label class="form-txt">Email Address*</label>
+                    <input class="form-style" placeholder="contact@game-on.co.uk" name="customer_email" required>
                 </div>
             </div>
             <div class="form-group">
-                <input class="form-style" placeholder="Contact Number" name="customer_phone_number">
+                <label class="form-txt">Contact Number</label>
+                <input class="form-style" placeholder="07123456789" name="customer_phone_number">
             </div>
             <div class="form-group">
-                <textarea class="form-style-txt" rows="4" placeholder="Message*" name="customer_message" required></textarea>
+                <label class="form-txt">Message*</label>
+                <textarea class="form-style-txt" rows="4" placeholder="How can we help you today?" name="customer_message" required></textarea>
             </div>
             <button type="submit">Send Message</button>
         </form>
@@ -44,7 +48,7 @@
 
             <p class="is-blue">Located in <a class="is-pink">The University of Sunderland.</a></p>
         </div>
-        <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=SR6%200DD&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{position:relative;text-align:right;height:auto;width:auto;}</style><style>.gmap_canvas {overflow:hidden;background:none!important;height:100%;width:100%;border-radius: 20px;}</style></div></div>    </div>
+        <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="200px" id="gmap_canvas" src="https://maps.google.com/maps?q=SR6%200DD&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{margin-top: 10px;position:relative;text-align:right;height:auto;width:auto;}</style><style>.gmap_canvas {overflow:hidden;background:none!important;height:100%;width:100%;border-radius: 20px;}</style></div></div>    </div>
 </div>
 <?php include ("layout/footer.php"); ?>
 
