@@ -17,6 +17,13 @@ $G_O_M_preparedStatement = $pdo->prepare($game_of_month);
 
 $G_O_M_preparedStatement->execute([1]);
 
+// basket game image
+$basket_product = "SELECT product_name, product_image, product_cost, available_stock FROM ASSIGNMENT.product WHERE product_sku = ?";
+
+// pass query
+
+$basket_product_preparedStatement = $pdo->prepare($basket_product);
+
 // Get featured games
 $featured_games = "SELECT product_name, product_image, product_sku, available_stock FROM assignment.product WHERE featured = ?";
 
