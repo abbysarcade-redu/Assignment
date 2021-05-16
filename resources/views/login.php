@@ -12,19 +12,19 @@
     </div>
         <form>
             <div class="central-buffer">
-                <div class="form-row central-login-form">
-                    <div class="form-group col-md-6">
+                <div class="central-login-form">
+                    <div class="col-md-6">
                         <input class="form-style" placeholder="Email Address*">
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="col-md-6">
                         <input class="form-style" placeholder="Password*">
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="col-md-6">
                         <button class="button-pink">
                             Login
                         </button>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="col-md-6">
                         <a class="white-btn" href="create%20account.php">
                             Create an Account
                         </a>

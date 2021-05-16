@@ -441,11 +441,11 @@ checkout-row. {
 }
 
 .central-buffer {
-    margin-top: 20px;
-    position: center;
     padding-bottom: 10px;
     display: inline-block;
     width: 45%;
+    margin: 0 25%;
+    margin-top: 40px;
 }
 
 .accountimg {
@@ -503,6 +503,7 @@ checkout-row. {
     color: white;
     text-decoration: none;
     margin-left: 20px;
+    margin-top: 10px;
 }
 
 button {
