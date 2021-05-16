@@ -3,9 +3,15 @@
         <img src="Style/images/long-logo.png" class="footer-logo">
         <p class="footer-content">Thank you for choosing game-on.co.uk, we pride ourselves on delivering a fantastic selection of games.</p>
         <div class="social">
-            <img class="footer-social" src="Style/images/Facebook-logo.png">
-            <img class="footer-social" src="Style/images/Twitter.png">
-            <img class="footer-social" src="Style/images/Twitch.png">
+            <a href="https://www.facebook.com/" target="_blank">
+                <img class="footer-social" src="Style/images/Facebook-logo.png">
+            </a>
+            <a href="https://twitter.com/" target="_blank">
+                <img class="footer-social" src="Style/images/Twitter.png">
+            </a>
+            <a href="https://www.twitch.tv/" target="_blank">
+                <img class="footer-social" src="Style/images/Twitch.png">
+            </a>
         </div>
         <p class="footer-content">Copyright 2021 game-on.co.uk</p>
     </div>
