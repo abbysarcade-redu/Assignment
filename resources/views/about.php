@@ -17,10 +17,18 @@
     <div class="partner-block">
         <h1>Partners</h1>
         <div>
-            <img src="Style/images/Microsoft_logo_-_2012_(vertical).svg.png" class="partner-block-img" href="#">
-            <img src="Style/images/1200px-SEGA_logo.svg.png" class="partner-block-img">
-            <img src="Style/images/5a1c3678f65d84088faf1403.png" class="partner-block-img">
-            <img src="Style/images/sony_logo_PNG5.png" class="partner-block-img">
+            <a class="game-containter" href="https://www.microsoft.com/en-gb" target="_blank">
+                <img src="Style/images/Microsoft_logo_-_2012_(vertical).svg.png" class="partner-block-img">
+            </a>
+            <a class="game-containter" href="https://www.sega.co.uk/" target="_blank">
+                <img src="Style/images/1200px-SEGA_logo.svg.png" class="partner-block-img">
+            </a>
+            <a class="game-containter" href="https://www.nintendo.co.uk/" target="_blank">
+                <img src="Style/images/5a1c3678f65d84088faf1403.png" class="partner-block-img">
+            </a>
+            <a class="game-containter" href="https://www.sony.co.uk/" target="_blank">
+                <img src="Style/images/sony_logo_PNG5.png" class="partner-block-img">
+            </a>
         </div>
     </div>
     <div class="team-block">
