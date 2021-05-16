@@ -7,7 +7,6 @@
 <?php include ("layout/nav.php"); ?>
 
 <div class="content-page">
-    <div class="nav-buffer"></div>
     <div class="hero-image">
         <img src="Style/images/login-banner.png" class="hero">
     </div>
