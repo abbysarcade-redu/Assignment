@@ -144,3 +144,9 @@ $stock_update = "UPDATE ASSIGNMENT.product SET available_stock = ? WHERE product
 
 //pass query
 $stock_update_update_preparedStatement = $pdo->prepare($stock_update);
+
+//account update
+$account_update = "UPDATE ASSIGNMENT.users SET user_name = ?, user_email = ? WHERE user_id = ?";
+
+//pass query
+$account_update_preparedStatement = $pdo->prepare($account_update);
