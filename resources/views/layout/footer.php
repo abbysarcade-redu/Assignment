@@ -20,7 +20,6 @@
             <h1 class="footer-info-title">Information</h1>
             <a class="footer-info-link" href="about.php">About</a>
             <a class="footer-info-link" href="useful_links.php">Useful Links</a>
-            <a class="footer-info-link" href="Search.php">Search Page</a>
         </div>
     </div>
     <div class="footer-column">
