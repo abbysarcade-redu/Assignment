@@ -12,7 +12,10 @@
     </div>
     <div class="us-block">
         <h1>Who We Are</h1>
-        <p class="about-content">As a specialist video game e-commerce retailer, we offer a wide range of video games for you. </p>
+        <p class="about-content">As a specialist video game e-commerce retailer, we offer a wide range of video games for you.</p>
+        <p class="about-content">We work directly with games developers to bring you the hottest games as they are released!</p>
+        <p class="about-content">Customer experience is extremely important to us here at Game On and we guarantee customer satisfaction.</p>
+        <p class="about-content">Game On maintains relationships with our delivery partners to ensure your order arrives within 2 hours.</p>
     </div>
     <div class="partner-block">
         <h1>Partners</h1>
