@@ -10,20 +10,19 @@
 else: ?>
 
     <?php
-
     $vals = array_count_values($_SESSION['basket']);
     $max = count($vals);
     if($max != 0) {
         foreach ($vals as $sku => $amount) {
-            $basket_product_preparedStatement->execute([$sku]);
-            $checkout_games = $basket_product_preparedStatement->fetchObject('checkout_games');
-            $subtotal = ($checkout_games->product_cost) * $amount;
+            $games_preparedStatement->execute([$sku]);
+            $game = $games_preparedStatement->fetchObject('game');
+            $subtotal = ($game->product_cost) * $amount;
             $line_items_preparedStatement->execute(array(
                 $_SESSION['order_number'],
                 $sku,
                 $amount
             ));
-            $remaining_stock = ($checkout_games->available_stock - $amount);
+            $remaining_stock = ($game->available_stock - $amount);
             $stock_update_update_preparedStatement->execute(array(
                 $remaining_stock,
                 $sku
@@ -110,15 +109,15 @@ else: ?>
         $max=count($vals);
         if ($max != 0):
             foreach ($vals as $sku => $amount):
-                $basket_product_preparedStatement->execute([$sku]);
-                $checkout_games = $basket_product_preparedStatement->fetchObject( 'checkout_games');
-                $subtotal = ($checkout_games->product_cost)*$amount; ?>
+                $games_preparedStatement->execute([$sku]);
+                $game = $games_preparedStatement->fetchObject( 'game');
+                $subtotal = ($game->product_cost)*$amount; ?>
                     <div class="basket-storage">
                         <div class="basket-item-i">
-                            <img src="<?php echo($checkout_games->product_image) ?>" class="games-img">
+                            <img src="<?php echo($game->product_image) ?>" class="games-img">
                         </div>
                         <div class="basket-item-l">
-                            <p class="games-txt"><?php echo($checkout_games->product_name) ?></p>
+                            <p class="games-txt"><?php echo($game->product_name) ?></p>
                         </div>
                         <div class="basket-item-l">
                             <p class="games-txt">x<?php print_r($amount); ?></p>

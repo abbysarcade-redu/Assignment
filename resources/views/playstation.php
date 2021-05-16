@@ -17,14 +17,14 @@
         </div>
         <div class="product-container">
             <ul class="prods" id="productUL">
-                <?php $row = $playstation_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "p_s");
-                foreach($row as $p_s):
-                    if($p_s->available_stock != 0):?>
+                <?php $row = $games_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "game");
+                foreach($row as $game):
+                    if($game->available_stock != 0):?>
                         <li>
                             <div class="top-games-entry">
-                                <a href="product_page.php?sku=<?=$p_s->product_sku;?>">
-                                    <img href="product_page.php?sku=<?=$p_s->product_sku;?>" src="<?php echo($p_s->product_image) ?>" class="top-games-img">
-                                    <p class="top-games-txt"><?php echo($p_s->product_name) ?></p>
+                                <a href="product_page.php?sku=<?=$game->product_sku;?>">
+                                    <img src="<?php echo($game->product_image) ?>" class="top-games-img">
+                                    <p class="top-games-txt"><?php echo($game->product_name) ?></p>
                                 </a>
                             </div>
                         </li>

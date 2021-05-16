@@ -28,7 +28,7 @@ $featured_games_preparedStatement->execute([1]);
 
 
 // Get games
-$games = "SELECT product_name, product_image, product_sku, available_stock FROM assignment.product";
+$games = "SELECT product_name, product_image, product_cost, product_description, slug, product_sku, available_stock FROM assignment.product";
 
 //pass query
 $games_preparedStatement = $pdo->prepare($games);
@@ -58,45 +58,12 @@ $xbox_preparedStatement = $pdo->prepare($xbox);
 
 $xbox_preparedStatement->execute([1]);
 
-// nintendo image
-$nintendo = "SELECT product_name, product_image, product_sku, available_stock FROM ASSIGNMENT.product WHERE nintendo = ?";
-
-// pass query
-
-$nintendo_preparedStatement = $pdo->prepare($nintendo);
-
-//execute
-
-$nintendo_preparedStatement->execute([1]);
-
-// PC image
-$pc = "SELECT product_name, product_image, product_sku, available_stock FROM ASSIGNMENT.product WHERE pc = ?";
-
-// pass query
-
-$pc_preparedStatement = $pdo->prepare($pc);
-
-//execute
-
-$pc_preparedStatement->execute([1]);
 
 // Get game details
 $game = "SELECT product_name, product_image, product_description, slug, product_cost, playstation, xbox, nintendo, pc, available_stock FROM assignment.product WHERE product_sku = ?";
 
 //pass query
 $game_preparedStatement = $pdo->prepare($game);
-
-//execute
-//$game_preparedStatement->execute();
-
-// basket game image
-$basket_product = "SELECT product_name, product_image, product_cost, available_stock FROM ASSIGNMENT.product WHERE product_sku = ?";
-
-// pass query
-
-$basket_product_preparedStatement = $pdo->prepare($basket_product);
-
-//execute
 
 //transaction
 $transaction = "INSERT INTO ASSIGNMENT.sale (sale_id, sale_number, user_id, order_date, order_value, order_status)

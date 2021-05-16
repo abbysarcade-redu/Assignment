@@ -37,17 +37,17 @@ print_r($order_number);?>
     if ($max != 0):
         foreach ($vals as $sku => $amount):
             $basket_product_preparedStatement->execute([$sku]);
-            $basket_games = $basket_product_preparedStatement->fetchObject( 'basket_games');
-            $subtotal = ($basket_games->product_cost)*$amount;
+            $game = $basket_product_preparedStatement->fetchObject( 'game');
+            $subtotal = ($game->product_cost)*$amount;
             $stock_check_preparedStatement->execute([$sku]);
             $stock = $stock_check_preparedStatement->fetch();
             array_push($total, $subtotal); ?>
                 <div class="basket-storage">
                     <div class="basket-item-i">
-                        <img src="<?php echo($basket_games->product_image) ?>" class="games-img">
+                        <img src="<?php echo($game->product_image) ?>" class="games-img">
                     </div>
                     <div class="basket-item-l">
-                        <p class="games-txt"><?php echo($basket_games->product_name) ?></p>
+                        <p class="games-txt"><?php echo($game->product_name) ?></p>
                     </div>
                     <a class="button-trans" href="basket%20reduce.php?sku=<?php echo($sku); ?>">-</a>
                     <?php if($stock['available_stock'] < $amount):
