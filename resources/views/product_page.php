@@ -1,3 +1,4 @@
+<?php include ("layout/nav.php"); ?>
 <head>
     <script
         src="https://code.jquery.com/jquery-3.6.0.js"
@@ -5,8 +6,7 @@
         crossorigin="anonymous"></script>
     <script language="JavaScript" type="text/javascript" src="../js/console_select.js"></script>
 </head>
-<?php include ("../tools/class_controller.php"); ?>
-<?php include ("../tools/db.php"); ?>
+
 <?php $SKU = $_GET['sku'] ?>
 <?php $passing_sku = str_split($SKU, 12); ?>
 <?php $game_preparedStatement->execute($passing_sku); ?>
@@ -24,7 +24,7 @@
     <title><?php echo($product_ret->product_name) ?></title>
 </header>
 <body>
-<?php include ("layout/nav.php"); ?>
+
 <section class="prod-container">
     <div class="prod-box">
         <div class="container-prod">

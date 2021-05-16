@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<?php include ("../tools/db.php"); ?>
 <?php include ("layout/header.php"); ?>
 <header>
     <title>Account Created</title>

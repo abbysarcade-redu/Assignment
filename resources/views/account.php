@@ -6,8 +6,6 @@
     header('Location: login.php');
 }; ?>
 
-<?php include ("../tools/class_controller.php"); ?>
-<?php include ("../tools/db.php"); ?>
 <!DOCTYPE html>
 <?php include ("layout/header.php"); ?>
 <header>

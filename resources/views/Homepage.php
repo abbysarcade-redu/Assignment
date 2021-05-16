@@ -25,7 +25,9 @@
         <div class="game-of-month">
             <h1> Game of the month</h1>
             <div>
-                <img src="<?php echo ($g_o_m->product_image); ?>" class="game-of-month-img">
+                <a href="product_page.php?sku=<?=$g_o_m->product_sku;?>">
+                    <img src="<?php echo ($g_o_m->product_image); ?>" class="game-of-month-img">
+                </a>
             </div>
         </div>
     <?php endif; ?>

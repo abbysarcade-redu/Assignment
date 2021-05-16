@@ -17,6 +17,7 @@ class user {
 class game_of_month {
     public $product_image;
     public $available_stock;
+    public $product_sku;
 }
 
 class featured_game {

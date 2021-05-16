@@ -7,7 +7,7 @@ try {
 }
 
 // Game of month image
-$game_of_month = "SELECT product_image, available_stock FROM ASSIGNMENT.product WHERE game_of_month = ?";
+$game_of_month = "SELECT product_image, available_stock, product_sku FROM ASSIGNMENT.product WHERE game_of_month = ?";
 
 // pass query
 
