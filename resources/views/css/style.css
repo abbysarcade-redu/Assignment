@@ -1161,6 +1161,23 @@ input:invalid {
     color: black;
 }
 
+.products-games-txt {
+    font-family: 'Space Mono';
+    color: white;
+    font-size: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    align-content: center !important;
+    word-wrap: normal;
+    max-width: 120px;
+    height: 40px;
+}
+
+.products-games-txt:hover {
+    color: #ff00e6;
+}
+
 .out-of-stock {
     color: #FF2856;
     margin-left: 5px;
