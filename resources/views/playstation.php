@@ -27,7 +27,7 @@
                             <div class="top-games-entry">
                                 <a href="product_page.php?sku=<?=$game->product_sku;?>">
                                     <img src="<?php echo($game->product_image) ?>" class="top-games-img">
-                                    <p class="top-games-txt"><?php echo($game->product_name) ?></p>
+                                    <p class="playstation-games-txt"><?php echo($game->product_name) ?></p>
                                 </a>
                             </div>
                         </li>

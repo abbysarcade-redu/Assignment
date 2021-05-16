@@ -1178,6 +1178,23 @@ input:invalid {
     color: #ff00e6;
 }
 
+.playstation-games-txt {
+    font-family: 'Space Mono';
+    color: white;
+    font-size: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    align-content: center !important;
+    word-wrap: normal;
+    max-width: 120px;
+    height: 40px;
+}
+
+.playstation-games-txt:hover {
+    color: #00f7ff;
+}
+
 .out-of-stock {
     color: #FF2856;
     margin-left: 5px;
