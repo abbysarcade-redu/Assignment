@@ -545,8 +545,9 @@ checkout-row. {
     width: 170px;
     color: white;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 10px;
     margin-top: 10px;
+    text-align: center;
 }
 
 button {
@@ -1757,6 +1758,7 @@ hr {
     display: inline-block;
     text-align: center;
     padding: 5px;
+    margin-left: 10px;
 }
 
 .b-but {

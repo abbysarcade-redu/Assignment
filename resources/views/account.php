@@ -22,18 +22,21 @@
             <div class="form-row">
                 <?php $user_details_preparedStatement->execute([$_SESSION['user_id']]);
                 $user = $user_details_preparedStatement->fetchObject('user'); ?>
-                <label class="left-white">Name</label>
-                <input class="form-style" placeholder="Full Name*" name="customer_name" value="<?php echo $user->user_name ?>">
-                <label class="left-white">Email</label>
-                <input class="form-style" placeholder="Email Address*" name="customer_email" value="<?php echo $user->user_email ?>">
+                <div>
+                    <label class="left-white">Name</label>
+                    <input class="form-style" placeholder="Full Name*" name="customer_name" value="<?php echo $user->user_name ?>">
+                </div>
+                <div>
+                    <label class="left-white">Email</label>
+                    <input class="form-style" placeholder="Email Address*" name="customer_email" value="<?php echo $user->user_email ?>">
+                </div>
                 <button type="submit">Save</button>
             </div>
         </form>
-        <a class="yellow-btn">Reset Password</a>
+        <a class="yellow-btn" >Reset Password</a>
         <a class="yellow-btn">Manage Addresses</a>
         <a class="yellow-btn">Orders</a>
         <a href="logout.php" class="button-pink">Logout</a>
-        <?php print_r($_SESSION); ?>
     </div>
 </div>
 <?php include ("layout/footer.php"); ?>
