@@ -1,10 +1,12 @@
 function search_function() {
     //declare variables
-    var input, filter, container, li, p, i, txtValue;
+    var input, filter, ul, li, p, i, txtValue;
     input = document.getElementById('search_input');
     filter = input.value.toUpperCase();
-    container = document.getElementById("search_container");
+    ul = document.getElementById("search_container");
     li = ul.getElementsByTagName('li');
+    ul.style.display = "grid";
+
 
     //loop through list items then hide those not matching
     for (i = 0; i < li.length; i++) {

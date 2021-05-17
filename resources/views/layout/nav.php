@@ -43,7 +43,7 @@ if(!isset($_SESSION['basket'])) {
         </li>
             <div class="search-input">
                 <div class="search-bar right">
-                    <input type="text" class="search_input" aria-label="search" placeholder="Search.." required>
+                    <input type="text" class="search_input" aria-label="search" placeholder="Search.." onkeyup="search_function()" required>
                     <button class="search_button" aria-label="submit search"><i class="fas fa-search"></i></button>
                 </div>
                     <ul class="gift-card-search-results" id="search_container">

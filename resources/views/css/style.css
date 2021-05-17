@@ -201,11 +201,7 @@ li {
     border-radius: 50px;
 }
 
-.search-bar:focus-within, {
-    box-shadow: 0 0 5px;
-    width: 90% !important;
-    margin-bottom: 15px;
-}
+
 
 .search_input:valid ~ .search-bar{
     box-shadow: 0 0 5px;
@@ -213,13 +209,7 @@ li {
     margin-bottom: 15px;
 }
 
-.search-bar:focus-within ~ .gift-card-search-results {
-    display: grid !important;
-}
 
-.search_input:not(:placeholder-shown) ~ .gift-card-search-results {
-    display: grid !important;
-}
 
 
 .search-bar:focus-within > .search_button {
@@ -229,14 +219,7 @@ li {
 
 }
 
-.search-bar:focus-within > .search_input {
-    font-size: 1rem;
-    padding-left: 5px;
-    width: calc(100% - 35px) !important;
-    cursor: initial !important;
-    background: transparent;
 
-}
 
 .menu-icon.search-bar:focus-within > nav-item {
     display: none;
@@ -275,11 +258,6 @@ li {
 .isdisabled {
     cursor: not-allowed !important;
     color: #00bac0;
-}
-
-.search-bar > .search_input:focus-within {
-    z-index: initial;
-    cursor: initial;
 }
 
 
@@ -388,10 +366,6 @@ li {
 
     .prod-container {
         padding-top: 0px;
-    }
-    .header .menu .search-bar:focus-within {
-        width: 20% !important;
-        margin-bottom: 10px !important;
     }
 
     .gift-card-search-results {
@@ -888,8 +862,8 @@ svg {
     max-height: 450px;
     overflow-y: scroll;
     z-index: 1000;
-    display: none;
     margin-left: 50px;
+    display: none;
 }
 
 .search-display {
