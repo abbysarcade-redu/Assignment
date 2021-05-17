@@ -1341,7 +1341,8 @@ h1 {
 }
 
 .social {
-    text-align: left;
+    text-align: center;
+    height: 25px;
 }
 
 .footer-column {
@@ -1387,11 +1388,11 @@ text-align: center;
     padding-bottom: 10px;
     left: 0;
     text-align: center;
+    width: 100%;
 }
 
 .footer-social {
     height: 20px;
-    float: left;
 }
 
 .footer-info-link {
