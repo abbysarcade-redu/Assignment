@@ -1,19 +1,39 @@
-function search_function() {
-    //declare variables
-    var input, filter, ul, li, p, i, txtValue;
-    input = document.getElementById('search_input');
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("productUL");
-    li = ul.getElementsByTagName('li');
+function langFunction() {
+    document.getElementById("langDropdown").classList.toggle("show");
+}
 
-    //loop through list items then hide those not matching
-    for (i = 0; i < li.length; i++) {
-        p = li[i].getElementsByTagName("p") [0];
-        txtValue = p.textContent || p.innerText;
+function langFilterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("langInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("langDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        txtValue = a[i].textContent || a[i].innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
+            a[i].style.display = "";
         } else {
-            li[i].style.display = "none";
+            a[i].style.display = "none";
+        }
+    }
+}
+
+function tagFunction() {
+    document.getElementById("tagDropdown").classList.toggle("show");
+}
+
+function tagFilterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("tagInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("tagDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        txtValue = a[i].textContent || a[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
         }
     }
 }

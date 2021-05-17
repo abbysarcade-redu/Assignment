@@ -2,6 +2,7 @@
 <?php include ("layout/header.php"); ?>
 <header>
     <title>Useful Links</title>
+    <script src="../js/link_search.js"></script>
 </header>
 <body>
 <?php include ("layout/nav.php"); ?>
@@ -11,27 +12,27 @@
     </div>
     <div class="table-wrapper">
             <div class="row">
-                <div class="col-sm-6">
-                    <div class="btn-group" data-goggle="buttons">
-                        <label class="btn btn-info active">
-                            <input type="radio" name="status" value="all" checked="checked">All
-                        </label>
-                        <label class="btn btn-success">
-                            <input type="radio" name="status" value="active">Javascript
-                        </label>
-                        <label class="btn btn-warning">
-                            <input type="radio" name="status" value="active">HTML
-                        </label>
-                        <label class="btn btn-danger">
-                            <input type="radio" name="status" value="active">SQL
-                        </label>
-                        <label class="btn btn-danger">
-                            <input type="radio" name="status" value="active">CSS
-                        </label>
-                        <label class="btn btn-danger">
-                            <input type="radio" name="status" value="active">PHP
-                        </label>
-                    </div>
+                <div class="search_container">
+                        <div class="dropdown">
+                            <button onclick="langFunction()" class="dropbtn">Language</button>
+                            <div id="langDropdown" class="dropdown-content">
+                                <input type="text" placeholder="Search.." id="langInput" onkeyup="langFilterFunction()">
+                                <?php $row = $all_lang_preparedStatement->fetchAll();
+                                foreach($row as $lang):?>
+                                <a onclick="filterSelection('<?php echo ($lang['language_name']) ?>"><?php echo ($lang['language_name']) ?></a>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <button onclick="tagFunction()" class="dropbtn">Tag</button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <input type="text" placeholder="Search.." id="tagInput" onkeyup="tagFilterFunction()">
+                                <?php $row = $all_tags_preparedStatement->fetchAll();
+                                foreach ($row as $tag): ?>
+                                    <a href="#about"><?php echo($tag['tag_name']) ?></a>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
                 </div>
             </div>
         <table class="table table-hover">
@@ -45,23 +46,22 @@
                 <th>Visit</th>
             </tr>
             </thead>
-            <tbody>
-                <tr lang="Javascript">
-                    <td>Soeng Souy</td>
-                    <td>Bootstrap Data Table with Filter Row Feature | CSS JAVASCRIPT </td>
-                    <td>Soeng Souy</td>
-                    <td>Javascript</td>
-                    <td>Table, Filter</td>
-                    <td><a href="https://www.soengsouy.com/2020/04/bootstrap-data-table-with-filter-row.html?m=1" target="_blank" class="btn btn-sm manage">Click Me</a></td>
+            <tbody id="link_table">
+            <?php $row = $useful_links_preparedStatement->fetchAll(PDO::FETCH_CLASS, 'useful_link');
+            foreach ($row as $useful_link):
+                $lang_preparedStatement->execute([$useful_link->lang]);
+                $db_lang = $lang_preparedStatement->fetch();
+                $tag_preparedStatement->execute([$useful_link->tags]);
+                $db_tag = $tag_preparedStatement->fetch(); ?>
+                <tr class="table filterTr" lang="Javascript">
+                    <td><?php echo($useful_link->website) ?></td>
+                    <td><?php echo($useful_link->webpage) ?></td>
+                    <td><?php echo($useful_link->author) ?></td>
+                    <td><?php echo($db_lang['language_name']) ?></td>
+                    <td><?php echo($db_tag['tag_name']) ?></td>
+                    <td><a href="<?php echo($useful_link->url) ?>" target="_blank" class="btn btn-sm manage">Click Me</a></td>
                 </tr>
-                <tr lang="HTML">
-                    <td>The Site Wizard</td>
-                    <td>How to Make Links Open in a New Window or Tab</td>
-                    <td>Unknown</td>
-                    <td>HTML</td>
-                    <td>New Tab</td>
-                    <td><a href="https://www.thesitewizard.com/html-tutorial/open-links-in-new-window-or-tab.shtml" target="_blank" class="btn btn-sm manage">Click Me</a></td>
-                </tr>
+            <?php endforeach; ?>
             </tbody>
         </table>
     </div>

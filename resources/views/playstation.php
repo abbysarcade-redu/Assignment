@@ -11,7 +11,10 @@
 <div class="content-page">
     <div class="hero-image">
         <img src="Style/images/playstation-banner.png" class="hero">
+        <?php $row = $products_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "game");
+        print_r($row); ?>
     </div>
+
     <div class="products">
         <div class="fit-container">
             <div class="filter">
@@ -21,6 +24,7 @@
         <div class="product-container">
             <ul class="prods" id="productUL">
                 <?php $row = $products_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "game");
+                print_r($row);
                 foreach($row as $game):?>
                         <li>
                             <div class="top-games-entry">

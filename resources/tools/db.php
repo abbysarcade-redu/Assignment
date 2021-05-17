@@ -159,3 +159,39 @@ $account_update = "UPDATE ASSIGNMENT.users SET user_name = ?, user_email = ? WHE
 //pass query
 $account_update_preparedStatement = $pdo->prepare($account_update);
 
+$useful_links = "SELECT website, webpage, author, lang, tags, url FROM ASSIGNMENT.useful_links";
+
+// pass query
+
+$useful_links_preparedStatement = $pdo->prepare($useful_links);
+
+$useful_links_preparedStatement->execute();
+
+$lang = "SELECT language_name FROM ASSIGNMENT.lang WHERE language_id = ?";
+
+// pass query
+
+$lang_preparedStatement = $pdo->prepare($lang);
+
+$tag = "SELECT tag_name FROM ASSIGNMENT.tags WHERE tag_id = ?";
+
+// pass query
+
+$tag_preparedStatement = $pdo->prepare($tag);
+
+$all_lang = "SELECT language_name FROM ASSIGNMENT.lang";
+
+// pass query
+
+$all_lang_preparedStatement = $pdo->prepare($all_lang);
+
+$all_lang_preparedStatement->execute();
+
+
+$all_tags = "SELECT tag_name FROM ASSIGNMENT.tags";
+
+// pass query
+
+$all_tags_preparedStatement = $pdo->prepare($all_tags);
+
+$all_tags_preparedStatement->execute();

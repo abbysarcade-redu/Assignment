@@ -42,4 +42,13 @@ class games {
     public $available_stock;
 }
 
+class useful_link {
+    public $website;
+    public $webpage;
+    public $author;
+    public $lang;
+    public $tags;
+    public $url;
+}
+
 ?>
