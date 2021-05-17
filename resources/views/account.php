@@ -33,7 +33,7 @@
                 <button type="submit">Save</button>
             </div>
         </form>
-        <a class="yellow-btn">Orders</a>
+        <a href="past_orders.php" class="yellow-btn">Orders</a>
         <a href="logout.php" class="button-pink">Logout</a>
     </div>
 </div>

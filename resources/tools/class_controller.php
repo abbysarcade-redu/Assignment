@@ -55,4 +55,9 @@ class useful_link {
     public $url;
 }
 
+class orders {
+    public $sale_number;
+    public $order_date;
+    public $order_value;
+}
 ?>
