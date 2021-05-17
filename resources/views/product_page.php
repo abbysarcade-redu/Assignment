@@ -15,7 +15,8 @@
 } ?>
 
 <?php $game_preparedStatement->setFetchMode(PDO::FETCH_CLASS, 'prod_ret'); ?>
-<?php $product_ret= ($game_preparedStatement->fetch()); ?>
+<?php $product_ret= ($game_preparedStatement->fetch());
+$_SESSION['total'] = $product_ret->product_cost;?>
 <?php if(empty($_SESSION['basket']))
     $_SESSION['basket'] = array(); ?>
 <!DOCTYPE html>
@@ -41,25 +42,25 @@
                             <label class="prod-label">Choose your console</label>
                             <div class="console-control">
                                 <?php if($product_ret->playstation == 1): ?>
-                                <input class="con-rad-cont" id="console[playstation]" type="radio" name="console" onclick="document.getElementById('purchase_button').disabled=false;document.getElementById('bask_button').disabled=false">
+                                <input class="con-rad-cont" id="console[playstation]" type="radio" name="console">
                                 <label class="console-button" for="console[playstation]">
                                     Playstation
                                 </label>
                                 <?php endif; ?>
                                 <?php if($product_ret->xbox == 1): ?>
-                                    <input class="con-rad-cont" id="console[xbox]" type="radio" name="console" onclick="document.getElementById('purchase_button').disabled=false;document.getElementById('bask_button').disabled=false">
+                                    <input class="con-rad-cont" id="console[xbox]" type="radio" name="console">
                                     <label class="console-button" for="console[xbox]">
                                         Xbox
                                     </label>
                                 <?php endif; ?>
                                 <?php if($product_ret->nintendo == 1): ?>
-                                    <input class="con-rad-cont" id="console[nintendo]" type="radio" name="console" onclick="document.getElementById('purchase_button').disabled=false;document.getElementById('bask_button').disabled=false">
+                                    <input class="con-rad-cont" id="console[nintendo]" type="radio" name="console">
                                     <label class="console-button" for="console[nintendo]">
                                         Nintendo
                                     </label>
                                 <?php endif; ?>
                                 <?php if($product_ret->pc == 1): ?>
-                                    <input class="con-rad-cont" id="console[pc]" type="radio" name="console" onclick="document.getElementById('purchase_button').disabled=false;document.getElementById('bask_button').disabled=false">
+                                    <input class="con-rad-cont" id="console[pc]" type="radio" name="console">
                                     <label class="console-button" for="console[pc]">
                                         PC
                                     </label>
@@ -81,9 +82,9 @@
 
 
 
-                            <button onclick="local.href='basket.php?sku=<?php echo($SKU) ?>'" id="purchase_button" class="submit_button"  disabled>
+                            <a id="purchase_button" class="submit_button isdisabled"  href="buy_now.php?sku=<?php echo ($SKU) ?>">
                                 Buy Now
-                            </button>
+                            </a>
                         </div>
 
                     </form>
