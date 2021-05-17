@@ -11,8 +11,6 @@
 <?php include ("layout/nav.php"); ?>
 <?php $order_number = $_GET['order_number'] ?>
 
-<div class="nav-buffer"></div>
-
 <div class="content-page">
     <div class="hero-image">
         <img src="Style/images/checkout-banner.png" class="hero">

@@ -626,7 +626,6 @@ svg {
 
 .content-page {
     background-color: #222222;
-    padding-top: 100px;
     width: 100%;
     height: 80%;
 }
@@ -841,7 +840,7 @@ svg {
    max-width: 100%;
     height: auto;
     width: 100%;
-    margin-top: 80px;
+
 
 }
 
