@@ -19,7 +19,6 @@
     $order_number = $_SESSION['order_number'];
 }
 print_r($order_number);?>
-<div class="nav-buffer"></div>
 <div class="basket-page">
     <div class="hero-image">
         <img src="Style/images/basket-banner.png" class="hero">
