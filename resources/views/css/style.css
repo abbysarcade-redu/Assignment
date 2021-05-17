@@ -1250,6 +1250,10 @@ h1 {
     color: black;
 }
 
+.products {
+    display: flex;
+}
+
 .products-games-txt {
     font-family: 'Space Mono';
     color: white;
