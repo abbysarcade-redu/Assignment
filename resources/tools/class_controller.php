@@ -7,6 +7,10 @@ class game {
     public $slug;
     public $product_sku;
     public $available_stock;
+    public $playstation;
+    public $nintendo;
+    public $pc;
+    public $xbox;
 }
 
 class user {

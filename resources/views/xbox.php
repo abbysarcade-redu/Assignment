@@ -17,12 +17,20 @@
         <div class="fit-container">
             <div class="filter">
                 <input type="text" id="search_input" onkeyup="search_function()" placeholder="Search games..">
+                <a href="playstation.php" class="filter-button">PlayStation</a>
+                <hr>
+                <a href="xbox.php" class="filter-button">Xbox</a>
+                <hr>
+                <a href="nintendo.php" class="filter-button">Nintendo</a>
+                <hr>
+                <a class="filter-button" href="PC.php">PC</a>
             </div>
         </div>
         <div class="product-container">
             <ul class="prods" id="productUL">
                 <?php $row = $products_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "game");
-                foreach($row as $game):?>
+                foreach($row as $game):
+                    if($game->xbox == 1):?>
                         <li>
                             <div class="top-games-entry">
                                 <a href="product_page.php?sku=<?=$game->product_sku;?>">
@@ -31,6 +39,7 @@
                                 </a>
                             </div>
                         </li>
+                    <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
         </div>
