@@ -85,8 +85,8 @@ print_r($order_number);?>
         <div class="b-but">
             <a class="button-pink-b" href="products.php">Continue Shopping</a>
         </div>
-        <div>
-            <a class="yellow-btn-b" href="checkout.php">Checkout Securely</a>
+        <div class="content-column-right">
+            <a class="right-align" href="checkout.php">Checkout Securely</a>
         </div>
     </div>
 </div>
