@@ -33,8 +33,6 @@
                 <button type="submit">Save</button>
             </div>
         </form>
-        <a class="yellow-btn" >Reset Password</a>
-        <a class="yellow-btn">Manage Addresses</a>
         <a class="yellow-btn">Orders</a>
         <a href="logout.php" class="button-pink">Logout</a>
     </div>
