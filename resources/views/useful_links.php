@@ -24,7 +24,7 @@
                                 <?php endforeach; ?>
                             </div>
                         </div>
-                        <div class="dropdown">
+                        <div class="dropdown-cont">
                             <button onclick="tagFunction()" class="dropbtn">Tag</button>
                             <div id="tagDropdown" class="dropdown-content">
                                 <input type="text" placeholder="Search.." id="tagInput" onkeyup="tagFilterFunction()">
