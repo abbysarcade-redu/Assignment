@@ -53,13 +53,13 @@ if(!isset($_SESSION['basket'])) {
                             <?php $row = $games_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "game");
                             foreach($row as $game): ?>
                                 <li>
+                                    <hr>
                                     <div class="search-item">
                                         <a class="search-display" href="product_page.php?sku=<?=$game->product_sku;?>">
                                             <img class="search-img" src="<?php echo($game->product_image) ?>">
                                             <p class="search-txt"><?php echo($game->product_name) ?></p>
                                         </a>
                                     </div>
-                                    <hr>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
