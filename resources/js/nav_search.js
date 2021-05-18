@@ -1,17 +1,21 @@
-function search_function() {
-    //declare variables
-    var input, filter, ul, li, p, i, txtValue;
-    input = document.getElementById('search_input');
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function resultsFunction() {
+    document.getElementById("search_container").classList.remove("hide");
+}
+
+function hideResultsFunction() {
+    document.getElementById("search_container").classList.add("hide");
+}
+
+function resultFilterFunction() {
+    var input, filter, div, ul, li, a, i;
+    input = document.getElementById("nav_search");
     filter = input.value.toUpperCase();
-    ul = document.getElementById("search_container");
-    li = ul.getElementsByTagName('li');
-    ul.style.display = "grid";
-
-
-    //loop through list items then hide those not matching
+    div = document.getElementById("search_container");
+    li = div.getElementsByTagName("li");
     for (i = 0; i < li.length; i++) {
-        p = li[i].getElementsByTagName("p") [0];
-        txtValue = p.textContent || p.innerText;
+        txtValue = li[i].textContent || li[i].innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             li[i].style.display = "";
         } else {

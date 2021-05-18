@@ -20,7 +20,7 @@ function langFilterFunction() {
     }
 }
 
-function langTableFilterFunction(PHP) {
+function PHPTableFilterFunction() {
     var input, filter, div, ul, li, a, i;
     input = PHP;
     filter = input.value.toUpperCase();

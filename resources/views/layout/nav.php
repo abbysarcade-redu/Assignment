@@ -9,6 +9,7 @@ if(!isset($_SESSION['basket'])) {
     ?>
 <?php include ("../tools/class_controller.php"); ?>
 <?php include ("../tools/db.php"); ?>
+<script src="../js/nav_dropdown.php"></script>
 
 <nav class="header">
     <a href="Homepage.php" class="logo"><img src="Style/images/Untitled design.png" alt="Game On" width="80"></a>
@@ -43,24 +44,27 @@ if(!isset($_SESSION['basket'])) {
         </li>
             <div class="search-input">
                 <div class="search-bar right">
-                    <input type="text" class="search_input" aria-label="search" placeholder="Search.." onkeyup="search_function()" required>
+                    <input type="text" class="search_input" id="nav_search" placeholder="Search.." onclick="resultsFunction()" onkeyup="resultFilterFunction()">
                     <button class="search_button" aria-label="submit search"><i class="fas fa-search"></i></button>
                 </div>
-                    <ul class="gift-card-search-results" id="search_container">
-                        <?php $row = $games_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "game");
-                        foreach($row as $game): ?>
-                            <li>
-                                <div class="search-item">
-                                    <a class="search-display" href="product_page.php?sku=<?=$game->product_sku;?>">
-                                        <img class="search-img" src="<?php echo($game->product_image) ?>">
-                                        <p class="search-txt"><?php echo($game->product_name) ?></p>
-                                    </a>
-                                </div>
-                            </li>
-                        <hr>
-                         <?php endforeach; ?>
-                    </ul>
-                </li>
+                    <div class="nav_search_container">
+                        <ul class="gift-card-search-results hide" id="search_container">
+                            <button class="close" onclick="hideResultsFunction()">X</button>
+                            <?php $row = $games_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "game");
+                            foreach($row as $game): ?>
+                                <li>
+                                    <div class="search-item">
+                                        <a class="search-display" href="product_page.php?sku=<?=$game->product_sku;?>">
+                                            <img class="search-img" src="<?php echo($game->product_image) ?>">
+                                            <p class="search-txt"><?php echo($game->product_name) ?></p>
+                                        </a>
+                                    </div>
+                                    <hr>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                        </li>
+                    </div>
             </div>
         <li class="buffer"></li>
     </ul>

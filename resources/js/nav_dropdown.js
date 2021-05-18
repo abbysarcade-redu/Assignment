@@ -1,4 +1,4 @@
-function(){
+function (){
     // Show hide popover
     (".dropdown").click(function(){
         (this).find(".dropdown-menu").slideToggle("fast");
