@@ -9,7 +9,7 @@ if(!isset($_SESSION['basket'])) {
     ?>
 <?php include ("../tools/class_controller.php"); ?>
 <?php include ("../tools/db.php"); ?>
-<script src="../js/nav_dropdown.php"></script>
+<script src="../js/nav_dropdown.js"></script>
 
 <nav class="header">
     <a href="Homepage.php" class="logo"><img src="Style/images/Untitled design.png" alt="Game On" width="80"></a>
@@ -34,13 +34,26 @@ if(!isset($_SESSION['basket'])) {
             </a>
         </li>
         <li class="img right">
-            <?php if(!isset($_SESSION['user_id'])): ?>
-            <a class="img dropdown-toggle" href="login.php">
-            <?php else: ?>
-            <a class="img dropdown-toggle" href="account.php">
-            <?php endif; ?>
-                <img id="accountImage" src="Style/images/Account.png" alt="Account" width="40" height="40">
-            </a>
+            <div>
+                <a class="img dropdown-toggle" onclick="hideAccountFunction()">
+                    <img id="accountImage" src="Style/images/Account.png" alt="Account" width="40" height="40">
+                </a>
+                <?php if(isset($_SESSION['user_id'])): ?>
+                <div class="account_drop hide" id="account_drop">
+                    <a href="account.php">Account</a>
+                    <hr>
+                    <a href="past_orders.php">Orders</a>
+                    <hr>
+                    <a href="logout.php">Logout</a>
+                </div>
+                <?php else: ?>
+                <div class="account_drop hide" id="account_drop">
+                    <a href="login.php">Login</a>
+                    <hr>
+                    <a href="create20%account.php">Create Account</a>
+                </div>
+                <?php endif; ?>
+            </div>
         </li>
             <div class="search-input">
                 <div class="search-bar right">
