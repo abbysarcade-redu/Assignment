@@ -364,6 +364,7 @@ li {
 
     .content-page {
         padding-top: 0px;
+        height: 100vh;
     }
 
     .prod-container {
@@ -622,7 +623,9 @@ svg {
 .content-page {
     background-color: #222222;
     width: 100%;
-    height: 80%;
+    min-height: 80vh;
+    height: 100%;
+
 }
 
 .prod-container {
@@ -861,6 +864,12 @@ svg {
     padding: 20px;
     border: 100px #222222;
     font-size: 20px;
+}
+
+.form-row {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20px;
 }
 
 .gift-card-search-results {

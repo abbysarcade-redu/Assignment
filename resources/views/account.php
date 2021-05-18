@@ -33,8 +33,10 @@
                 <button type="submit">Save</button>
             </div>
         </form>
-        <a href="past_orders.php" class="yellow-btn">Orders</a>
-        <a href="logout.php" class="button-pink">Logout</a>
+        <div class="form-row">
+            <a href="past_orders.php" class="yellow-btn">Orders</a>
+            <a href="logout.php" class="button-pink">Logout</a>
+        </div>
     </div>
 </div>
 <?php include ("layout/footer.php"); ?>
