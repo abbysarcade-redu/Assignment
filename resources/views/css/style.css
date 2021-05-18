@@ -1089,7 +1089,7 @@ h1 {
     display: block;
     overflow: auto;
     width: 30%;
-
+    margin-bottom: 20px;
 }
 
 .product-container {
