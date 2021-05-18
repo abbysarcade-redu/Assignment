@@ -20,7 +20,7 @@ if(!isset($_SESSION)) {
             <a class="k_nav-link">Users</a>
         </li>
         <li class="nav-item">
-            <a class="k_nav-link">Useful Links</a>
+            <a href="links.php" class="k_nav-link">Useful Links</a>
         </li>
         <li class="nav-item">
             <a class="k_nav-link">Logout</a>
