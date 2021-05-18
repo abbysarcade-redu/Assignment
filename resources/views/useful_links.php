@@ -17,9 +17,10 @@
                             <button onclick="langFunction()" class="dropbtn">Language</button>
                             <div id="langDropdown" class="dropdown-content">
                                 <input type="text" placeholder="Search.." id="langInput" onkeyup="langFilterFunction()">
+                                    <a class="dropdown-text" onclick="langTableFilterFunction()">All</a>
                                 <?php $row = $all_lang_preparedStatement->fetchAll();
                                 foreach($row as $lang):?>
-                                    <a class="dropdown-text" onclick="langTableFilterFunction("<?php echo ($lang['language_name']) ?>")"><?php echo ($lang['language_name']) ?></a>
+                                    <a class="dropdown-text" onclick="<?php echo ($lang['language_name']) ?>TableFilterFunction()"><?php echo ($lang['language_name']) ?></a>
                                 <?php endforeach; ?>
                             </div>
                         </div>
@@ -27,9 +28,10 @@
                             <button onclick="tagFunction()" class="dropbtn">Tag</button>
                             <div id="tagDropdown" class="dropdown-content">
                                 <input type="text" placeholder="Search.." id="tagInput" onkeyup="tagFilterFunction()">
+                                    <a class="dropdown-text" onclick="tagTableFilterFunction()">All</a>
                                 <?php $row = $all_tags_preparedStatement->fetchAll();
                                 foreach ($row as $tag): ?>
-                                    <a class="dropdown-text" href="#about"><?php echo($tag['tag_name']) ?></a>
+                                    <a class="dropdown-text" onclick="<?php echo($tag['tag_slug']) ?>TableFilterFunction()"><?php echo($tag['tag_name']) ?></a>
                                 <?php endforeach; ?>
                             </div>
                         </div>
@@ -52,8 +54,8 @@
                 $lang_preparedStatement->execute([$useful_link->lang]);
                 $db_lang = $lang_preparedStatement->fetch();
                 $tag_preparedStatement->execute([$useful_link->tags]);
-                $db_tag = $tag_preparedStatement->fetch(); ?>
-                <tr class="table filterTr">
+                $db_tag = $tag_preparedStatement->fetch();?>
+                <tr class="table filterTr <?php echo($db_lang['language_name'])?> <?php echo($db_tag['tag_slug'])?>" >
                     <td><?php echo($useful_link->website) ?></td>
                     <td><?php echo($useful_link->webpage) ?></td>
                     <td><?php echo($useful_link->author) ?></td>

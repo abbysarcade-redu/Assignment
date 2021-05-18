@@ -173,7 +173,7 @@ $lang = "SELECT language_name FROM ASSIGNMENT.lang WHERE language_id = ?";
 
 $lang_preparedStatement = $pdo->prepare($lang);
 
-$tag = "SELECT tag_name FROM ASSIGNMENT.tags WHERE tag_id = ?";
+$tag = "SELECT tag_name, tag_slug FROM ASSIGNMENT.tags WHERE tag_id = ?";
 
 // pass query
 
@@ -188,7 +188,7 @@ $all_lang_preparedStatement = $pdo->prepare($all_lang);
 $all_lang_preparedStatement->execute();
 
 
-$all_tags = "SELECT tag_name FROM ASSIGNMENT.tags";
+$all_tags = "SELECT tag_name, tag_slug FROM ASSIGNMENT.tags";
 
 // pass query
 
