@@ -13,9 +13,11 @@ class game {
     public $xbox;
 }
 
-class user {
+class users {
+    public $user_id;
     public $name;
     public $email;
+    public $access;
 }
 
 class game_of_month {

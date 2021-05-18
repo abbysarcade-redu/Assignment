@@ -214,3 +214,11 @@ $login_credentials_preparedStatement = $pdo->prepare($login_credentials);
 $past_order_breakdown = "SELECT product_sku, quantity FROM ASSIGNMENT.line_item WHERE sale_id = ?";
 
 $past_order_breakdown_preparedStatement = $pdo->prepare($past_order_breakdown);
+
+$users = "SELECT user_id, user_name, user_email, access_type FROM ASSIGNMENT.users";
+
+// pass query
+
+$users_preparedStatement = $pdo->prepare($users);
+
+$users_preparedStatement->execute();

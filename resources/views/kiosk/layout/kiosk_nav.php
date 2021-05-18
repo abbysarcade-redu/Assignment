@@ -17,7 +17,7 @@ if(!isset($_SESSION)) {
             <a class="k_nav-link">Orders</a>
         </li>
         <li class="nav-item">
-            <a class="k_nav-link">Users</a>
+            <a href="users.php" class="k_nav-link">Users</a>
         </li>
         <li class="nav-item">
             <a href="links.php" class="k_nav-link">Useful Links</a>
