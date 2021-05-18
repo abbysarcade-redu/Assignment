@@ -9,13 +9,13 @@ function langFilterFunction() {
     input = document.getElementById("langInput");
     filter = input.value.toUpperCase();
     div = document.getElementById("langDropdown");
-    tr = div.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-        txtValue = tr[i].textContent || a[i].innerText;
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        txtValue = a[i].textContent || a[i].innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
+            a[i].style.display = "";
         } else {
-            tr[i].style.display = "none";
+            a[i].style.display = "none";
         }
     }
 }
