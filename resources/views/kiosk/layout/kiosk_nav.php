@@ -11,7 +11,7 @@ if(!isset($_SESSION)) {
     <ul class="menu">
         <a href="dashboard.php" class="logo"><img src="../Style/images/Untitled design.png" alt="Game On" width="80"></a>
         <li class="nav-item">
-            <a class="k_nav-link">Brands</a>
+            <a href="products.php" class="k_nav-link">Products</a>
         </li>
         <li class="nav-item">
             <a href="order.php" class="k_nav-link">Orders</a>
@@ -23,7 +23,7 @@ if(!isset($_SESSION)) {
             <a href="links.php" class="k_nav-link">Useful Links</a>
         </li>
         <li class="nav-item">
-            <a class="k_nav-link">Logout</a>
+            <a href="../logout.php" class="k_nav-link">Logout</a>
         </li>
     </ul>
 

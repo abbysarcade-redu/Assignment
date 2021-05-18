@@ -64,4 +64,15 @@ class order {
     public $order_date;
     public $order_value;
 }
+
+class kiosk_products {
+    public $product_sku;
+    public $product_name;
+    public $product_cost;
+    public $available_stock;
+    public $playstation;
+    public $xbox;
+    public $nintendo;
+    public $pc;
+}
 ?>

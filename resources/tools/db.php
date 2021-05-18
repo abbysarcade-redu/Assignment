@@ -235,3 +235,8 @@ $sale_user = "SELECT user_name, user_email FROM ASSIGNMENT.users WHERE user_id =
 
 $sale_user_preparedStatement = $pdo->prepare($sale_user);
 
+$kiosk_products = "SELECT product_sku, product_name, product_cost, available_stock, playstation, xbox, nintendo, pc FROM ASSIGNMENT.product";
+
+$kiosk_products_preparedStatement = $pdo->prepare($kiosk_products);
+
+$kiosk_products_preparedStatement->execute();
