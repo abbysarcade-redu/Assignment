@@ -10,7 +10,7 @@
     <div class="hero-image">
         <img src="Style/images/Create%20an%20account.png" class="hero">
     </div>
-    <form action="account_created.php" name="account_form" method="post">
+    <form action="account_validator.php" name="account_form" method="post">
         <div class="central-buffer">
             <div class="form-row central-form">
                 <div class="form-group">

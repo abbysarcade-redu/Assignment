@@ -201,3 +201,6 @@ $past_orders = "SELECT sale_number, order_date, order_value FROM ASSIGNMENT.sale
 $past_orders_preparedStatement = $pdo->prepare($past_orders);
 
 
+$email_check = "SELECT count(*) FROM ASSIGNMENT.users WHERE user_email = ?";
+
+$email_check_preparedStatement = $pdo->prepare($email_check);
