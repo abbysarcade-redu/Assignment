@@ -9,12 +9,21 @@
 else: ?>
 
     <?php
+
+    ?>
+    <?php include ("layout/header.php"); ?>
+    <header>
+        <title>Checkout Successful</title>
+    </header>
+    <body>
+    <?php include ("layout/nav.php");
+
     $vals = array_count_values($_SESSION['basket']);
     $max = count($vals);
     if($max != 0) {
         foreach ($vals as $sku => $amount) {
-            $games_preparedStatement->execute([$sku]);
-            $game = $games_preparedStatement->fetchObject('game');
+            $products_preparedStatement->execute([$sku]);
+            $game = $products_preparedStatement->fetchObject('game');
             $subtotal = ($game->product_cost) * $amount;
             $line_items_preparedStatement->execute(array(
                 $_SESSION['order_number'],
@@ -73,16 +82,10 @@ else: ?>
 
     $delivery_ref = $pdo->lastInsertId();
 
-    $sale_detail_update_preparedStatement->execute([$payment_ref, $delivery_ref, $_SESSION['order_number']]);
+    $sale_detail_update_preparedStatement->execute([$payment_ref, $delivery_ref, $_SESSION['order_number']]);  ?>
 
 
-    ?>
-    <?php include ("layout/header.php"); ?>
-    <header>
-        <title>Checkout Successful</title>
-    </header>
-    <body>
-    <?php include ("layout/nav.php"); ?>
+
 
 
     <div class="nav-buffer"></div>
@@ -111,8 +114,8 @@ else: ?>
         $max=count($vals);
         if ($max != 0):
             foreach ($vals as $sku => $amount):
-                $games_preparedStatement->execute([$sku]);
-                $game = $games_preparedStatement->fetchObject( 'game');
+                $game_preparedStatement->execute([$sku]);
+                $game = $game_preparedStatement->fetchObject( 'game');
                 $subtotal = ($game->product_cost)*$amount; ?>
                     <div class="basket-storage">
                         <div class="basket-item-i">
@@ -151,9 +154,9 @@ else: ?>
 
     <?php include ("layout/header.php"); ?>
         <body>
-    <?php
+        <?php
         $_SESSION['basket'] = array();
         unset($_SESSION['total']);
         unset($_SESSION['order_number']);
-    ?>
+        ?>
 <?php endif; ?>

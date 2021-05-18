@@ -35,13 +35,11 @@ $featured_games_preparedStatement->execute([1]);
 
 
 // Get games
-$games = "SELECT product_name, product_image, product_cost, product_description, slug, product_sku FROM ASSIGNMENT.product where available_stock != ?";
+$games = "SELECT product_name, product_image, product_cost, product_description, slug FROM ASSIGNMENT.product where product_sku != ?";
 
 //pass query
 $games_preparedStatement = $pdo->prepare($games);
 
-//execute
-$games_preparedStatement->execute([0]);
 
 $products = "SELECT product_name, product_image, product_cost, product_description, slug, product_sku, playstation, nintendo, pc, xbox FROM ASSIGNMENT.product where available_stock != ?";
 
