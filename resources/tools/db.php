@@ -240,3 +240,27 @@ $kiosk_products = "SELECT product_sku, product_name, product_cost, available_sto
 $kiosk_products_preparedStatement = $pdo->prepare($kiosk_products);
 
 $kiosk_products_preparedStatement->execute();
+
+$products_count = "SELECT count(*) FROM ASSIGNMENT.product";
+
+$products_count_preparedStatement = $pdo->prepare($products_count);
+
+$products_count_preparedStatement->execute();
+
+$orders_count = "SELECT count(*) FROM ASSIGNMENT.sale";
+
+$orders_count_preparedStatement = $pdo->prepare($orders_count);
+
+$orders_count_preparedStatement->execute();
+
+$users_count = "SELECT count(*) FROM ASSIGNMENT.users";
+
+$users_count_preparedStatement = $pdo->prepare($users_count);
+
+$users_count_preparedStatement->execute();
+
+$links_count = "SELECT count(*) FROM ASSIGNMENT.useful_links";
+
+$links_count_preparedStatement = $pdo->prepare($links_count);
+
+$links_count_preparedStatement->execute();

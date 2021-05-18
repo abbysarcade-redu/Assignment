@@ -5,6 +5,8 @@ if(!isset($_SESSION)) {
 } ?>
 <head>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 
 <div class="kiosk_nav">
