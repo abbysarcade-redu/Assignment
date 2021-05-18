@@ -2,7 +2,7 @@
 <?php include ("layout/header.php"); ?>
 <header>
     <title>Useful Links</title>
-    <script src="../js/link_search.js"></script>
+    <script src="../js/useful_links.js"></script>
 </header>
 <body>
 <?php include ("layout/nav.php"); ?>
@@ -19,17 +19,17 @@
                                 <input type="text" placeholder="Search.." id="langInput" onkeyup="langFilterFunction()">
                                 <?php $row = $all_lang_preparedStatement->fetchAll();
                                 foreach($row as $lang):?>
-                                <a onclick="filterSelection('<?php echo ($lang['language_name']) ?>"><?php echo ($lang['language_name']) ?></a>
+                                    <a class="dropdown-text" onclick="langTableFilterFunction("<?php echo ($lang['language_name']) ?>")"><?php echo ($lang['language_name']) ?></a>
                                 <?php endforeach; ?>
                             </div>
                         </div>
                         <div class="dropdown">
                             <button onclick="tagFunction()" class="dropbtn">Tag</button>
-                            <div id="myDropdown" class="dropdown-content">
+                            <div id="tagDropdown" class="dropdown-content">
                                 <input type="text" placeholder="Search.." id="tagInput" onkeyup="tagFilterFunction()">
                                 <?php $row = $all_tags_preparedStatement->fetchAll();
                                 foreach ($row as $tag): ?>
-                                    <a href="#about"><?php echo($tag['tag_name']) ?></a>
+                                    <a class="dropdown-text" href="#about"><?php echo($tag['tag_name']) ?></a>
                                 <?php endforeach; ?>
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                 $db_lang = $lang_preparedStatement->fetch();
                 $tag_preparedStatement->execute([$useful_link->tags]);
                 $db_tag = $tag_preparedStatement->fetch(); ?>
-                <tr class="table filterTr" lang="Javascript">
+                <tr class="table filterTr">
                     <td><?php echo($useful_link->website) ?></td>
                     <td><?php echo($useful_link->webpage) ?></td>
                     <td><?php echo($useful_link->author) ?></td>
