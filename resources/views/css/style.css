@@ -628,6 +628,17 @@ svg {
 
 }
 
+.order_container {
+    margin-left: 35px;
+    display: inline-flex;
+    width: 80%;
+}
+
+.order_line {
+    margin-right: 10%;
+    width: 100%;
+}
+
 .prod-container {
     background: #ededed;
     align-items: stretch;
@@ -1805,7 +1816,7 @@ hr {
     border-radius: 25px;
     font-size: 20px;
     border: none;
-    width: 160px;
+    width: 100%;
     color: white;
     text-decoration: none;
     display: inline-block;

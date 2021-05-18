@@ -14,27 +14,29 @@
     <div class="hero-image">
         <img src="Style/images/your%20orders.png" class="hero">
     </div>
+    <div class="buffer-space"></div>
     <div>
         <?php $past_orders_preparedStatement->execute([$_SESSION['user_id']]);
         $row = $past_orders_preparedStatement->fetchAll(PDO::FETCH_CLASS, 'orders');
         foreach ($row as $users): ?>
-        <div>
-            <div>
-                <a class="order_title">Order Number:</a>
-                <a class="order_details"><?php echo($users->sale_number) ?></a>
+        <div class="order_container">
+            <div class="order_line">
+                <p class="order_title">Order Number:</p>
+                <p class="order_details"><?php echo($users->sale_number) ?></p>
             </div>
-            <div>
-                <a class="order_title">Order Date:</a>
-                <a class="order_details"><?php echo($users->order_date) ?></a>
+            <div class="order_line">
+                <p class="order_title">Order Date:</p>
+                <p class="order_details"><?php echo($users->order_date) ?></p>
             </div>
-            <div>
-                <a class="order_title">Order Value:</a>
-                <a class="order_details"><?php echo($users->order_value) ?></a>
+            <div class="order_line">
+                <p class="order_title">Order Value:</p>
+                <p class="order_details"><?php echo($users->order_value) ?></p>
             </div>
-            <hr>
-
+            <a class="yellow-btn">View Order</a>
         </div>
+        <hr>
         <?php endforeach; ?>
+        <div class="buffer-space"></div>
     </div>
 </div>
 
