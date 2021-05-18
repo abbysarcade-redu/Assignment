@@ -47,7 +47,7 @@
                             <a>PC</a>
                         <?php endif; ?>
                     <td>
-                        <a>
+                        <a href="v_products.php?sku=<?php echo($kiosk_products->product_sku) ?>">
                             <img class="link_img" src="../Style/images/view.png">
                         </a>
                         <a>

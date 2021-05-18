@@ -68,11 +68,16 @@ class order {
 class kiosk_products {
     public $product_sku;
     public $product_name;
+    public $product_description;
     public $product_cost;
+    public $featured;
+    public $game_of_month;
     public $available_stock;
+    public $product_image;
     public $playstation;
     public $xbox;
     public $nintendo;
     public $pc;
 }
+
 ?>

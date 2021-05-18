@@ -1941,6 +1941,41 @@ table.table-striped.table-hover tbody tr:hover {
     font-size: 35px;
 }
 
+.img_kiosk {
+    height: 150px;
+    border-radius: 10px;
+    border: white solid 4px;
+    margin-top: 20px;
+}
+
+.cont_icon {
+    height: 50px;
+    float: right;
+}
+
+.kiosk_content {
+    color: white;
+    font-family: "Space Mono";
+    margin-left: 30px;
+    font-size: 10px;
+    margin-right: 30px;
+}
+
+.kiosk_title {
+    color: #00f7ff;
+    margin-left: 30px;
+}
+
+.kiosk_image_container {
+    width: 100%;
+    text-align: center;
+}
+
+.kiosk_container {
+    margin-left: 5%;
+    width: 90%;
+}
+
 .dash_bubble {
     background-color: #00f7ff;
     border-radius: 25px;

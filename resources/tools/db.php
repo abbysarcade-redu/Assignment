@@ -35,7 +35,7 @@ $featured_games_preparedStatement->execute([1]);
 
 
 // Get games
-$games = "SELECT product_name, product_image, product_cost, product_description, slug, product_sku FROM ASSIGNMENT.product where available_stock != ?";
+$games = "SELECT product_name, product_image, product_cost, product_description, product_sku FROM ASSIGNMENT.product where available_stock != ?";
 
 //pass query
 $games_preparedStatement = $pdo->prepare($games);
@@ -43,7 +43,7 @@ $games_preparedStatement = $pdo->prepare($games);
 $games_preparedStatement->execute([0]);
 
 
-$products = "SELECT product_name, product_image, product_cost, product_description, slug, product_sku, playstation, nintendo, pc, xbox FROM ASSIGNMENT.product where available_stock != ?";
+$products = "SELECT product_name, product_image, product_cost, product_description, product_sku, playstation, nintendo, pc, xbox FROM ASSIGNMENT.product where available_stock != ?";
 
 //pass query
 $products_preparedStatement = $pdo->prepare($products);
@@ -235,7 +235,7 @@ $sale_user = "SELECT user_name, user_email FROM ASSIGNMENT.users WHERE user_id =
 
 $sale_user_preparedStatement = $pdo->prepare($sale_user);
 
-$kiosk_products = "SELECT product_sku, product_name, product_cost, available_stock, playstation, xbox, nintendo, pc FROM ASSIGNMENT.product";
+$kiosk_products = "SELECT product_sku, product_name, product_description, product_cost, featured, game_of_month,  available_stock, playstation, xbox, nintendo, pc FROM ASSIGNMENT.product";
 
 $kiosk_products_preparedStatement = $pdo->prepare($kiosk_products);
 
@@ -264,3 +264,8 @@ $links_count = "SELECT count(*) FROM ASSIGNMENT.useful_links";
 $links_count_preparedStatement = $pdo->prepare($links_count);
 
 $links_count_preparedStatement->execute();
+
+$kiosk_product = "SELECT product_name, product_description, product_cost, featured, game_of_month,  available_stock, product_image, playstation, xbox, nintendo, pc FROM ASSIGNMENT.product WHERE product_sku = ?";
+
+$kiosk_product_preparedStatement = $pdo->prepare($kiosk_product);
+

@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 
 <?php if((count($_SESSION['basket'])) == 0):
-    header('location: products.php');
+    header('location: v_products.php');
 else: ?>
 
     <?php
