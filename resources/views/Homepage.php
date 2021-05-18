@@ -24,7 +24,6 @@
     <?php if($g_o_m->available_stock != 0): ?>
         <div class="game-of-month">
             <h1> Game of the month</h1>
-            <?php print_r($_SESSION['user_id']); ?>
             <div>
                 <a href="product_page.php?sku=<?=$g_o_m->product_sku;?>">
                     <img src="<?php echo ($g_o_m->product_image); ?>" class="game-of-month-img">

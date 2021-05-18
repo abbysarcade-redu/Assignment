@@ -21,7 +21,7 @@ $log_pass = hash_hmac('sha256', $_POST["password"], 'GameOn');
 
 if ($auth_pass['user_password'] == $log_pass) {
     $_SESSION['user_id'] = $auth_pass['user_id'];
-    print_r($_SESSION['user_id']);
+    $_SESSION['access_type'] = $auth_pass['access_type'];
     header('Location: Homepage.php');
 } else {
     include("login.php");

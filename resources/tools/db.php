@@ -207,7 +207,7 @@ $email_check = "SELECT count(*) FROM ASSIGNMENT.users WHERE user_email = ?";
 
 $email_check_preparedStatement = $pdo->prepare($email_check);
 
-$login_credentials = "SELECT user_password, user_id FROM ASSIGNMENT.users WHERE user_email = ?";
+$login_credentials = "SELECT user_password, user_id, access_type FROM ASSIGNMENT.users WHERE user_email = ?";
 
 $login_credentials_preparedStatement = $pdo->prepare($login_credentials);
 
