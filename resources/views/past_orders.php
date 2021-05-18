@@ -30,7 +30,7 @@
             </div>
             <div class="order_line">
                 <p class="order_title">Order Value:</p>
-                <p class="order_details"><?php echo($users->order_value) ?></p>
+                <p class="order_details">£<?php echo($users->order_value) ?></p>
             </div>
             <a href="order_breakdown.php?sale_number=<?php echo($users->sale_number)?>" class="yellow-btn">View Order</a>
         </div>

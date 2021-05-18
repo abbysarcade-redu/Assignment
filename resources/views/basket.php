@@ -27,14 +27,16 @@ print_r($order_number);?>
         <div class="content-column-left">
             <h1 class="is-white">Your Shopping Basket</h1>
         </div>
-        <div class="content-column-right">
-            <a class="right-align yellow-btn" href="checkout.php">Checkout Securely</a>
-        </div>
+        <?php $vals = array_count_values($_SESSION['basket']);
+        $max=count($vals);
+        if ($max != 0): ?>
+            <div class="content-column-right">
+                <a class="right-align" href="checkout.php">Checkout Securely</a>
+            </div>
+        <?php endif; ?>
     </div>
     <hr>
     <?php
-    $vals = array_count_values($_SESSION['basket']);
-    $max=count($vals);
     if ($max != 0):
         foreach ($vals as $sku => $amount):
             $basket_product_preparedStatement->execute([$sku]);
@@ -77,7 +79,7 @@ print_r($order_number);?>
         </div>
         <div class="basket-sub-item-r">
             <?php $_SESSION['total'] = array_sum($total); ?>
-            <p class="basket-txt-r"><?php echo ($_SESSION['total']); ?></p>
+            <p class="basket-txt-r">£<?php echo ($_SESSION['total']); ?></p>
         </div>
     </div>
     <hr>
@@ -85,9 +87,13 @@ print_r($order_number);?>
         <div class="b-but">
             <a class="button-pink-b" href="products.php">Continue Shopping</a>
         </div>
-        <div class="content-column-right">
-            <a class="right-align" href="checkout.php">Checkout Securely</a>
-        </div>
+        <?php $vals = array_count_values($_SESSION['basket']);
+        $max=count($vals);
+        if ($max != 0): ?>
+            <div class="content-column-right">
+                <a class="right-align" href="checkout.php">Checkout Securely</a>
+            </div>
+        <?php endif; ?>
     </div>
 </div>
     <?php include ("layout/footer.php"); ?>
