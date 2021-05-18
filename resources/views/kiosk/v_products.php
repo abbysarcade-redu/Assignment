@@ -21,6 +21,9 @@ $product = $kiosk_product_preparedStatement->fetch(); ?>
             <img class="img_kiosk" src="../<?php echo ($product['product_image']) ?>">
         </div>
         <hr>
+        <h1 class="kiosk_title">Product SKU</h1>
+        <p class="kiosk_content"><?php echo($_GET['sku']) ?></p>
+        <hr>
         <h1 class="kiosk_title">Game Name</h1>
         <p class="kiosk_content"><?php echo($product['product_name']) ?></p>
         <hr>

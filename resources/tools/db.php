@@ -269,3 +269,6 @@ $kiosk_product = "SELECT product_name, product_description, product_cost, featur
 
 $kiosk_product_preparedStatement = $pdo->prepare($kiosk_product);
 
+$kiosk_order = "SELECT sale_number, user_id, order_date, payment_ref, order_value, order_status, delivery_ref FROM ASSIGNMENT.sale WHERE sale_id = ?";
+
+$kiosk_order_preparedStatement = $pdo->prepare($kiosk_order);

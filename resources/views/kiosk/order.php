@@ -40,7 +40,7 @@
                     <td><?php echo($order->order_date) ?></td>
                     <td><?php echo($order->order_value) ?></td>
                     <td>
-                        <a>
+                        <a href="v_orders.php?id=<?php echo($order->sale_id) ?>">
                             <img class="link_img" src="../Style/images/view.png">
                         </a>
                         <a>
