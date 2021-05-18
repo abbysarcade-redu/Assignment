@@ -55,13 +55,4 @@
             </tbody>
         </table>
     </div>
-<script src="../js/ProductSearch.js"    ></script>
-<div class="buffer-space">
 
-</div>
-
-</div>
-    <?php include ("layout/footer.php"); ?>
-
-</body>
-</html>

@@ -222,3 +222,16 @@ $users = "SELECT user_id, user_name, user_email, access_type FROM ASSIGNMENT.use
 $users_preparedStatement = $pdo->prepare($users);
 
 $users_preparedStatement->execute();
+
+$orders = "SELECT sale_id, sale_number, user_id, order_date, order_value FROM ASSIGNMENT.sale";
+
+// pass query
+
+$orders_preparedStatement = $pdo->prepare($orders);
+
+$orders_preparedStatement->execute();
+
+$sale_user = "SELECT user_name, user_email FROM ASSIGNMENT.users WHERE user_id = ?";
+
+$sale_user_preparedStatement = $pdo->prepare($sale_user);
+
