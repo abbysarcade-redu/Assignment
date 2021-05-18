@@ -10,17 +10,17 @@
     <div class="hero-image">
         <img src="Style/images/login-banner.png" class="hero">
     </div>
-        <form>
+        <form action="login_validator.php" name="login_form" method="post">
             <div class="central-buffer">
                 <div class="central-login-form">
                     <div class="col-md-6">
-                        <input class="form-style" placeholder="Email Address*">
+                        <input class="form-style" placeholder="Email Address*" name="email" type="email" required>
                     </div>
                     <div class="col-md-6">
-                        <input class="form-style" placeholder="Password*">
+                        <input class="form-style" placeholder="Password*" name="password" type="password" required>
                     </div>
                     <div class="col-md-6">
-                        <button class="button-pink">
+                        <button type="submit" class="button-pink">
                             Login
                         </button>
                     </div>

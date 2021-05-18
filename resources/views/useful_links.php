@@ -13,7 +13,7 @@
     <div class="table-wrapper">
             <div class="row">
                 <div class="search_container">
-                        <div class="dropdown">
+                        <div class="dropdown-cont">
                             <button onclick="langFunction()" class="dropbtn">Language</button>
                             <div id="langDropdown" class="dropdown-content">
                                 <input type="text" placeholder="Search.." id="langInput" onkeyup="langFilterFunction()">

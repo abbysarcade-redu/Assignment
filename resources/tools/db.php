@@ -35,10 +35,12 @@ $featured_games_preparedStatement->execute([1]);
 
 
 // Get games
-$games = "SELECT product_name, product_image, product_cost, product_description, slug FROM ASSIGNMENT.product where product_sku != ?";
+$games = "SELECT product_name, product_image, product_cost, product_description, slug, product_sku FROM ASSIGNMENT.product where available_stock != ?";
 
 //pass query
 $games_preparedStatement = $pdo->prepare($games);
+
+$games_preparedStatement->execute([0]);
 
 
 $products = "SELECT product_name, product_image, product_cost, product_description, slug, product_sku, playstation, nintendo, pc, xbox FROM ASSIGNMENT.product where available_stock != ?";
@@ -204,3 +206,7 @@ $past_orders_preparedStatement = $pdo->prepare($past_orders);
 $email_check = "SELECT count(*) FROM ASSIGNMENT.users WHERE user_email = ?";
 
 $email_check_preparedStatement = $pdo->prepare($email_check);
+
+$login_credentials = "SELECT user_password, user_id FROM ASSIGNMENT.users WHERE user_email = ?";
+
+$login_credentials_preparedStatement = $pdo->prepare($login_credentials);
