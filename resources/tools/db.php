@@ -283,3 +283,9 @@ $kiosk_link_update = "UPDATE ASSIGNMENT.useful_links SET website = ?, webpage = 
 
 //pass query
 $kiosk_link_update_preparedStatement = $pdo->prepare($kiosk_link_update);
+
+//account update
+$kiosk_order_update = "UPDATE ASSIGNMENT.sale SET order_date = ?, order_value = ?, order_status = ? WHERE sale_id = ?";
+
+//pass query
+$kiosk_order_update_preparedStatement = $pdo->prepare($kiosk_order_update);
