@@ -21,7 +21,7 @@
         <form name="account_update" action="account_change.php" method="post">
             <div class="form-row">
                 <?php $user_details_preparedStatement->execute([$_SESSION['user_id']]);
-                $user = $user_details_preparedStatement->fetchObject('user'); ?>
+                $user = $user_details_preparedStatement->fetchObject('users');?>
                 <div>
                     <label class="left-white">Name</label>
                     <input class="form-style" placeholder="Full Name*" name="customer_name" value="<?php echo $user->user_name ?>">

@@ -4,7 +4,6 @@ class game {
     public $product_image;
     public $product_cost;
     public $product_description;
-    public $slug;
     public $product_sku;
     public $available_stock;
     public $playstation;

@@ -10,7 +10,9 @@ if(!isset($_SESSION['basket'])) {
     ?>
 <?php include ("../tools/class_controller.php"); ?>
 <?php include ("../tools/db.php"); ?>
+<?php include ("layout/header.php"); ?>
 <script src="../js/nav_dropdown.js"></script>
+<script src="../js/nav_search.js"></script>
 
 <nav class="header">
     <a href="Homepage.php" class="logo"><img src="Style/images/Untitled design.png" alt="Game On" width="80"></a>
@@ -46,6 +48,10 @@ if(!isset($_SESSION['basket'])) {
                     <a href="past_orders.php">Orders</a>
                     <hr>
                     <a href="logout.php">Logout</a>
+                    <?php if($_SESSION['access_type'] == 2): ?>
+                        <hr>
+                        <a href="kiosk/dashboard.php">Dashboard</a>
+                    <?php endif; ?>
                 </div>
                 <?php else: ?>
                 <div class="account_drop hide" id="account_drop">

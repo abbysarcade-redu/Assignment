@@ -17,7 +17,7 @@
     <div class="buffer-space"></div>
     <div>
         <?php $past_orders_preparedStatement->execute([$_SESSION['user_id']]);
-        $row = $past_orders_preparedStatement->fetchAll(PDO::FETCH_CLASS, 'orders');
+        $row = $past_orders_preparedStatement->fetchAll(PDO::FETCH_CLASS, 'order');
         foreach ($row as $users): ?>
         <div class="order_container">
             <div class="order_line">

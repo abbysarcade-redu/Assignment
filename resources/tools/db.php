@@ -75,7 +75,7 @@ $xbox_preparedStatement->execute([1]);
 
 
 // Get game details
-$game = "SELECT product_name, product_image, product_description, slug, product_cost, playstation, xbox, nintendo, pc, available_stock FROM assignment.product WHERE product_sku = ?";
+$game = "SELECT product_name, product_image, product_description, product_cost, playstation, xbox, nintendo, pc, available_stock FROM assignment.product WHERE product_sku = ?";
 
 //pass query
 $game_preparedStatement = $pdo->prepare($game);
