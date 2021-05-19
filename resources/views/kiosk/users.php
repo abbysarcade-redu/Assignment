@@ -40,7 +40,7 @@
                         <a href="e_users.php?id=<?php echo($users->user_id) ?>">
                             <img class="link_img" src="../Style/images/edit.png">
                         </a>
-                        <a>
+                        <a href="user_delete.php?id=<?php echo($users->user_id) ?>">
                             <img class="link_img" src="../Style/images/delete.png">
                         </a>
                     </td>

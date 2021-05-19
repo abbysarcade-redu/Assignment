@@ -16,7 +16,9 @@ $user = $sale_user_preparedStatement->fetch();?>
             <a href="v_users.php?id=<?php echo($_GET['id']) ?>">
                 <img class="cont_icon" src="../Style/images/cont_view.png">
             </a>
-            <img class="cont_icon" src="../Style/images/cont_delete.png">
+            <a href="user_delete.php?id=<?php echo($_GET['id']) ?>">
+                <img class="cont_icon" src="../Style/images/cont_delete.png">
+            </a>
         </div>
         <form action="user_edit.php?id=<?php echo($_GET['id']) ?>" method="post">
             <hr>

@@ -338,3 +338,8 @@ $delete_link = "DELETE FROM ASSIGNMENT.useful_links WHERE link_id = ?";
 
 //pass query
 $delete_link_preparedStatement = $pdo->prepare($delete_link);
+
+$delete_user = "DELETE FROM ASSIGNMENT.users WHERE user_id = ?";
+
+//pass query
+$delete_user_preparedStatement = $pdo->prepare($delete_user);

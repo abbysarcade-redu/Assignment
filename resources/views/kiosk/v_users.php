@@ -13,8 +13,12 @@ $user = $sale_user_preparedStatement->fetch();?>
     <div class="kiosk_container">
         <div class="buffer-space"></div>
         <div>
-            <img class="cont_icon" src="../Style/images/cont_edit.png">
-            <img class="cont_icon" src="../Style/images/cont_delete.png">
+            <a href="e_users.php?id=<?php print_r($_GET['id']) ?>">
+                <img class="cont_icon" src="../Style/images/cont_edit.png">
+            </a>
+            <a href="user_delete.php?id=<?php print_r($_GET['id']) ?>">
+                <img class="cont_icon" src="../Style/images/cont_delete.png">
+            </a>
         </div>
         <hr>
         <h1 class="kiosk_title">User ID</h1>
