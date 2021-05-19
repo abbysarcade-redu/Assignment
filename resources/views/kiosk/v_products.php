@@ -13,7 +13,9 @@ $product = $kiosk_product_preparedStatement->fetch(); ?>
     <div class="kiosk_container">
         <div class="buffer-space"></div>
         <div>
-            <img class="cont_icon" src="../Style/images/cont_edit.png">
+            <a href="e_products.php?sku=<?php echo($_GET['sku']) ?>">
+                <img class="cont_icon" src="../Style/images/cont_edit.png">
+            </a>
             <img class="cont_icon" src="../Style/images/cont_delete.png">
         </div>
         <hr>
@@ -30,8 +32,8 @@ $product = $kiosk_product_preparedStatement->fetch(); ?>
         <h1 class="kiosk_title">Description</h1>
         <p class="kiosk_content"><?php echo($product['product_description']) ?></p>
         <hr>
-        <h1 class="kiosk_title">Product Name</h1>
-        <p class="kiosk_content"><?php echo($product['product_name']) ?></p>
+        <h1 class="kiosk_title">Cost</h1>
+        <p class="kiosk_content">£<?php echo($product['product_cost']) ?></p>
         <?php if($product['game_of_month'] == 1): ?>
             <hr>
             <h1 class="kiosk_title">Game of the Month</h1>

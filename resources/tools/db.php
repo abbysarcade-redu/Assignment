@@ -289,3 +289,9 @@ $kiosk_order_update = "UPDATE ASSIGNMENT.sale SET order_date = ?, order_value = 
 
 //pass query
 $kiosk_order_update_preparedStatement = $pdo->prepare($kiosk_order_update);
+
+//account update
+$kiosk_product_update = "UPDATE ASSIGNMENT.product SET product_name = ?, product_description = ?, product_cost = ?, game_of_month = ?, available_stock = ?, playstation = ?, xbox  = ?, nintendo = ?, pc = ? WHERE product_sku = ?";
+
+//pass query
+$kiosk_product_update_preparedStatement = $pdo->prepare($kiosk_product_update);
