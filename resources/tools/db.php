@@ -328,3 +328,8 @@ VALUES(?,?,?,?,?,?,?,?,?)";
 
 //pass query
 $kiosk_product_add_preparedStatement = $pdo->prepare($kiosk_product_add);
+
+$delete_order = "DELETE FROM ASSIGNMENT.sale WHERE sale_id = ?";
+
+//pass query
+$delete_order_preparedStatement = $pdo->prepare($delete_order);

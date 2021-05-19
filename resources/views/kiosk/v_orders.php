@@ -16,7 +16,9 @@ $orders = $kiosk_order_preparedStatement->fetch();?>
             <a href="e-order.php?id=<?php echo($_GET['id']) ?>">
                 <img class="cont_icon" src="../Style/images/cont_edit.png">
             </a>
-            <img class="cont_icon" src="../Style/images/cont_delete.png">
+            <a href="order_delete.php?id=<?php echo($_GET['id']) ?>">
+                <img class="cont_icon" src="../Style/images/cont_delete.png">
+            </a>
         </div>
         <hr>
         <h1 class="kiosk_title">Sale ID</h1>

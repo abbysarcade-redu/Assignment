@@ -46,7 +46,7 @@
                         <a href="e-order.php?id=<?php echo($order->sale_id) ?>">
                             <img class="link_img" src="../Style/images/edit.png">
                         </a>
-                        <a>
+                        <a href="order_delete.php?id=<?php echo($order->sale_id) ?>">
                             <img class="link_img" src="../Style/images/delete.png">
                         </a>
                     </td>
