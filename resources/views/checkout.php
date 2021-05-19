@@ -33,25 +33,24 @@
                     <div class="form-group">
                         <?php if(isset($_SESSION['user_id'])):
                         $user_details_preparedStatement->execute([$_SESSION['user_id']]);
-                        $user = $user_details_preparedStatement->fetchObject('user'); ?>
+                        $user = $user_details_preparedStatement->fetchObject('users'); ?>
                         <input class="form-style" placeholder="Full Name*" name="name" value="<?php echo $user->user_name ?>" required>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group">
                         <input class="form-style" placeholder="Email Address*" type="email" name="email" value="<?php echo $user->user_email ?>" required>
                     </div>
-                </div>
-                <div class="form-group">
                     <?php else: ?>
-                    <input class="form-style" placeholder="Full Name*" name="name" required>
-                </div>
-                <div class="form-group col-md-6">
-                    <input class="form-style" placeholder="Email Address*" type="email" required>
-                </div>
-            </div>
-            <div class="form-group">
+                        <input class="form-style" placeholder="Full Name*" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-style" placeholder="Email Address*" type="email" required>
+                    </div>
                 <?php endif; ?>
-                    <input class="form-style" placeholder="Contact Number" type="tel" name="number">
-                </div>
+                    <div class="form-group">
+                        <input class="form-style" placeholder="Contact Number" type="tel" name="number">
+                    </div>
+
+            </div>
             </div>
             <div class="checkout-container-right">
                 <label class="left-white">Card Details</label>
@@ -62,10 +61,12 @@
                     <div class="form-group col-md-6">
                         <input class="form-style" placeholder="Name on Card*" name="name_on_card" required>
                     </div>
-                </div>
-                <div class="form-group">
+                    <div class="form-group">
                     <input class="form-style" placeholder="CSV*" name="csv" maxlength="3" minlength="3" required>
                 </div>
+                </div>
+
+
             </div>
         </div>
 
