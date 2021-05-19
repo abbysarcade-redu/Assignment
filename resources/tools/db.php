@@ -320,3 +320,11 @@ VALUES(?,?,?,?,?,?)";
 
 //pass query
 $kiosk_link_add_preparedStatement = $pdo->prepare($kiosk_link_add);
+
+//account update
+$kiosk_product_add = "INSERT INTO ASSIGNMENT.product (product_name, product_description, product_cost, game_of_month, available_stock, playstation, xbox, nintendo, pc)
+VALUES(?,?,?,?,?,?,?,?,?)";
+
+
+//pass query
+$kiosk_product_add_preparedStatement = $pdo->prepare($kiosk_product_add);

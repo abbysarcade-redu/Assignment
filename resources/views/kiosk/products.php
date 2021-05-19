@@ -13,7 +13,7 @@
 <?php include("layout/kiosk_nav.php") ?>
 
 <div class="content-page">
-    <a class="button-pink-b">Add product</a>
+    <a class="button-pink-b" href="a_product.php">Add product</a>
     <div class="table-wrapper">
         <table class="table table-hover">
             <thead class="table_header">
