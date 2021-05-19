@@ -301,3 +301,22 @@ $kiosk_user_update = "UPDATE ASSIGNMENT.users SET user_name = ?, user_email = ? 
 
 //pass query
 $kiosk_user_update_preparedStatement = $pdo->prepare($kiosk_user_update);
+
+$get_lang = "SELECT language_id, language_name FROM ASSIGNMENT.lang";
+
+//pass query
+$get_lang_preparedStatement = $pdo->prepare($get_lang);
+
+$get_tag = "SELECT tag_id, tag_name FROM ASSIGNMENT.tags";
+
+//pass query
+$get_tag_preparedStatement = $pdo->prepare($get_tag);
+
+
+//account update
+$kiosk_link_add = "INSERT INTO ASSIGNMENT.useful_links (website, webpage, author, lang, tags, url)
+VALUES(?,?,?,?,?,?)";
+
+
+//pass query
+$kiosk_link_add_preparedStatement = $pdo->prepare($kiosk_link_add);
