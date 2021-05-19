@@ -333,3 +333,8 @@ $delete_order = "DELETE FROM ASSIGNMENT.sale WHERE sale_id = ?";
 
 //pass query
 $delete_order_preparedStatement = $pdo->prepare($delete_order);
+
+$delete_link = "DELETE FROM ASSIGNMENT.useful_links WHERE link_id = ?";
+
+//pass query
+$delete_link_preparedStatement = $pdo->prepare($delete_link);

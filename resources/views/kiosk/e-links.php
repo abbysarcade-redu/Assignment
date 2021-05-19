@@ -16,7 +16,9 @@ $link = $kiosk_link_preparedStatement->fetch();?>
             <a href="v_links.php?id=<?php echo($_GET['id']) ?>">
                 <img class="cont_icon" src="../Style/images/cont_view.png">
             </a>
-            <img class="cont_icon" src="../Style/images/cont_delete.png">
+            <a href="link_delete.php?id=<?php echo($_GET['id']) ?>">
+                <img class="cont_icon" src="../Style/images/cont_delete.png">
+            </a>
         </div>
         <form action="link_edit.php?id=<?php echo($_GET['id']) ?>" method="post">
             <hr>

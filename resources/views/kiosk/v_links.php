@@ -16,7 +16,9 @@ $link = $kiosk_link_preparedStatement->fetch();?>
             <a href="e-links.php?id=<?php echo($_GET['id']) ?>">
                 <img class="cont_icon" src="../Style/images/cont_edit.png">
             </a>
-            <img class="cont_icon" src="../Style/images/cont_delete.png">
+            <a href="link_delete.php?id=<?php echo($_GET['id']) ?>">
+                <img class="cont_icon" src="../Style/images/cont_delete.png">
+            </a>
         </div>
         <hr>
         <h1 class="kiosk_title">Link Id</h1>

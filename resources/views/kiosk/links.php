@@ -46,7 +46,7 @@
                         <a href="e-links.php?id=<?php echo($useful_link->link_id) ?>">
                             <img class="link_img" src="../Style/images/edit.png">
                         </a>
-                        <a>
+                        <a href="link_delete.php?id=<?php echo($useful_link->link_id) ?>">
                             <img class="link_img" src="../Style/images/delete.png">
                         </a>
                     </td>
