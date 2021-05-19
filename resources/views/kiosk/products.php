@@ -53,7 +53,7 @@
                         <a href="e_products.php?sku=<?php echo($kiosk_products->product_sku) ?>">
                             <img class="link_img" src="../Style/images/edit.png">
                         </a>
-                        <a>
+                        <a href="product_delete.php?sku=<?php echo($kiosk_products->product_sku) ?>">
                             <img class="link_img" src="../Style/images/delete.png">
                         </a>
                     </td>

@@ -16,7 +16,9 @@ $product = $kiosk_product_preparedStatement->fetch(); ?>
             <a href="v_products.php?sku=<?php echo($_GET['sku']) ?>">
                 <img class="cont_icon" src="../Style/images/cont_view.png">
             </a>
-            <img class="cont_icon" src="../Style/images/cont_delete.png">
+            <a href="product_delete.php?sku=<?php echo($_GET['sku']) ?>">
+                <img class="cont_icon" src="../Style/images/cont_delete.png">
+            </a>
         </div>
         <form action="products_edit.php?sku=<?php echo($_GET['sku']) ?>" method="post">
             <h1 class="kiosk_title">Product SKU</h1>
