@@ -13,7 +13,7 @@ $user = $sale_user_preparedStatement->fetch();?>
     <div class="kiosk_container">
         <div class="buffer-space"></div>
         <div>
-            <a href="v_links.php?id=<?php echo($_GET['id']) ?>">
+            <a href="v_users.php?id=<?php echo($_GET['id']) ?>">
                 <img class="cont_icon" src="../Style/images/cont_view.png">
             </a>
             <img class="cont_icon" src="../Style/images/cont_delete.png">
@@ -22,7 +22,6 @@ $user = $sale_user_preparedStatement->fetch();?>
             <hr>
             <h1 class="kiosk_title">Link Id</h1>
             <p class="kiosk_content"><?php echo($_GET['id']) ?></p>
-            <hr>
             <hr>
             <h1 class="kiosk_title">Customer Name</h1>
             <input name="website" class="kiosk_input" value="<?php echo($user['user_name']) ?>"/>
