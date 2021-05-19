@@ -34,7 +34,7 @@
                     <td>Admin</td>
                     <?php endif; ?>
                     <td>
-                        <a>
+                        <a href="v_users.php?id=<?php echo($users->user_id) ?>">
                             <img class="link_img" src="../Style/images/view.png">
                         </a>
                         <a>
