@@ -13,7 +13,9 @@ $link = $kiosk_link_preparedStatement->fetch();?>
     <div class="kiosk_container">
         <div class="buffer-space"></div>
         <div>
-            <img class="cont_icon" src="../Style/images/cont_edit.png">
+            <a href="e-links.php?id=<?php echo($_GET['id']) ?>">
+                <img class="cont_icon" src="../Style/images/cont_edit.png">
+            </a>
             <img class="cont_icon" src="../Style/images/cont_delete.png">
         </div>
         <hr>

@@ -1953,6 +1953,12 @@ table.table-striped.table-hover tbody tr:hover {
     float: right;
 }
 
+.kiosk_input {
+    border-radius: 10px;
+    margin-left: 25px;
+    width: 95%;
+}
+
 .kiosk_content {
     color: white;
     font-family: "Space Mono";

@@ -43,7 +43,7 @@
                         <a href="v_links.php?id=<?php echo($useful_link->link_id) ?>">
                             <img class="link_img" src="../Style/images/view.png">
                         </a>
-                        <a>
+                        <a href="e-links.php?id=<?php echo($useful_link->link_id) ?>">
                             <img class="link_img" src="../Style/images/edit.png">
                         </a>
                         <a>

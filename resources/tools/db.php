@@ -277,3 +277,9 @@ $kiosk_order_preparedStatement = $pdo->prepare($kiosk_order);
 $kiosk_link = "SELECT website, webpage, author, lang, tags, url FROM ASSIGNMENT.useful_links WHERE link_id = ?";
 
 $kiosk_link_preparedStatement = $pdo->prepare($kiosk_link);
+
+//account update
+$kiosk_link_update = "UPDATE ASSIGNMENT.useful_links SET website = ?, webpage = ?, author = ?, url = ? WHERE link_id = ?";
+
+//pass query
+$kiosk_link_update_preparedStatement = $pdo->prepare($kiosk_link_update);
