@@ -17,15 +17,13 @@
     </div>
     <div class="contact-page-layout">
         <form action="contact_send.php" method="post">
-            <div class="form-row">
-                <div class="form-group">
-                    <label class="form-txt">Full Name *</label>
-                    <input class="form-style" placeholder="John Doe" name="customer_name" required>
-                </div>
-                <div class="form-group col-md-6">
-                    <label class="form-txt">Email Address*</label>
-                    <input class="form-style" placeholder="contact@game-on.co.uk" name="customer_email" required>
-                </div>
+            <div class="form-group">
+                <label class="form-txt">Full Name *</label>
+                <input class="form-style" placeholder="John Doe" name="customer_name" required>
+            </div>
+            <div class="form-group">
+                <label class="form-txt">Email Address*</label>
+                <input class="form-style" placeholder="contact@game-on.co.uk" name="customer_email" required>
             </div>
             <div class="form-group">
                 <label class="form-txt">Contact Number</label>
