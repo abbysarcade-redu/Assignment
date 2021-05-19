@@ -18,16 +18,16 @@ $user = $sale_user_preparedStatement->fetch();?>
             </a>
             <img class="cont_icon" src="../Style/images/cont_delete.png">
         </div>
-        <form action="link_edit.php?id=<?php echo($_GET['id']) ?>" method="post">
+        <form action="user_edit.php?id=<?php echo($_GET['id']) ?>" method="post">
             <hr>
-            <h1 class="kiosk_title">Link Id</h1>
+            <h1 class="kiosk_title">User Id</h1>
             <p class="kiosk_content"><?php echo($_GET['id']) ?></p>
             <hr>
             <h1 class="kiosk_title">Customer Name</h1>
-            <input name="website" class="kiosk_input" value="<?php echo($user['user_name']) ?>"/>
+            <input name="name" class="kiosk_input" value="<?php echo($user['user_name']) ?>"/>
             <hr>
             <h1 class="kiosk_title">User Email</h1>
-            <input name="website" class="kiosk_input" value="<?php echo($user['user_email']) ?>"/>
+            <input name="email" class="kiosk_input" value="<?php echo($user['user_email']) ?>"/>
             <hr>
             <h1 class="kiosk_title">Orders</h1>
             <p class="kiosk_content"></p>

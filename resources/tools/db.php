@@ -295,3 +295,9 @@ $kiosk_product_update = "UPDATE ASSIGNMENT.product SET product_name = ?, product
 
 //pass query
 $kiosk_product_update_preparedStatement = $pdo->prepare($kiosk_product_update);
+
+//account update
+$kiosk_user_update = "UPDATE ASSIGNMENT.users SET user_name = ?, user_email = ? WHERE user_id = ?";
+
+//pass query
+$kiosk_user_update_preparedStatement = $pdo->prepare($kiosk_user_update);
