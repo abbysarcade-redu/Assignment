@@ -9,7 +9,7 @@
 <?php include("layout/kiosk_nav.php") ?>
 
 <div class="content-page">
-    <a class="button-pink-b">Add User</a>
+    <a class="button-pink-b" href="a_user.php">Add User</a>
     <div class="table-wrapper">
         <table class="table table-hover">
             <thead class="table_header">

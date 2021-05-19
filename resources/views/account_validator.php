@@ -12,7 +12,6 @@ if ($unique['count(*)'] != 0) {
 } else {
 
     $password = hash_hmac('sha256', $_POST["password"], 'GameOn');
-    print_r($password);
     $user_preparedStatement->execute(array(
         $_POST['name'],
         $_POST['email'],
