@@ -49,6 +49,7 @@ class games {
 }
 
 class useful_link {
+    public $link_id;
     public $website;
     public $webpage;
     public $author;

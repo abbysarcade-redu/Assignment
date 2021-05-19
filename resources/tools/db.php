@@ -159,7 +159,7 @@ $account_update = "UPDATE ASSIGNMENT.users SET user_name = ?, user_email = ? WHE
 //pass query
 $account_update_preparedStatement = $pdo->prepare($account_update);
 
-$useful_links = "SELECT website, webpage, author, lang, tags, url FROM ASSIGNMENT.useful_links";
+$useful_links = "SELECT link_id, website, webpage, author, lang, tags, url FROM ASSIGNMENT.useful_links";
 
 // pass query
 
@@ -272,3 +272,8 @@ $kiosk_product_preparedStatement = $pdo->prepare($kiosk_product);
 $kiosk_order = "SELECT sale_number, user_id, order_date, payment_ref, order_value, order_status, delivery_ref FROM ASSIGNMENT.sale WHERE sale_id = ?";
 
 $kiosk_order_preparedStatement = $pdo->prepare($kiosk_order);
+
+
+$kiosk_link = "SELECT website, webpage, author, lang, tags, url FROM ASSIGNMENT.useful_links WHERE link_id = ?";
+
+$kiosk_link_preparedStatement = $pdo->prepare($kiosk_link);
