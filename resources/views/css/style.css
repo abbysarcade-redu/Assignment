@@ -258,8 +258,8 @@ li {
 }
 
 .isdisabled {
-    cursor: not-allowed !important;
     color: #00bac0;
+    pointer-events: none;
 }
 
 
