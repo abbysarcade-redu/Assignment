@@ -35,3 +35,4 @@ $user = $sale_user_preparedStatement->fetch();?>
     </div>
     <div class="buffer-space"></div>
 </div>
+<?php include ("layout/kiosk_footer.php") ?>

@@ -39,3 +39,4 @@
         </a>
     </div>
 </div>
+<?php include ("layout/kiosk_footer.php") ?>

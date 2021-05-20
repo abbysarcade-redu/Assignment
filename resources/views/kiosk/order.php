@@ -56,3 +56,4 @@
         </table>
     </div>
 <div class="buffer-space"></div>
+<?php include ("layout/kiosk_footer.php") ?>
