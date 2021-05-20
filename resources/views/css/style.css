@@ -1718,6 +1718,7 @@ text-align: center;
     display: flex;
     margin-left: 5%;
 }
+
 .basket-sub-item-r {
     width: 40%;
     display: flex;
@@ -2021,12 +2022,21 @@ table.table-striped.table-hover tbody tr:hover {
     background-color: #00f7ff;
     border-radius: 25px;
     margin-left: 10%;
-    width: 30%;
+    width: 80%;
     margin-top: 10px;
     margin-bottom: 10px;
     height: 100px;
     padding: 10px;
     display: block;
+}
+
+.dashboard {
+    width: 100%;
+    text-decoration: none;
+}
+
+.dash_bubble:hover {
+    background-color: #ffcc00;
 }
 
 table.table td .btn.manage {

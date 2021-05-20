@@ -7,32 +7,32 @@
 <div class="buffer-space"></div>
 <div class="content-page">
     <div class="dash">
-        <a href="products.php">
+        <a class="dashboard" href="products.php">
             <div class="dash_bubble">
-                <a>Total Products:</a>
+                <p>Total Products:</p>
                 <?php $prod = $products_count_preparedStatement->fetch() ?>
                 <h1 class="central_dash"><?php print_r($prod['count(*)']) ?></h1>
             </div>
         </a>
-        <a href="order.php">
+        <a class="dashboard" href="order.php">
             <div class="dash_bubble">
-                <a>Total Orders:</a>
+                <p>Total Orders:</p>
                 <?php $ord = $orders_count_preparedStatement->fetch() ?>
                 <h1 class="central_dash"><?php print_r($ord['count(*)']) ?></h1>
             </div>
         </a>
     </div>
     <div class="dash">
-        <a href="users.php">
+        <a class="dashboard" href="users.php">
             <div class="dash_bubble">
-                <a>Total Users:</a>
+                <p>Total Users:</p>
                 <?php $use = $users_count_preparedStatement->fetch() ?>
                 <h1 class="central_dash"><?php print_r($use['count(*)']) ?></h1>
             </div>
         </a>
-        <a href="links.php">
+        <a class="dashboard" href="links.php">
             <div class="dash_bubble">
-                <a>Total Useful Links:</a>
+                <p>Total Useful Links:</p>
                 <?php $link = $links_count_preparedStatement->fetch() ?>
                 <h1 class="central_dash"><?php print_r($link['count(*)']) ?></h1>
             </div>
