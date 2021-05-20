@@ -31,7 +31,29 @@ $user = $sale_user_preparedStatement->fetch();?>
         <p class="kiosk_content"><?php echo($user['user_email']) ?></p>
         <hr>
         <h1 class="kiosk_title">Orders</h1>
-        <p class="kiosk_content"></p>
+        <div>
+            <?php $past_orders_preparedStatement->execute([$_GET['id']]);
+            $row = $past_orders_preparedStatement->fetchAll(PDO::FETCH_CLASS, 'order');
+            foreach ($row as $users): ?>
+                <div class="order_container">
+                    <div class="order_line">
+                        <p class="order_title">Order Number:</p>
+                        <p class="order_details"><?php echo($users->sale_number) ?></p>
+                    </div>
+                    <div class="order_line">
+                        <p class="order_title">Order Date:</p>
+                        <p class="order_details"><?php echo($users->order_date) ?></p>
+                    </div>
+                    <div class="order_line">
+                        <p class="order_title">Order Value:</p>
+                        <p class="order_details">£<?php echo($users->order_value) ?></p>
+                    </div>
+                    <a href="v_orders.php?id=<?php echo($users->sale_id)?>" class="yellow-btn">View Order</a>
+                </div>
+                <hr>
+            <?php endforeach; ?>
+            <div class="buffer-space"></div>
+        </div>
     </div>
     <div class="buffer-space"></div>
 </div>

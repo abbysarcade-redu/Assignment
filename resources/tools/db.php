@@ -196,7 +196,7 @@ $all_tags_preparedStatement = $pdo->prepare($all_tags);
 
 $all_tags_preparedStatement->execute();
 
-$past_orders = "SELECT sale_number, order_date, order_value FROM ASSIGNMENT.sale WHERE user_id = ?";
+$past_orders = "SELECT sale_id, sale_number, order_date, order_value FROM ASSIGNMENT.sale WHERE user_id = ?";
 
 // pass query
 

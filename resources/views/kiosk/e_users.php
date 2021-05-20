@@ -37,11 +37,33 @@ $user = $sale_user_preparedStatement->fetch();?>
             <?php else: ?>
                 <input name="admin" class="kiosk_input" type="checkbox"/>
             <?php endif; ?>
-            <h1 class="kiosk_title">Orders</h1>
-            <p class="kiosk_content"></p>
             <hr>
             <button type="submit">Save</button>
         </form>
+            <h1 class="kiosk_title">Orders</h1>
+            <p class="kiosk_content"></p>
+            <div>
+                <?php $past_orders_preparedStatement->execute([$_GET['id']]);
+                $row = $past_orders_preparedStatement->fetchAll(PDO::FETCH_CLASS, 'order');
+                foreach ($row as $users): ?>
+                    <div class="order_container">
+                        <div class="order_line">
+                            <p class="order_title">Order Number:</p>
+                            <p class="order_details"><?php echo($users->sale_number) ?></p>
+                        </div>
+                        <div class="order_line">
+                            <p class="order_title">Order Date:</p>
+                            <p class="order_details"><?php echo($users->order_date) ?></p>
+                        </div>
+                        <div class="order_line">
+                            <p class="order_title">Order Value:</p>
+                            <p class="order_details">£<?php echo($users->order_value) ?></p>
+                        </div>
+                        <a href="e-order.php?id=<?php echo($users->sale_id)?>" class="yellow-btn">Edit Order</a>
+                    </div>
+                    <hr>
+                <?php endforeach; ?>
+
     </div>
     <div class="buffer-space"></div>
 </div>

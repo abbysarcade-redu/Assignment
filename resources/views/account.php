@@ -34,7 +34,7 @@
             </div>
         </form>
         <div class="form-row">
-            <a href="past_orders.php" class="button-yellow">Orders</a>
+            <a href="past_orders.php?id=<?php echo($_SESSION['user_id']); ?>" class="button-yellow">Orders</a>
             <a href="logout.php" class="button-pink">Logout</a>
         </div>
     </div>

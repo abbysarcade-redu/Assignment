@@ -9,14 +9,15 @@
     <title>Orders</title>
 </header>
 <body>
-<?php include ("layout/nav.php"); ?>
+<?php include ("layout/nav.php");
+print_r($_GET['id']);?>
 <div class="content-page">
     <div class="hero-image">
         <img src="Style/images/your%20orders.png" class="hero">
     </div>
     <div class="buffer-space"></div>
     <div>
-        <?php $past_orders_preparedStatement->execute([$_SESSION['user_id']]);
+        <?php $past_orders_preparedStatement->execute([$_GET['id']]);
         $row = $past_orders_preparedStatement->fetchAll(PDO::FETCH_CLASS, 'order');
         foreach ($row as $users): ?>
         <div class="order_container">
