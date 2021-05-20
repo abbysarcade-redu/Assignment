@@ -4,9 +4,7 @@
 } ?>
 <!DOCTYPE html>
 
-<?php if((count($_SESSION['basket'])) == 0):
-    header('location: v_products.php');
-else: ?>
+
 
     <?php
 
@@ -67,9 +65,9 @@ else: ?>
     $user_address_preparedStatement->execute(array(json_encode($address_ids), $user));
 
     $payment_preparedStatement->execute(array(
-        base64_encode($_POST['card_number']),
-        base64_encode($_POST['name_on_card']),
-        base64_encode($_POST['csv']),
+        hash_hmac('sha256',$_POST['card_number'], 'GameOn'),
+        hash_hmac('sha256', $_POST['name_on_card'], 'GameOn'),
+        hash_hmac('sha256', $_POST['csv'], 'GameOn'),
         $billing_address
     ));
 
@@ -151,12 +149,3 @@ else: ?>
     </body>
     </html>
 
-
-    <?php include ("layout/header.php"); ?>
-        <body>
-        <?php
-        $_SESSION['basket'] = array();
-        unset($_SESSION['total']);
-        unset($_SESSION['order_number']);
-        ?>
-<?php endif; ?>

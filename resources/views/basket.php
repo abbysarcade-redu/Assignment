@@ -11,6 +11,8 @@
 <?php include ("layout/nav.php"); ?>
 <?php $total = array(); ?>
 
+<?php print_r($_SESSION['user_id']); ?>
+
 <?php if(!isset($_SESSION['order_number'])) {
     $date = strtotime("now");
     $id = rand(00000000, 99999999);

@@ -135,7 +135,7 @@ VALUES(?,?)";
 $delivery_preparedStatement = $pdo->prepare($delivery);
 
 //transaction
-$sale_detail_update = "UPDATE ASSIGNMENT.sale SET payment_ref = ?, delivery_ref = ? WHERE sale_id = ?";
+$sale_detail_update = "UPDATE ASSIGNMENT.sale SET payment_ref = ?, delivery_ref = ? WHERE sale_number = ?";
 
 //pass query
 $sale_detail_update_preparedStatement = $pdo->prepare($sale_detail_update);
