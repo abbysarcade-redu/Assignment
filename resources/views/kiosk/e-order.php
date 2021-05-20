@@ -29,6 +29,11 @@ $orders = $kiosk_order_preparedStatement->fetch();?>
             <hr>
             <?php $sale_user_preparedStatement->execute([$orders['user_id']]);
             $user = $sale_user_preparedStatement->fetch();?>
+            <div>
+                <a href="e_users.php?id=<?php echo($orders['user_id']) ?>">
+                    <img class="cont_icon" src="../Style/images/user_kiosk.png">
+                </a>
+            </div>
             <h1 class="kiosk_title">User Name</h1>
             <p class="kiosk_content"><?php echo($user['user_name']) ?></p>
             <hr>
