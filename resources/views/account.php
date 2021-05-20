@@ -30,11 +30,11 @@
                     <label class="left-white">Email</label>
                     <input class="form-style" placeholder="Email Address*" name="customer_email" value="<?php echo $user->user_email ?>">
                 </div>
-                <button type="submit">Save</button>
+                <button class="button-pink" type="submit">Save</button>
             </div>
         </form>
         <div class="form-row">
-            <a href="past_orders.php" class="yellow-btn">Orders</a>
+            <a href="past_orders.php" class="button-yellow">Orders</a>
             <a href="logout.php" class="button-pink">Logout</a>
         </div>
     </div>

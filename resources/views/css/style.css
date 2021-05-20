@@ -564,8 +564,7 @@ checkout-row. {
     width: 170px;
     color: white;
     text-decoration: none;
-    margin-left: 10px;
-    margin-top: 10px;
+    margin: 10px;
     text-align: center;
 }
 
@@ -1839,6 +1838,21 @@ hr {
     text-align: center;
     padding: 5px;
     margin-left: 10px;
+}
+
+.button-yellow {
+    background-color: #ffcc00;
+    border-radius: 25px;
+    font-size: 20px;
+    height: 30px;
+    border: none;
+    display: block;
+    width: 170px;
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    margin: 10px;
+    text-align: center;
 }
 
 #accountImage {
