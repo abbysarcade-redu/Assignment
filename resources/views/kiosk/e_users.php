@@ -31,6 +31,12 @@ $user = $sale_user_preparedStatement->fetch();?>
             <h1 class="kiosk_title">User Email</h1>
             <input name="email" class="kiosk_input" value="<?php echo($user['user_email']) ?>"/>
             <hr>
+            <h1 class="kiosk_title">Access Type</h1>
+            <?php if($user['access_type'] == 2): ?>
+                <input name="admin" class="kiosk_input" type="checkbox" checked/>
+            <?php else: ?>
+                <input name="admin" class="kiosk_input" type="checkbox"/>
+            <?php endif; ?>
             <h1 class="kiosk_title">Orders</h1>
             <p class="kiosk_content"></p>
             <hr>

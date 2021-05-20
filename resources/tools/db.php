@@ -231,7 +231,7 @@ $orders_preparedStatement = $pdo->prepare($orders);
 
 $orders_preparedStatement->execute();
 
-$sale_user = "SELECT user_name, user_email FROM ASSIGNMENT.users WHERE user_id = ?";
+$sale_user = "SELECT user_name, user_email, access_type FROM ASSIGNMENT.users WHERE user_id = ?";
 
 $sale_user_preparedStatement = $pdo->prepare($sale_user);
 
@@ -297,7 +297,7 @@ $kiosk_product_update = "UPDATE ASSIGNMENT.product SET product_name = ?, product
 $kiosk_product_update_preparedStatement = $pdo->prepare($kiosk_product_update);
 
 //account update
-$kiosk_user_update = "UPDATE ASSIGNMENT.users SET user_name = ?, user_email = ? WHERE user_id = ?";
+$kiosk_user_update = "UPDATE ASSIGNMENT.users SET user_name = ?, user_email = ?, access_type = ? WHERE user_id = ?";
 
 //pass query
 $kiosk_user_update_preparedStatement = $pdo->prepare($kiosk_user_update);
