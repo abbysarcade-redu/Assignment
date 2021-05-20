@@ -49,6 +49,7 @@ $orders = $kiosk_order_preparedStatement->fetch();?>
             <hr>
             <h1 class="kiosk_title">Delivery Reference</h1>
             <p class="kiosk_content"><?php echo($orders['delivery_ref']) ?></p>
+            <hr>
             <button type="submit">Save</button>
         </form>
     </div>

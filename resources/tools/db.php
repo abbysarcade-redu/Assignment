@@ -348,3 +348,8 @@ $delete_product = "DELETE FROM ASSIGNMENT.products WHERE product_sku = ?";
 
 //pass query
 $delete_product_preparedStatement = $pdo->prepare($delete_product);
+
+$get_payment = "SELECT card_number, name_on_card FROM ASSIGNMENT.payment WHERE payment_ref = ?";
+
+//pass query
+$get_payment_preparedStatement = $pdo->prepare($get_payment);
