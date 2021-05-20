@@ -477,9 +477,15 @@ checkout-row. {
 
 .k_nav-link {
     color: #ff00e6 !important;
-    font-family: "Space Mono" !important;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 20px;
+
+}
+
+.k_nav-link:hover {
+    color: #00f7ff !important;
 }
 
 .table_header {
