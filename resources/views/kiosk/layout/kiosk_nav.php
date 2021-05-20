@@ -27,6 +27,9 @@ if(!isset($_SESSION)) {
             <a href="links.php" class="k_nav-link">Useful Links</a>
         </li>
         <li class="nav-item">
+            <a href="../Homepage.php" class="k_nav-link">Back to site</a>
+        </li>
+        <li class="nav-item">
             <a href="../logout.php" class="k_nav-link">Logout</a>
         </li>
     </ul>
