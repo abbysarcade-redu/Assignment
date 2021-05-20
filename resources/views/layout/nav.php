@@ -45,7 +45,7 @@ if(!isset($_SESSION['basket'])) {
                 <div class="account_drop hide" id="account_drop">
                     <a href="account.php">Account</a>
                     <hr>
-                    <a href="past_orders.php">Orders</a>
+                    <a href="past_orders.php?id=<?php echo($_SESSION['user_id']); ?>">Orders</a>
                     <hr>
                     <a href="logout.php">Logout</a>
                     <?php if($_SESSION['access_type'] == 2): ?>

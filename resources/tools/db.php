@@ -353,3 +353,8 @@ $get_payment = "SELECT card_number, name_on_card FROM ASSIGNMENT.payment WHERE p
 
 //pass query
 $get_payment_preparedStatement = $pdo->prepare($get_payment);
+
+$order_details = "SELECT order_date, order_value FROM ASSIGNMENT.sale WHERE sale_number= ?";
+
+//pass query
+$order_details_preparedStatement = $pdo->prepare($order_details);
