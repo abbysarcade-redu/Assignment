@@ -7,7 +7,7 @@ if($_POST) {
     $customer_message = "";
     $email_body = "";
     $email_subject = "Customer Email";
-    $email_recipient = "a.donkin@redu.co.uk";
+    $email_recipient = "bh73tk@student.sunderland.ac.uk";
     $c_email_subject = "Thank you for your email";
     $c_email_body = "Thank you for getting in touch with Game On. We have received your email and will be in touch as soon as possible.
 

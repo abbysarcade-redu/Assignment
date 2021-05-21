@@ -84,12 +84,14 @@
 
     if($_POST) {
         $customer_name = "";
-        $customer_email = "";
+        $customer_email = str_replace(array("\r", "\n", "%0a", "%0d"), '', $_POST['email']);
+        $customer_email = filter_var($customer_email, FILTER_VALIDATE_EMAIL);
+        $email_sender = "bh73tk@student.sunderland.ac.uk";
         $email_body = "Thank you for placing an order with Game On. Your order is now with the warehouse team to pick pack and send your game.";
         $email_subject = "Thank you for your order.";
 
 
-        $headers = 'MIME-Version: 1.0' . "\r\n" . 'From: ' . $customer_email . "\r\n";
+        $headers = 'MIME-Version: 1.0' . "\r\n" . 'From: ' . $email_sender . "\r\n";
 
         $mail = mail($customer_email, $email_subject, $email_body, $headers);
     }?>
