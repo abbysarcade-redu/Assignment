@@ -7,7 +7,7 @@
 <div>
     <img class="full-logo" src="Style/images/Untitled%20design.png">
     <p class="content">Abby Donkin</p>
-    <p class="content">Student ID</p>
+    <p class="content">1110642063</p>
 
     <p class="content">This website has been created as part of a university assignment and is not a commercial site offering merchandise for sale.</p>
     <div class="central">
