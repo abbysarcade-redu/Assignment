@@ -23,6 +23,5 @@
             <button type="submit">Save</button>
         </form>
     </div>
-    <div class="buffer-space"></div>
 </div>
 <?php include ("layout/kiosk_footer.php") ?>

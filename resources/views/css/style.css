@@ -754,6 +754,7 @@ svg {
     display: block;
     box-sizing: inherit;
     overflow: hidden;
+    height: auto;
 }
 
 .prod-info-columns {
