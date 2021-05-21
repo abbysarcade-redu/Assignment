@@ -1,3 +1,4 @@
+<!-- footer container -->
 <div class="footer">
     <div class="footer-column">
         <p class="footer-info-title">wwww.game-on.co.uk</p>

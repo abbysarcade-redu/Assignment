@@ -16,18 +16,18 @@
 <div class="content-page">
     <div class="kiosk_container">
         <div class="buffer-space"></div>
-        <!-- To create a form. The inputs are used in sections where we would like the user to time in a response, all of these are required fields. We also have included a dropdown select which only provides responses that are predefined in the database. Given more time, I would have liked to have added the functionality to add another option.
+        <!-- To create a form. The inputs are used in sections where we would like the user to type in a response, all of these are required fields. I also have included a dropdown select which only provides responses that are predefined in the database. Given more time, I would have liked to have added the functionality to add another option.
         The action on here is to send to the link_create file which takes the inputs and adds to the database using the post method. -->
         <form action="link_create.php" method="post">
             <hr>
             <h1 class="kiosk_title">Website</h1>
-            <input name="website" class="kiosk_input" placeholder="Name of site"/>
+            <input name="website" class="kiosk_input" placeholder="Name of site" required/>
             <hr>
             <h1 class="kiosk_title">Webpage</h1>
-            <input name="webpage" class="kiosk_input" placeholder="Name of page"/>
+            <input name="webpage" class="kiosk_input" placeholder="Name of page" required/>
             <hr>
             <h1 class="kiosk_title">Author</h1>
-            <input name="author" class="kiosk_input" placeholder="Page Author"/>
+            <input name="author" class="kiosk_input" placeholder="Page Author" required/>
             <hr>
             <h1 class="kiosk_title">Language</h1>
             <select class="kiosk_drop" name="lang">
@@ -56,7 +56,7 @@
             </select>
             <hr>
             <h1 class="kiosk_title">URL</h1>
-            <input name="url" type="url" class="kiosk_input" placeholder="www.game-on.co.uk"/>
+            <input name="url" type="url" class="kiosk_input" placeholder="www.game-on.co.uk" required/>
             <hr>
             <!-- this button is set to be a submit which means it will direct to the page in the action of the form. -->
             <button type="submit">Save</button>

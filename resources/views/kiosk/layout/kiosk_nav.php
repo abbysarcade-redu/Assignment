@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <?php
+// check if the session is started
 if(!isset($_SESSION)) {
     session_start();
 } ?>
+
+<!-- Pull in the style requirements -->
 <head>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -11,6 +14,7 @@ if(!isset($_SESSION)) {
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
 </head>
 
+<!-- Kiosk Nav container -->
 <div class="kiosk_nav">
     <ul class="menu">
         <a href="dashboard.php" class="logo"><img src="../Style/images/Untitled design.png" alt="Game On" width="80"></a>
