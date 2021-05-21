@@ -80,7 +80,19 @@
 
     $delivery_ref = $pdo->lastInsertId();
 
-    $sale_detail_update_preparedStatement->execute([$payment_ref, $delivery_ref, $_SESSION['order_number']]);  ?>
+    $sale_detail_update_preparedStatement->execute([$payment_ref, $delivery_ref, $_SESSION['order_number']]);
+
+    if($_POST) {
+        $customer_name = "";
+        $customer_email = "";
+        $email_body = "Thank you for placing an order with Game On. Your order is now with the warehouse team to pick pack and send your game.";
+        $email_subject = "Thank you for your order.";
+
+
+        $headers = 'MIME-Version: 1.0' . "\r\n" . 'From: ' . $customer_email . "\r\n";
+
+        $mail = mail($customer_email, $email_subject, $email_body, $headers);
+    }?>
 
 
 
