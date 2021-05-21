@@ -16,6 +16,7 @@
                         <div class="dropdown-cont">
                             <button onclick="langFunction()" class="dropbtn">Language</button>
                             <div id="langDropdown" class="dropdown-content">
+                                <!-- show useful links and allow filters using javascript -->
                                 <input type="text" placeholder="Search.." id="langInput" onkeyup="langFilterFunction()">
                                     <a class="dropdown-text" onclick="langTableFilterFunction()">All</a>
                                 <?php $row = $all_lang_preparedStatement->fetchAll();

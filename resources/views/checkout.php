@@ -25,12 +25,13 @@
         </div>
     </div>
     <hr>
-    <form name="checkout" action="Checkout%20Successful.php" method="post">
+    <form name="checkout" action="checkout_successful.php" method="post">
         <div class="checkout-row">
             <div class="checkout-container-left">
                 <label class="left-white">Your Details</label>
                 <div class="form-row">
                     <div class="form-group">
+                        <!-- check if the user id id set and if it is, prefill the inputs it can -->
                         <?php if(isset($_SESSION['user_id'])):
                         $user_details_preparedStatement->execute([$_SESSION['user_id']]);
                         $user = $user_details_preparedStatement->fetchObject('users'); ?>

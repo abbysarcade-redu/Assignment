@@ -1,5 +1,6 @@
 <?php
 
+// build email
 if($_POST) {
     $customer_name = "";
     $customer_email = "";
@@ -56,9 +57,11 @@ if($_POST) {
         <div class="contact-page-layout">
             <div>
                 <?php
+                //send customer service email
                 $mail = mail($email_recipient, $email_subject, $email_body, $headers);
 
                 if ($mail) {
+                    // send customer email conf
                     mail($customer_email, $c_email_subject, $c_email_body);
                     echo "<p class='is-white'>Thank you for getting in touch $customer_name. We have received your message and will respond ASAP."; ?>
                     <img src="Style/images/Sent.png" width="80%">
@@ -88,6 +91,7 @@ if($_POST) {
                     <iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=SR6%200DD&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                     <a href="https://123movies-to.org"></a>
                     <br>
+                    <!-- google map -->
                     <style>.mapouter{position:relative;text-align:right;height:auto;width:auto;}</style>
                     <style>.gmap_canvas {overflow:hidden;background:none!important;height:100%;width:100%;border-radius: 20px;}</style>
                 </div>

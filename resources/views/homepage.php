@@ -24,6 +24,7 @@
     <?php if($g_o_m->available_stock != 0): ?>
         <div class="game-of-month">
             <h1> Game of the month</h1>
+            <!-- show game of the month -->
             <div>
                 <a href="product_page.php?sku=<?=$g_o_m->product_sku;?>">
                     <img src="<?php echo ($g_o_m->product_image); ?>" class="game-of-month-img">
@@ -33,6 +34,7 @@
     <?php endif; ?>
     <div class="top-games">
         <h1>Top Games</h1>
+        <!-- show top games -->
         <div>
         <?php $row = $featured_games_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "featured_game");
         foreach ($row as $featured_game):

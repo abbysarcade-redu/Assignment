@@ -1,10 +1,16 @@
 <!DOCTYPE html>
+<!-- include headers for design elements -->
+
 <?php include ("layout/header.php"); ?>
 <header>
+    <!-- Add a name to the tab shown on the browser-->
     <title>About Us</title>
 </header>
 <body>
+<!-- include the nav bar -->
 <?php include ("layout/nav.php"); ?>
+
+<!-- container for the content page -->
 <div class="nav-buffer">
 <div class="home-page">
     <div class="hero-image">
@@ -72,6 +78,9 @@
         </div>
     </div>
 </div>
+
+<!-- including the footer -->
+
 <?php include ("layout/footer.php"); ?>
 
 

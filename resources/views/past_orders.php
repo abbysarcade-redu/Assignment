@@ -17,6 +17,7 @@ print_r($_GET['id']);?>
     </div>
     <div class="buffer-space"></div>
     <div>
+        <!-- get all the past orders for a user -->
         <?php $past_orders_preparedStatement->execute([$_GET['id']]);
         $row = $past_orders_preparedStatement->fetchAll(PDO::FETCH_CLASS, 'order');
         foreach ($row as $users): ?>

@@ -6,7 +6,7 @@
         crossorigin="anonymous"></script>
     <script language="JavaScript" type="text/javascript" src="../js/consoleSelect.js"></script>
 </head>
-
+<!-- get the product information and show on page -->
 <?php $SKU = $_GET['sku'] ?>
 <?php $passing_sku = str_split($SKU, 12); ?>
 <?php $game_preparedStatement->execute($passing_sku); ?>

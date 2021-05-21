@@ -1,3 +1,4 @@
+<!-- create footer container -->
 <div class="footer">
     <div class="footer-column">
         <img src="Style/images/long-logo.png" class="footer-logo">

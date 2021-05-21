@@ -30,6 +30,7 @@
             <ul class="prods" id="productUL">
                 <?php $row = $products_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "game");
                 foreach($row as $game):
+                    //only show xbox games
                     if($game->xbox == 1):?>
                         <li>
                             <div class="top-games-entry">

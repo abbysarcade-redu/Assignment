@@ -28,6 +28,7 @@
             <ul class="prods" id="productUL">
                 <?php $row = $products_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "game");
                 foreach($row as $game):
+                    // only show pc games
                     if($game->pc == 1):?>
                         <li>
                             <div class="top-games-entry">

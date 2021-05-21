@@ -10,6 +10,7 @@
 <?php include ("layout/nav.php"); ?>
 
 <?php
+// get  past order and show the details from the database
 $past_order_breakdown_preparedStatement->execute([$_GET['sale_number']]);
 $row = $past_order_breakdown_preparedStatement->fetchAll();
 ?>

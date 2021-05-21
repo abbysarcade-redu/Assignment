@@ -11,3 +11,4 @@ if (isset($_SESSION['basket'])) {
 
 <?php include("product_page.php"); ?>
 
+<!-- set basket details -->

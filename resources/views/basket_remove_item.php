@@ -18,3 +18,4 @@ foreach ($vals as $sku => $amount) {
     }
 }
 header("Location: basket.php"); ?>
+<!-- remove all entires of the sku and redirect to the basket. ->

@@ -29,6 +29,7 @@
         <div class="product-container">
             <ul class="prods" id="productUL">
                 <?php $row = $products_preparedStatement-> fetchAll(PDO::FETCH_CLASS, "game");
+                //only show playstation games
                 foreach($row as $game):
                     if($game->playstation == 1):?>
                         <li>

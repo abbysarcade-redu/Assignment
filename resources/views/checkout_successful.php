@@ -15,7 +15,7 @@
     </header>
     <body>
     <?php include ("layout/nav.php");
-
+// get the order details
     $vals = array_count_values($_SESSION['basket']);
     $max = count($vals);
     if($max != 0) {
@@ -35,7 +35,7 @@
             ));
         }
     }
-
+// add the delivery address to the database
     $address_preparedStatement->execute(array(
         $_POST['d-house-number'],
         $_POST['d-street'],
@@ -45,8 +45,10 @@
         $_POST['d-post-code'],
         1
     ));
+    // get delivery address id
     $delivery_address = $pdo->lastInsertId();
 
+    // add the billing address to te database
     $address_preparedStatement->execute(array(
         $_POST['b-house-number'],
         $_POST['b-street'],
@@ -56,21 +58,22 @@
         $_POST['b-post-code'],
         2
     ));
-
+// get billing address id
     $billing_address = $pdo->lastInsertId();
-
+// add addresses to the transaction
     $address_ids = ([$delivery_address, $billing_address]);
+    // get the user id
     $user = $_SESSION['user_id'];
-
     $user_address_preparedStatement->execute(array(json_encode($address_ids), $user));
 
+    //hash the card details
     $payment_preparedStatement->execute(array(
         hash_hmac('sha256',$_POST['card_number'], 'GameOn'),
         hash_hmac('sha256', $_POST['name_on_card'], 'GameOn'),
         hash_hmac('sha256', $_POST['csv'], 'GameOn'),
         $billing_address
     ));
-
+// get payment ref
     $payment_ref = $pdo->lastInsertId();
 
     $delivery_preparedStatement->execute(array(
@@ -81,7 +84,7 @@
     $delivery_ref = $pdo->lastInsertId();
 
     $sale_detail_update_preparedStatement->execute([$payment_ref, $delivery_ref, $_SESSION['order_number']]);
-
+// send order email
     if($_POST) {
         $customer_name = "";
         $customer_email = str_replace(array("\r", "\n", "%0a", "%0d"), '', $_POST['email']);
@@ -115,6 +118,7 @@
             <p class="is-white-left">Name: <?php echo($_POST['name'])?></p>
             <p class="is-white-left">Email Address: <?php echo($_POST['email'])?></p>
             <p class="is-white-left">Phone Number: <?php echo($_POST['number'])?></p>
+            <!-- only show last 4 digits of the card number -->
             <p class="is-white-left">Card Number: **** **** **** <?php echo(substr($_POST['card_number'], -4)) ?></p>
         </div>
         <div class="checkout-container-right">
@@ -125,6 +129,7 @@
         $vals = array_count_values($_SESSION['basket']);
         $max=count($vals);
         if ($max != 0):
+            // show line items
             foreach ($vals as $sku => $amount):
                 $game_preparedStatement->execute([$sku]);
                 $game = $game_preparedStatement->fetchObject( 'game');

@@ -30,6 +30,7 @@
         <div class="product-container">
             <ul class="prods" id="productUL">
                 <?php $row = $products_preparedStatement-> fetchAll(PDO::FETCH_CLASS, 'game');
+                // show all products
                 foreach($row as $game): ?>
                         <li>
                             <div class="top-games-entry">

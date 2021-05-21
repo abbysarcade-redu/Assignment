@@ -7,3 +7,4 @@ $sku_possition = array_search($sku, $_SESSION['basket']);
 unset(($_SESSION['basket'])[$sku_possition]);
 ?>
 <?php header("Location: basket.php"); ?>
+<!-- remove the sku from the array again and redirect to the basket. ->
