@@ -1879,6 +1879,7 @@ hr {
     border-radius: 25px;
     margin-top: 20px;
     width: 100px;
+    border: 2px solid #ffcc00;
 }
 
 .b-but {
