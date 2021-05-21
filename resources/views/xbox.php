@@ -5,7 +5,7 @@
 <?php include ("layout/header.php"); ?>
 <header>
     <title>Xbox</title>
-    <script src="../js/SearchFunction.js"></script>
+    <script src="../js/searchFunction.js"></script>
 </header>
 <body>
 <?php include ("layout/nav.php"); ?>
@@ -23,7 +23,7 @@
                 <hr>
                 <a href="nintendo.php" class="filter-button">Nintendo</a>
                 <hr>
-                <a class="filter-button" href="PC.php">PC</a>
+                <a class="filter-button" href="pc.php">PC</a>
             </div>
         </div>
         <div class="product-container">
@@ -43,7 +43,7 @@
                 <?php endforeach; ?>
             </ul>
         </div>
-        <script src="../js/SearchFunction.js"></script>
+        <script src="../js/searchFunction.js"></script>
     </div>
 </div>
 <?php include ("layout/footer.php"); ?>

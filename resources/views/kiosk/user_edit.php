@@ -14,5 +14,5 @@ $kiosk_user_update_preparedStatement->execute(array(
     $_GET['id']
 ));
 
-include("e_users.php"); ?>
+include("edit_users.php"); ?>
 

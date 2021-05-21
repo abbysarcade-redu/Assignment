@@ -10,4 +10,4 @@
 
 $_GET['id'] = $pdo->lastInsertId();
 
-include ("v_links.php"); ?>
+include("view_links.php"); ?>

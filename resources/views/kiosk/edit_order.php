@@ -13,7 +13,7 @@ $orders = $kiosk_order_preparedStatement->fetch();?>
     <div class="kiosk_container">
         <div class="buffer-space"></div>
         <div>
-            <a href="v_orders.php?id=<?php echo($_GET['id']) ?>">
+            <a href="view_orders.php?id=<?php echo($_GET['id']) ?>">
                 <img class="cont_icon" src="../Style/images/cont_view.png">
             </a>
             <a href="order_delete.php?id=<?php echo($_GET['id']) ?>">
@@ -30,7 +30,7 @@ $orders = $kiosk_order_preparedStatement->fetch();?>
             <?php $sale_user_preparedStatement->execute([$orders['user_id']]);
             $user = $sale_user_preparedStatement->fetch();?>
             <div>
-                <a href="e_users.php?id=<?php echo($orders['user_id']) ?>">
+                <a href="edit_users.php?id=<?php echo($orders['user_id']) ?>">
                     <img class="cont_icon" src="../Style/images/user_kiosk.png">
                 </a>
             </div>

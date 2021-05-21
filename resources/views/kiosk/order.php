@@ -40,10 +40,10 @@
                     <td><?php echo($order->order_date) ?></td>
                     <td><?php echo($order->order_value) ?></td>
                     <td>
-                        <a href="v_orders.php?id=<?php echo($order->sale_id) ?>">
+                        <a href="view_orders.php?id=<?php echo($order->sale_id) ?>">
                             <img class="link_img" src="../Style/images/view.png">
                         </a>
-                        <a href="e-order.php?id=<?php echo($order->sale_id) ?>">
+                        <a href="edit_order.php?id=<?php echo($order->sale_id) ?>">
                             <img class="link_img" src="../Style/images/edit.png">
                         </a>
                         <a href="order_delete.php?id=<?php echo($order->sale_id) ?>">

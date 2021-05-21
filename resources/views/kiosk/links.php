@@ -13,7 +13,7 @@
 <?php include("layout/kiosk_nav.php") ?>
 
 <div class="content-page">
-    <a class="button-pink-b" href="a_links.php">Add Link</a>
+    <a class="button-pink-b" href="add_links.php">Add Link</a>
     <div class="table-wrapper">
         <table class="table table-hover">
             <thead class="table_header">
@@ -40,10 +40,10 @@
                     <td><?php echo($db_lang['language_name']) ?></td>
                     <td><?php echo($db_tag['tag_name']) ?></td>
                     <td>
-                        <a href="v_links.php?id=<?php echo($useful_link->link_id) ?>">
+                        <a href="view_links.php?id=<?php echo($useful_link->link_id) ?>">
                             <img class="link_img" src="../Style/images/view.png">
                         </a>
-                        <a href="e-links.php?id=<?php echo($useful_link->link_id) ?>">
+                        <a href="edit_links.php?id=<?php echo($useful_link->link_id) ?>">
                             <img class="link_img" src="../Style/images/edit.png">
                         </a>
                         <a href="link_delete.php?id=<?php echo($useful_link->link_id) ?>">

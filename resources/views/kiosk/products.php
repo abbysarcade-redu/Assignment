@@ -13,7 +13,7 @@
 <?php include("layout/kiosk_nav.php") ?>
 
 <div class="content-page">
-    <a class="button-pink-b" href="a_product.php">Add product</a>
+    <a class="button-pink-b" href="add_product.php">Add product</a>
     <div class="table-wrapper">
         <table class="table table-hover">
             <thead class="table_header">
@@ -47,10 +47,10 @@
                             <a>PC</a>
                         <?php endif; ?>
                     <td>
-                        <a href="v_products.php?sku=<?php echo($kiosk_products->product_sku) ?>">
+                        <a href="view_products.php?sku=<?php echo($kiosk_products->product_sku) ?>">
                             <img class="link_img" src="../Style/images/view.png">
                         </a>
-                        <a href="e_products.php?sku=<?php echo($kiosk_products->product_sku) ?>">
+                        <a href="edit_products.php?sku=<?php echo($kiosk_products->product_sku) ?>">
                             <img class="link_img" src="../Style/images/edit.png">
                         </a>
                         <a href="product_delete.php?sku=<?php echo($kiosk_products->product_sku) ?>">

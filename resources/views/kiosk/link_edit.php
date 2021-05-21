@@ -8,4 +8,4 @@ $kiosk_link_update_preparedStatement->execute(array(
     $_GET['id']
     ));
 
-include("e-links.php"); ?>
+include("edit_links.php"); ?>

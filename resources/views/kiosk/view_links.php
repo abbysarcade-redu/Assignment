@@ -13,7 +13,7 @@ $link = $kiosk_link_preparedStatement->fetch();?>
     <div class="kiosk_container">
         <div class="buffer-space"></div>
         <div>
-            <a href="e-links.php?id=<?php echo($_GET['id']) ?>">
+            <a href="edit_links.php?id=<?php echo($_GET['id']) ?>">
                 <img class="cont_icon" src="../Style/images/cont_edit.png">
             </a>
             <a href="link_delete.php?id=<?php echo($_GET['id']) ?>">

@@ -344,7 +344,7 @@ $delete_user = "DELETE FROM ASSIGNMENT.users WHERE user_id = ?";
 //pass query
 $delete_user_preparedStatement = $pdo->prepare($delete_user);
 
-$delete_product = "DELETE FROM ASSIGNMENT.products WHERE product_sku = ?";
+$delete_product = "DELETE FROM ASSIGNMENT.product WHERE product_sku = ?";
 
 //pass query
 $delete_product_preparedStatement = $pdo->prepare($delete_product);

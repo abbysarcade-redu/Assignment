@@ -7,7 +7,7 @@ if($_POST) {
     $customer_message = "";
     $email_body = "";
     $email_subject = "Customer Email";
-    $email_recipient = "bh73tk@student.sunderland.ac.uk";
+    $email_recipient = "a.donkin@redu.co.uk";
     $c_email_subject = "Thank you for your email";
     $c_email_body = "Thank you for getting in touch with Game On. We have received your email and will be in touch as soon as possible.
 
@@ -45,7 +45,6 @@ if($_POST) {
 </header>
 <body>
 <?php include ("layout/nav.php"); ?>
-<div class="nav-buffer">
     <div class="content-page">
         <div class="hero-image">
             <img src="Style/images/contact-us-banner.png" class="hero">
@@ -93,6 +92,7 @@ if($_POST) {
                     <style>.gmap_canvas {overflow:hidden;background:none!important;height:100%;width:100%;border-radius: 20px;}</style>
                 </div>
             </div>
+        </div>
     </div>
 </div>
 

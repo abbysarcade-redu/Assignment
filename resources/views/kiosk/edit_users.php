@@ -13,7 +13,7 @@ $user = $sale_user_preparedStatement->fetch();?>
     <div class="kiosk_container">
         <div class="buffer-space"></div>
         <div>
-            <a href="v_users.php?id=<?php echo($_GET['id']) ?>">
+            <a href="view_users.php?id=<?php echo($_GET['id']) ?>">
                 <img class="cont_icon" src="../Style/images/cont_view.png">
             </a>
             <a href="user_delete.php?id=<?php echo($_GET['id']) ?>">
@@ -59,7 +59,7 @@ $user = $sale_user_preparedStatement->fetch();?>
                             <p class="order_title">Order Value:</p>
                             <p class="order_details">£<?php echo($users->order_value) ?></p>
                         </div>
-                        <a href="e-order.php?id=<?php echo($users->sale_id)?>" class="yellow-btn">Edit Order</a>
+                        <a href="edit_order.php?id=<?php echo($users->sale_id)?>" class="yellow-btn">Edit Order</a>
                     </div>
                     <hr>
                 <?php endforeach; ?>

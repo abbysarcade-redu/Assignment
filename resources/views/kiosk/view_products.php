@@ -13,7 +13,7 @@ $product = $kiosk_product_preparedStatement->fetch(); ?>
     <div class="kiosk_container">
         <div class="buffer-space"></div>
         <div>
-            <a href="e_products.php?sku=<?php echo($_GET['sku']) ?>">
+            <a href="edit_products.php?sku=<?php echo($_GET['sku']) ?>">
                 <img class="cont_icon" src="../Style/images/cont_edit.png">
             </a>
             <a href="product_delete.php?sku=<?php echo($_GET['sku']) ?>">

@@ -11,8 +11,8 @@ if(!isset($_SESSION['basket'])) {
 <?php include ("../tools/class_controller.php"); ?>
 <?php include ("../tools/db.php"); ?>
 <?php include ("layout/header.php"); ?>
-<script src="../js/nav_dropdown.js"></script>
-<script src="../js/nav_search.js"></script>
+<script src="../js/navDropdown.js"></script>
+<script src="../js/navSearch.js"></script>
 
 <nav class="header">
     <a href="Homepage.php" class="logo"><img src="Style/images/Untitled design.png" alt="Game On" width="80"></a>

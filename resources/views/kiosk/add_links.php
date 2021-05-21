@@ -1,4 +1,6 @@
+
 <?php include ("../../tools/class_controller.php"); ?>
+// include the database file so we can access the queries
 <?php include ("../../tools/db.php"); ?>
 
 <!DOCTYPE html>

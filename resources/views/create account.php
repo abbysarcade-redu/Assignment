@@ -49,7 +49,7 @@
         </ul>
 
     </div>
-    <script src="../js/account_validator.js"></script>
+    <script src="../js/accountValidator.js"></script>
 </div>
 <div class="buffer-space">
 

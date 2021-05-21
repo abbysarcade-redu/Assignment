@@ -2,7 +2,7 @@
 <?php include ("layout/header.php"); ?>
 <header>
     <title>Useful Links</title>
-    <script src="../js/useful_links.js"></script>
+    <script src="../js/usefulLinks.js"></script>
 </header>
 <body>
 <?php include ("layout/nav.php"); ?>
@@ -67,7 +67,7 @@
             </tbody>
         </table>
     </div>
-<script src="../js/ProductSearch.js"    ></script>
+<script src="../js/linksSearch.js"    ></script>
 <div class="buffer-space">
 
 </div>

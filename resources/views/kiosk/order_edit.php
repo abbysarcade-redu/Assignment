@@ -9,5 +9,5 @@ $kiosk_order_update_preparedStatement->execute(array(
     $_GET['id']
 ));
 
-include("e-order.php"); ?>
+include("edit_order.php"); ?>
 

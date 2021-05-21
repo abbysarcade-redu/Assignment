@@ -9,7 +9,7 @@
 <?php include("layout/kiosk_nav.php") ?>
 
 <div class="content-page">
-    <a class="button-pink-b" href="a_user.php">Add User</a>
+    <a class="button-pink-b" href="add_user.php">Add User</a>
     <div class="table-wrapper">
         <table class="table table-hover">
             <thead class="table_header">
@@ -34,10 +34,10 @@
                     <td>Admin</td>
                     <?php endif; ?>
                     <td>
-                        <a href="v_users.php?id=<?php echo($users->user_id) ?>">
+                        <a href="view_users.php?id=<?php echo($users->user_id) ?>">
                             <img class="link_img" src="../Style/images/view.png">
                         </a>
-                        <a href="e_users.php?id=<?php echo($users->user_id) ?>">
+                        <a href="edit_users.php?id=<?php echo($users->user_id) ?>">
                             <img class="link_img" src="../Style/images/edit.png">
                         </a>
                         <a href="user_delete.php?id=<?php echo($users->user_id) ?>">

@@ -18,7 +18,7 @@
             <a href="playstation.php"><img src="Style/images/ps-logo.png" class="pop-console-img" ></a>
             <a href="xbox.php"><img src="Style/images/Xbox-logo.png" class="pop-console-img"></a>
             <a href="nintendo.php"><img src="Style/images/nintendo-logo.png" class="pop-console-img"></a>
-            <a href="PC.php"><img src="Style/images/computer.png" class="pop-console-img"></a>
+            <a href="pc.php"><img src="Style/images/computer.png" class="pop-console-img"></a>
         </div>
     </div>
     <?php if($g_o_m->available_stock != 0): ?>

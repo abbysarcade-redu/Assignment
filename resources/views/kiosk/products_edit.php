@@ -44,4 +44,4 @@ $kiosk_product_update_preparedStatement->execute(array(
     $_GET['sku']
 ));
 
-include("e_products.php"); ?>
+include("edit_products.php"); ?>

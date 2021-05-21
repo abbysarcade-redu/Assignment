@@ -45,4 +45,4 @@ $kiosk_product_add_preparedStatement->execute(array(
 
 $_GET['sku'] = $pdo->lastInsertId();
 
-include("v_products.php"); ?>
+include("view_products.php"); ?>

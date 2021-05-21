@@ -5,7 +5,7 @@ $email_check_preparedStatement->execute([$_POST['email']]);
 $unique = $email_check_preparedStatement->fetch();
 
 if ($unique['count(*)'] != 0) {
-    include("a_user.php");
+    include("add_user.php");
     echo '<script>alert("This email address has already been registered on this site. Please use a different email address.")</script>';
     } else {
         $password = 'Password1!';
@@ -26,7 +26,7 @@ if ($unique['count(*)'] != 0) {
 
         $_GET['id'] = $pdo->lastInsertId();
 
-        include("v_users.php");
+        include("view_users.php");
 
     }
 ?>

@@ -20,7 +20,7 @@ if(null !== $_POST["import"]) {
             {
                 echo "<script type=\"text/javascript\">
                 alert(\"Invalid File:Please Upload CSV File.\");
-                window.location = \"bulk product upload.php\"
+                window.location = \"bulk_product_upload.php\"
                 </script>";
             }
         }
