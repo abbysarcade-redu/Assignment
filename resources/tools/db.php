@@ -43,7 +43,7 @@ $games_preparedStatement = $pdo->prepare($games);
 $games_preparedStatement->execute([0]);
 
 
-$products = "SELECT product_name, product_image, product_cost, product_description, product_sku, playstation, nintendo, pc, xbox FROM ASSIGNMENT.product where available_stock != ?";
+$products = "SELECT product_name, product_image, product_cost, product_description, product_sku, playstation, nintendo, pc, xbox FROM ASSIGNMENT.product where available_stock > ?";
 
 //pass query
 $products_preparedStatement = $pdo->prepare($products);
