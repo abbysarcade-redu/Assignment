@@ -22,6 +22,7 @@ if ($unique['count(*)'] != 0) {
     }
     $_SESSION['user_id'] = $pdo->lastInsertId();
     $_SESSION['user_name'] = $_POST['name'];
+    $_SESSION['access_type'] = 1;
     header('Location: account_created.php');
 }
 ?>

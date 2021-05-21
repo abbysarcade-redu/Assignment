@@ -38,11 +38,12 @@ if(!isset($_SESSION['basket'])) {
         </li>
         <li class="img right">
             <div>
-                <a class="img dropdown-toggle" onclick="hideAccountFunction()">
+                <a class="img dropdown-toggle" onclick="showAccountFunction()">
                     <img id="accountImage" src="Style/images/Account.png" alt="Account" width="40" height="40">
                 </a>
                 <?php if(isset($_SESSION['user_id'])): ?>
                 <div class="account_drop hide" id="account_drop">
+                    <button class="close" onclick="hideAccountFunction()">X</button>
                     <a href="account.php">Account</a>
                     <hr>
                     <a href="past_orders.php?id=<?php echo($_SESSION['user_id']); ?>">Orders</a>
@@ -55,9 +56,10 @@ if(!isset($_SESSION['basket'])) {
                 </div>
                 <?php else: ?>
                 <div class="account_drop hide" id="account_drop">
+                    <button class="close" onclick="hideAccountFunction()">X</button>
                     <a href="login.php">Login</a>
                     <hr>
-                    <a href="create20%account.php">Create Account</a>
+                    <a href="create%20account.php">Create Account</a>
                 </div>
                 <?php endif; ?>
             </div>
