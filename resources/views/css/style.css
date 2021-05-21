@@ -310,7 +310,19 @@ li {
 .header .menu-btn:checked ~ .menu {
     max-height: 450px;
     float: right;
-    display: block;
+    display: inline-grid;
+    padding-right: 5px;
+    margin-right: 5px;
+    width: 100px;
+    border-radius: 25px;
+}
+
+.header .menu-btn:checked ~ .menu .search_input{
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu .search-bar{
+    display: none;
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon {
