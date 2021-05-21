@@ -386,9 +386,6 @@ li {
 }
 
 
-.home-page {
-    padding-top: 60px;
-}
 
 .container {
     width: 400px;
@@ -872,6 +869,7 @@ svg {
    max-width: 100%;
     height: auto;
     width: 100%;
+    padding-top: 100px;
 
 
 }
