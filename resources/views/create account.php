@@ -38,11 +38,6 @@
                 </button>
             </div>
         </div>
-        <div class="central-buffer">
-            <div>
-                <img class="accountimg" src="Style/images/User.png">
-            </div>
-        </div>
     </form>
     <div id="message">
         <h3>Password must contain the following;</h3>
